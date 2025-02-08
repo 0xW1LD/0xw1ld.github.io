@@ -1,6 +1,7 @@
 ---
 layout: post
+title: This is a Test Post
+Author: Yes
 ---
 
-# This is a test post
 - nothing to see here
