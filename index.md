@@ -1,5 +1,5 @@
 ---
 layout: default
 ---
-# 0xW1LD
+# Welcome!
 - Hi there! This site is under construction...
