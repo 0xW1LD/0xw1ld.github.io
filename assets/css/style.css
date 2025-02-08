@@ -145,7 +145,7 @@
 
 .highlight .k,
 .highlight .kv {
-	color: #000000;
+	color: #e8e6e3;
 	font-weight: bold
 }
 
@@ -241,7 +241,7 @@
 }
 
 .highlight .no {
-	color: #008080
+	color: #72FFFF
 }
 
 .highlight .nd {
@@ -273,7 +273,7 @@
 }
 
 .highlight .nt {
-	color: #000080
+	color: #7Faeff
 }
 
 .highlight .vc {
@@ -298,7 +298,7 @@
 }
 
 .highlight .o {
-	color: #000000;
+	color: #e8e6e3;
 	font-weight: bold
 }
 
@@ -356,7 +356,7 @@ h1 {
 }
 
 h2 {
-	color: #393939
+	color: #C4BFB7
 }
 
 h3,
@@ -410,7 +410,7 @@ pre {
 	padding: 8px 15px;
 	background: rgb(20, 22, 23);
 	border-radius: 5px;
-	border: 1px solid #e5e5e5;
+	border: 1px solid #373c3e;
 	overflow-x: auto
 }
 
