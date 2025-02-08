@@ -516,8 +516,7 @@ strong {
 section {
 	width: 500px;
 	float: right;
-	padding-bottom: 50px;
-	background: #fff url("/assets/img/bg.png")
+	padding-bottom: 50px
 }
 
 small {
@@ -543,7 +542,8 @@ footer {
 screen and (max-width: 960px) {
 	div.wrapper {
 		width: auto;
-		margin: 0
+		margin: 0;
+		background: #fff url("/assets/img/bg.png")
 	}
 
 	header,
