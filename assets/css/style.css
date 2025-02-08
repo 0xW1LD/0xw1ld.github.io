@@ -388,7 +388,7 @@ a:hover small {
 }
 
 .wrapper {
-	width: 860px;
+	width: 960px;
 	margin: 0 auto
 }
 
@@ -456,7 +456,9 @@ header {
 	width: 270px;
 	float: left;
 	position: fixed;
-	-webkit-font-smoothing: subpixel-antialiased
+	-webkit-font-smoothing: subpixel-antialiased;
+	box-shadow: 1px 1px 5px #0f0f0f;
+	padding: 10px;
 }
 
 ul.downloads {
@@ -521,9 +523,11 @@ strong {
 }
 
 section {
-	width: 500px;
+	width: 600px;
 	float: right;
-	padding-bottom: 50px
+	padding-bottom: 50px;
+	box-shadow: 1px 1px 5px #0f0f0f;
+	padding: 10px;
 }
 
 small {
