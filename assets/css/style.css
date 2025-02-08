@@ -411,7 +411,8 @@ pre {
 	background: rgb(20, 22, 23);
 	border-radius: 5px;
 	border: 1px solid #373c3e;
-	overflow-x: auto
+	overflow-x: auto;
+	scrollbar-color: #5f5f5f;
 }
 
 table {
