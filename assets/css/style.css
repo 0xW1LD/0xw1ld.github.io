@@ -311,7 +311,7 @@
 }
 
 body {
-	background: #0f0f0f url("/assets/img/bg.png");
+	background: #fff url("/assets/img/bg.png");
 	padding: 50px;
 	font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #727272;
@@ -381,7 +381,7 @@ a:hover small {
 }
 
 .wrapper {
-	width: 760px;
+	width: 860px;
 	margin: 0 auto
 }
 
@@ -514,7 +514,7 @@ strong {
 }
 
 section {
-	width: 700px;
+	width: 500px;
 	float: right;
 	padding-bottom: 50px
 }
