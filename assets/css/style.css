@@ -388,7 +388,7 @@ a:hover small {
 }
 
 .wrapper {
-	width: 960px;
+	width: 1080px;
 	margin: 0 auto
 }
 
@@ -453,7 +453,7 @@ kbd {
 }
 
 header {
-	width: 270px;
+	width: 280px;
 	float: left;
 	position: fixed;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -525,7 +525,7 @@ strong {
 }
 
 section {
-	width: 600px;
+	width: 670px;
 	float: right;
 	padding-bottom: 50px;
 	box-shadow: 1px 1px 5px #0f0f0f;
