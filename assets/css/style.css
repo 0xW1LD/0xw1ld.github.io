@@ -530,9 +530,10 @@ strong {
 section {
 	width: 680px;
 	float: right;
-	padding-bottom: 50px;
 	box-shadow: 1px 1px 5px #0f0f0f;
 	padding: 20px;
+	padding-bottom: 50px;
+	margin-bottom: 50px
 	background-color: #181a1b;
 	border-radius: 10px;
 }
