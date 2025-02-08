@@ -1,5 +1,5 @@
 ---
 layout: default
 ---
-# 0xW1LD's Blog
+# 0xW1LD
 - Hi there! This site is under construction...
