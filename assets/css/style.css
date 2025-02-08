@@ -98,7 +98,7 @@
 }
 
 .highlight .gp {
-	color: #555555
+	color: #61ffff
 }
 
 .highlight .gs {
@@ -124,7 +124,7 @@
 }
 
 .highlight .kn {
-	color: #000000;
+	color: #e8e6e3;
 	font-weight: bold
 }
 
@@ -139,7 +139,7 @@
 }
 
 .highlight .kt {
-	color: #445588;
+	color: #8ba6c5;
 	font-weight: bold
 }
 
@@ -162,7 +162,7 @@
 }
 
 .highlight .mi {
-	color: #009999
+	color: #61ffff
 }
 
 .highlight .mo {
@@ -172,7 +172,7 @@
 .highlight .m,
 .highlight .mb,
 .highlight .mx {
-	color: #009999
+	color: #61ffff
 }
 
 .highlight .sb {
@@ -220,11 +220,11 @@
 }
 
 .highlight .s {
-	color: #d14
+	color: #ef3564
 }
 
 .highlight .na {
-	color: #008080
+	color: #72ffff
 }
 
 .highlight .bp {
@@ -259,7 +259,7 @@
 }
 
 .highlight .nf {
-	color: #990000;
+	color: #ff6161;
 	font-weight: bold
 }
 
@@ -269,7 +269,7 @@
 }
 
 .highlight .nn {
-	color: #555555
+	color: #b2aca2
 }
 
 .highlight .nt {
@@ -367,7 +367,7 @@ h6 {
 }
 
 a {
-	color: #267CB9;
+	color: #53a3dc;
 	text-decoration: none
 }
 
