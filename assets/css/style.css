@@ -413,6 +413,7 @@ pre {
 	border: 1px solid #373c3e;
 	overflow-x: auto;
 	scrollbar-color: #5f5f5f #373c3e;
+	scrollbar-width: thin;
 }
 
 table {
