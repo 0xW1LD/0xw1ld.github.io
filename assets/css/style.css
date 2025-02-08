@@ -382,7 +382,8 @@ a:hover small {
 
 .wrapper {
 	width: 860px;
-	margin: 0 auto
+	margin: 0 auto;
+	background: #fff url("/assets/img/bg.png")
 }
 
 blockquote {
@@ -542,8 +543,7 @@ footer {
 screen and (max-width: 960px) {
 	div.wrapper {
 		width: auto;
-		margin: 0;
-		background: #fff url("/assets/img/bg.png")
+		margin: 0
 	}
 
 	header,
