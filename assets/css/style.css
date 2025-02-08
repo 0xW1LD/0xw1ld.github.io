@@ -453,7 +453,7 @@ kbd {
 }
 
 header {
-	width: 284px;
+	width: 290px;
 	float: left;
 	position: fixed;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -525,7 +525,7 @@ strong {
 }
 
 section {
-	width: 676px;
+	width: 680px;
 	float: right;
 	padding-bottom: 50px;
 	box-shadow: 1px 1px 5px #0f0f0f;
