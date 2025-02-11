@@ -9,4 +9,3 @@ $ whoami
 $ id
 groups=1000(SKID),1001(PenTest-enthusiast),1002(HTB-CommunityContributor)
 ```
-# POSTS
