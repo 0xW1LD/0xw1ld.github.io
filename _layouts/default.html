@@ -2,7 +2,7 @@
 layout: template
 ---
 
-
+{{content}}
 
 {% for category in site.categories %}
 <h1>{{ category[0] }}</h1>
@@ -11,6 +11,5 @@ layout: template
     <small>{{ post.date | date: "%Y-%m-%d" }} by {{ site.author }}{% for tag in post.tags %}<p style="float: right;">{{ tag }}&nbsp;</p>{% endfor %}</small>
     <hr style="width:100%; background: #373c3e;">
     <p style="text-align: justify; width: 75%; float: left;">{{ post.summary }}</p><img src="{{ post.image }}" style="float: right; width: 23%;">
-    <p style="color: red;">IT'S WORKING</p>
   {% endfor %}
 {% endfor%}
