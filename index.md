@@ -7,5 +7,5 @@ layout: default
 $ whoami
 0xW1LD
 $ id
-groups=1000(SKID),1001(PenTest-enthusiast),1002(HTB-CommunityContributor)
+groups=1000(HTB-SYN),1001(HTB-CommunityContributor),1002(Discord-@w1ld__)
 ```
