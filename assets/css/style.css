@@ -439,8 +439,8 @@ th {
 
 img {
 	max-width: 100%;
-	display:flex;
-	align-items: center;
+	display:block;
+	margin: 0 auto 0 auto;
 }
 
 kbd {
