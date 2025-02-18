@@ -2,4 +2,6 @@
 
 source "https://rubygems.org"
 
-gemspec
+# gemspec
+gem "jekyll"
+gem "jekyll-theme-minimal"
