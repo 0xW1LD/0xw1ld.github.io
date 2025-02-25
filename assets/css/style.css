@@ -543,6 +543,24 @@ section {
 	background-color: #181a1b;
 	border-radius: 10px;
 }
+nav {
+	width: 270PX;
+	float: left;
+	position: fixed;
+	margin-top: 425px;
+	-webkit-font-smoothing: subpixel-antialiased;
+	padding: 20px;
+	border-radius: 15px;
+	text-align: right;
+}
+
+nav a{
+	color: #d3cfc9;
+}
+
+li {
+	list-style-type: none;
+}
 
 small {
 	font-size: 11px

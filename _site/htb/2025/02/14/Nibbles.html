@@ -27,6 +27,8 @@
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -57,6 +59,9 @@
 
         
       </header>
+      <nav>
+        <ul></ul>
+      </nav>
       <section>
 
       <small>14 February 2025</small>
@@ -162,7 +167,7 @@ After loging in we reach an admin dashboard:<br />
 <img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213180044.png" alt="Pasted image 20250213180044.png" />
 Viewing the <code class="language-plaintext highlighter-rouge">plugins</code> we find a <code class="language-plaintext highlighter-rouge">my image</code> plugin, which on initial testing is vulnerable to an arbitrary file upload.</p>
 <h1 id="vulnerability-assessment">Vulnerability Assessment</h1>
-<h2 id="nibbleblog-file-upload-vulnerability">Nibbleblog File Upload Vulnerability</h2>
+<h2 id="arbitrary-file-upload">Arbitrary File Upload</h2>
 <ul>
   <li>url: https://www.rapid7.com/db/modules/exploit/multi/http/nibbleblog_file_upload/
 The current enumerated version <code class="language-plaintext highlighter-rouge">v4.0.3</code> is known to be vulnerable to the exploit.</li>
