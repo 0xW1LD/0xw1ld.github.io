@@ -67,6 +67,11 @@ groups</span><span class="o">=</span>1000<span class="o">(</span>Discord-@w1ld__
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/03/01/Chemistry.html">Chemistry</a></h2>
+            <small>2025-03-01 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Chemistry is running an http webserver on a strange port, port 5000. The webpage is of a chemistry CIF analyzer tool using python. The python libraries that it uses in order to parse the CIF files is vulnerable to an RCE vulnerability. Using this we can upload and execute a reverse shell to get a shell on the system. We can then find a database with users and their passwords. One of the passwords belongs to a user on the machine allowing us to ssh into the machine. As User we find a monitoring site running as root on port 8080 which is running aiohttp with a vulnerable setting that allows for an LFI. We can use this LFI to gain root's ssh keys and ssh into the box.</p><img src="https://labs.hackthebox.com/storage/avatars/b8f3d660af2d3ed0929eb119e33526cf.png" style="float: right; width: 23%;">
+          
             <h2><a href="/htb/2025/02/25/Yummy.html">Yummy</a></h2>
             <small>2025-02-25 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
