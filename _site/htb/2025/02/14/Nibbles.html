@@ -166,23 +166,10 @@ Attempting to login guessing <code class="language-plaintext highlighter-rouge">
 After loging in we reach an admin dashboard:<br />
 <img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213180044.png" alt="Pasted image 20250213180044.png" />
 Viewing the <code class="language-plaintext highlighter-rouge">plugins</code> we find a <code class="language-plaintext highlighter-rouge">my image</code> plugin, which on initial testing is vulnerable to an arbitrary file upload.</p>
-<h1 id="vulnerability-assessment">Vulnerability Assessment</h1>
-<h2 id="arbitrary-file-upload">Arbitrary File Upload</h2>
-<ul>
-  <li>url: https://www.rapid7.com/db/modules/exploit/multi/http/nibbleblog_file_upload/
-The current enumerated version <code class="language-plaintext highlighter-rouge">v4.0.3</code> is known to be vulnerable to the exploit.</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Category   | Score |
-| ---------- | ----- |
-| Success    | 10    |
-| Complexity | 5     |
-| Damage     | -0    |
-| Total      | 15    |
-</code></pre></div></div>
 
 <h1 id="exploitation">Exploitation</h1>
-<p>Uploading the following PoC using the <code class="language-plaintext highlighter-rouge">my image</code> plugin:</p>
+<p>The following <a href="https://www.rapid7.com/db/modules/exploit/multi/http/nibbleblog_file_upload/">exploit</a> seems to be present on the enumerated version (<code class="language-plaintext highlighter-rouge">v4.0.3</code>).
+Uploading the following PoC using the <code class="language-plaintext highlighter-rouge">my image</code> plugin:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'cmd'</span><span class="p">])</span><span class="cp">?&gt;</span>
 </code></pre></div></div>
