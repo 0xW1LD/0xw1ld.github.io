@@ -1,12 +1,3 @@
----
-released: 2024-11-16
-creators:
-  - 0xOz
-pwned: true
-tags:
-  - os/linux
-  - diff/hard
----
 # BlockBlock
 
 ![BlockBlock](https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png)
