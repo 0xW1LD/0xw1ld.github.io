@@ -185,7 +185,7 @@ We're greeted by the `ghost` cms dashboard!
 # User
 Looking around we find a version number: `5.58.0`
 ![](/assets/img/img_linkvortex/linkvortex-1744531148477.png)
-Searching for vulnerabilities we found the following `poc` https://github.com/0xDTC/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028
+Searching for vulnerabilities we found the following `poc` [Ghost Arbitrary File Read](https://github.com/0xDTC/Ghost-5.58-Arbitrary-File-Read-CVE-2023-40028)
 Looking at the source it looks like it uploads a zipped file with a symlink to get an LFI.
 Let's run this script against our target.
 ```bash
