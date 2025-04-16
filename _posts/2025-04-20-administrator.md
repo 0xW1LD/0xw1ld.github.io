@@ -218,8 +218,6 @@ bloodyAD --host 10.10.11.42 -d administrator.htb -u michael -p 'popopopo' set pa
 [+] Password changed successfully!
 ```
 
-> Take note to ensure your password aligns with the password policy, this isn't hard as if it doesn't align you'd get errors.
-
 I'm not a massive fan of using a changed password and suspect it will get cleaned up in a while so let's grab a TGT.
 
 > These steps as I will soon learn aren't necessary as all I need is his password to access ftp. But it's good to keep in mind nonetheless.
