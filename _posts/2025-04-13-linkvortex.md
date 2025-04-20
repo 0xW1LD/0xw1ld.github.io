@@ -9,7 +9,7 @@ tags:
   - diff/easy
 category:
   - HTB
-summary: Link vortex is running a webserver using ghost cms which we can find the credentials of in the git repository of a subdomain. We utilize a ghost cms exploit that uses symlinks to read files for the configuration of ghost which nets us the credentials of user Bob. Bob has the permissions to run a custom script as sudo which reads and transfers symlinks with some filtering. We can bypass the filtering through a double symlink. Another way we can escalate privileges is through exploiting a vulnerbility in the script that allows code execution through injection via the CHECK_CONTENT variable. Neither of these methods are intended and the intended method is to just fight the race condition right after the symlink is moved but before it is read to get another arbitrary file read.
+description: Link vortex is running a webserver using ghost cms which we can find the credentials of in the git repository of a subdomain. We utilize a ghost cms exploit that uses symlinks to read files for the configuration of ghost which nets us the credentials of user Bob. Bob has the permissions to run a custom script as sudo which reads and transfers symlinks with some filtering. We can bypass the filtering through a double symlink. Another way we can escalate privileges is through exploiting a vulnerbility in the script that allows code execution through injection via the CHECK_CONTENT variable. Neither of these methods are intended and the intended method is to just fight the race condition right after the symlink is moved but before it is read to get another arbitrary file read.
 image: https://labs.hackthebox.com/storage/avatars/97f12db8fafed028448e29e30be7efac.png
 cssclass: custom_htb
 ---

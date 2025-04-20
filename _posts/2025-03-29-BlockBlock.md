@@ -6,7 +6,7 @@ creators:
 pwned: true
 tags: os/linux diff/hard
 category: HTB
-summary: "Blockblock is running an online web chat decentralized through block chain. We can exploit an XSS vulnerability in the web app to gain an admin cookie, from which we can interact with the blockhain api to leak credentials. We can then use these credentials to login to the system. We have permissions to run forge as another user. Using this privillege we run forge with a malicious build script to gain a shell as that user. This user has access to run pacman as root so we use this to install a malicious pacman package to get the ssh keys of root."
+description: "Blockblock is running an online web chat decentralized through block chain. We can exploit an XSS vulnerability in the web app to gain an admin cookie, from which we can interact with the blockhain api to leak credentials. We can then use these credentials to login to the system. We have permissions to run forge as another user. Using this privillege we run forge with a malicious build script to gain a shell as that user. This user has access to run pacman as root so we use this to install a malicious pacman package to get the ssh keys of root."
 image: https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png
 ---
 ![BlockBlock](https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png)

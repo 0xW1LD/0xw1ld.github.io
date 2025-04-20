@@ -8,7 +8,7 @@ tags:
  - os/linux
 category:
   - HTB
-summary: Chemistry is running an http webserver on a strange port, port 5000. The webpage is of a chemistry CIF analyzer tool using python. The python libraries that it uses in order to parse the CIF files is vulnerable to an RCE vulnerability. Using this we can upload and execute a reverse shell to get a shell on the system. We can then find a database with users and their passwords. One of the passwords belongs to a user on the machine allowing us to ssh into the machine. As User we find a monitoring site running as root on port 8080 which is running aiohttp with a vulnerable setting that allows for an LFI. We can use this LFI to gain root's ssh keys and ssh into the box.
+description: Chemistry is running an http webserver on a strange port, port 5000. The webpage is of a chemistry CIF analyzer tool using python. The python libraries that it uses in order to parse the CIF files is vulnerable to an RCE vulnerability. Using this we can upload and execute a reverse shell to get a shell on the system. We can then find a database with users and their passwords. One of the passwords belongs to a user on the machine allowing us to ssh into the machine. As User we find a monitoring site running as root on port 8080 which is running aiohttp with a vulnerable setting that allows for an LFI. We can use this LFI to gain root's ssh keys and ssh into the box.
 image: https://labs.hackthebox.com/storage/avatars/b8f3d660af2d3ed0929eb119e33526cf.png
 ---
 ![chemistry](https://labs.hackthebox.com/storage/avatars/b8f3d660af2d3ed0929eb119e33526cf.png)
