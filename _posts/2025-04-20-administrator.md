@@ -9,7 +9,7 @@ tags:
   - diff/medium
 category:
   - HTB
-summary: Administrator is running Active Directory and we're provided with initial credentials for the user Olivia. We can use Olivia to Kerberoast Michael who can change Benjamin's Password. Benjamin is a member of Share Moderators which hints us towards file shares, nothing interesting in SMB however FTP is open and is hosting a backup passwordsafe file. Cracking this file we gain access to Emily through her password located in the file. Emily can write Ethan, however we can't Kerberoast him so instead we ASREPRoast him. Ethan has DCsync privileges over the domain so we use those to dump all the hashes.
+summary: Administrator is running Active Directory and we're provided with initial credentials for the user Olivia. We can use Olivia to Kerberoast Michael who can change Benjamin's Password. Benjamin is a member of Share Moderators which hints us towards file shares, nothing interesting in SMB however FTP is open and is hosting a backup passwordsafe file. Cracking this file we gain access to Emily through her password located in the file. Emily can write Ethan, however we can't Kerberoast him so instead we ASREPRoast him. Ethan has DCsync privileges over the domain so we use those to dump all the hashes
 image: https://labs.hackthebox.com/storage/avatars/9d232b1558b7543c7cb85f2774687363.png
 cssclass: custom_htb
 ---
