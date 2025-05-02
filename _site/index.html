@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,9 +32,18 @@
 
 <!-- Setup Google Analytics -->
 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'G-BLW6GLT2VS', 'auto');
+    ga('send', 'pageview');
+  </script>
+
 
 <!-- You can set your favicon here -->
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="http://localhost:4000/favicon.ico">
 
 <!-- end custom head snippets -->
   </head>
@@ -60,7 +70,7 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">whoami
 </span>0xW1LD
 <span class="nv">$ </span><span class="nb">id
-groups</span><span class="o">=</span>1000<span class="o">(</span>Discord-@w1ld__<span class="o">)</span>,1001<span class="o">(</span>HTB-CommunityContributor<span class="o">)</span>,1002<span class="o">(</span>HTB Team-SYN<span class="o">)</span>
+groups</span><span class="o">=</span>1000<span class="o">(</span>Discord-@w1ld__<span class="o">)</span>,1001<span class="o">(</span>HTB-CommunityContributor<span class="o">)</span>,1002<span class="o">(</span>HTB Team-OSI<span class="o">)</span>
 <span class="nv">$ </span><span class="nb">cat </span>README
 I<span class="sb">`</span>m just a SKID, hoping that my 1 braincell will be enough.
 
@@ -71,6 +81,26 @@ He<span class="sb">`</span>s right here by the way, say hi! <span class="nt">---
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/05/01/BigBang.html">BigBang</a></h2>
+            <small>2025-05-01 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Bigbang is running a wordpress website using buddy forms which is vulnerable to RCE through image deserialization. Using this RCE we can establish a reverse shell which allows us to find credentials within a database with a reused password for ssh. We find a GrafanaDB endpoint which contains further credentials to pivot to another user. Finally we find an interesting thick web app running as root which is vulnerable to command injection.</p><img src="https://labs.hackthebox.com/storage/avatars/2d22afd496c5ae6f6c51ca24bf3719e1.png" style="float: right; width: 23%;">
+          
+            <h2><a href="/htb/2025/04/26/Vintage.html">Vintage</a></h2>
+            <small>2025-04-26 by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/windows&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Vintage is another assumed breach active directory box, we're given Olivia's credentials. We use these to enumerate the domain using bloodhound where we'll find a pre 2000 compatible windows machine. We login using the machine account which can read GMSA01 which is another machine account. We use this account to allow ourselves to AS-REP Roast one of the service accounts. After which we find that the password is reused by C.Neri through a password spray. Checking bloodhound, C.Neri has an admin account which we manually have to decrypt the dpapi to read the password. C.Neri has access to the delegated admins group so we add SVC_SQL and give it an SPN using which we can impersonate L.Bianchi.adm who is root.</p><img src="https://labs.hackthebox.com/storage/avatars/4eae732c7af0ce1b443d009637167610.png" style="float: right; width: 23%;">
+          
+            <h2><a href="/htb/2025/04/20/administrator.html">Administrator</a></h2>
+            <small>2025-04-20 by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Administrator is running Active Directory and we're provided with initial credentials for the user Olivia. We can use Olivia to change Michael's password who can change Benjamin's Password. Benjamin is a member of Share Moderators which hints us towards file shares, nothing interesting in SMB however FTP is open and is hosting a backup passwordsafe file. Cracking this file we gain access to Emily through her password located in the file. Emily can write Ethan, however we can't Kerberoast him so instead we ASREPRoast him. Ethan has DCsync privileges over the domain so we use those to dump all the hashes</p><img src="https://labs.hackthebox.com/storage/avatars/9d232b1558b7543c7cb85f2774687363.png" style="float: right; width: 23%;">
+          
+            <h2><a href="/htb/2025/04/13/linkvortex.html">linkvortex</a></h2>
+            <small>2025-04-13 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Link vortex is running a webserver using ghost cms which we can find the credentials of in the git repository of a subdomain. We utilize a ghost cms exploit that uses symlinks to read files for the configuration of ghost which nets us the credentials of user Bob. Bob has the permissions to run a custom script as sudo which reads and transfers symlinks with some filtering. We can bypass the filtering through a double symlink. Another way we can escalate privileges is through exploiting a vulnerbility in the script that allows code execution through injection via the CHECK_CONTENT variable. Neither of these methods are intended and the intended method is to just fight the race condition right after the symlink is moved but before it is read to get another arbitrary file read.</p><img src="https://labs.hackthebox.com/storage/avatars/97f12db8fafed028448e29e30be7efac.png" style="float: right; width: 23%;">
+          
             <h2><a href="/htb/2025/03/29/BlockBlock.html">Blockblock</a></h2>
             <small>2025-03-29 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
@@ -79,7 +109,7 @@ He<span class="sb">`</span>s right here by the way, say hi! <span class="nt">---
             <h2><a href="/htb/2025/03/10/BlockBlock.html">Blockblock</a></h2>
             <small>2025-03-10 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
-            <p style="text-align: justify; width: 75%; float: left;">Blockblock is running an online web chat decentralized through block chain. We can exploit an XSS vulnerability in the web app to gain an admin cookie, from which we can interact with the blockhain api to leak credentials. We can then use these credentials to login to the system. We have permissions to run forge as another user. Using this privillege we run forge with a malicious build script to gain a shell as that user. This user has access to run pacman as root so we use this to install a malicious pacman package to get the ssh keys of root.</p><img src="https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png" style="float: right; width: 23%;">
+            <p style="text-align: justify; width: 75%; float: left;"></p><img src="https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png" style="float: right; width: 23%;">
           
             <h2><a href="/htb/2025/03/08/Chemistry.html">Chemistry</a></h2>
             <small>2025-03-08 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
@@ -94,7 +124,7 @@ He<span class="sb">`</span>s right here by the way, say hi! <span class="nt">---
             <h2><a href="/htb/2025/02/18/DarkCorp.html">Darkcorp</a></h2>
             <small>2025-02-18 by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
-            <p style="text-align: justify; width: 75%; float: left;">DarkCorp is running a roundcube mail service which is vulnerable to XSS which allows us to read user's mail. We use this to reset a password on a dashboard which is vulnerable to SQLi with RCE which we use to gain a shell. We find postgres backups which contain credentials for an ldap user and a user on the mail server. Using these credentials we can access webpage running on wev-01 which we can coerce to send an http request to a port on the mail server. We can relay this request to ntlmrelay using it to setup a malicious DNS record. We then coerce the Administrator to authenticate to this DNS record and gain Administrator on the web-01 server. After which we dump DPAPI credentials, we find a cleartext password which we can password spray against DC-01 and find another ldap user who can get us the hash of yet another user who has an admin account. Changing the UPN of that user to the one of the admin account allows us to abuse KRB5 on the mail server where we can find cashed credential hashes. The credentials belong to a GPO manager which we use to create an account in the local administrators to get control over the DC.</p><img src="https://labs.hackthebox.com/storage/avatars/93fba06a4780b65be5a5a4f9512b8e78.png" style="float: right; width: 23%;">
+            <p style="text-align: justify; width: 75%; float: left;"></p><img src="https://labs.hackthebox.com/storage/avatars/93fba06a4780b65be5a5a4f9512b8e78.png" style="float: right; width: 23%;">
           
             <h2><a href="/htb/2025/02/14/Nibbles.html">Nibbles</a></h2>
             <small>2025-02-14 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
