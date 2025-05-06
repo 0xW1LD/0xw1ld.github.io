@@ -81,8 +81,13 @@ He<span class="sb">`</span>s right here by the way, say hi! <span class="nt">---
         
         <h1>HTB</h1>
           
-            <h2><a href="/htb/2025/05/01/BigBang.html">BigBang</a></h2>
-            <small>2025-05-01 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+            <h2><a href="/htb/2025/05/05/Underpass.html">Underpass</a></h2>
+            <small>2025-05-05 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Underpass is running a default apache website. If we check udp ports we find that a daloradius is running. Looking through the source of daloradius we find a couple of login pages and default credentials. Using these credentials we login to a dashboard and find credentials for svcMosh. We use his credentials to ssh on the box. svcMosh can run Mosh-server as root which we can use to spawn a root terminal.</p><img src="https://labs.hackthebox.com/storage/avatars/456a4d2e52f182847fb0a2dba0420a44.png" style="float: right; width: 23%;">
+          
+            <h2><a href="/htb/2025/05/03/BigBang.html">BigBang</a></h2>
+            <small>2025-05-03 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
             <p style="text-align: justify; width: 75%; float: left;">Bigbang is running a wordpress website using buddy forms which is vulnerable to RCE through image deserialization. Using this RCE we can establish a reverse shell which allows us to find credentials within a database with a reused password for ssh. We find a GrafanaDB endpoint which contains further credentials to pivot to another user. Finally we find an interesting thick web app running as root which is vulnerable to command injection.</p><img src="https://labs.hackthebox.com/storage/avatars/2d22afd496c5ae6f6c51ca24bf3719e1.png" style="float: right; width: 23%;">
           
@@ -106,11 +111,6 @@ He<span class="sb">`</span>s right here by the way, say hi! <span class="nt">---
             <hr style="width:100%; background: #373c3e;">
             <p style="text-align: justify; width: 75%; float: left;">Blockblock is running an online web chat decentralized through block chain. We can exploit an XSS vulnerability in the web app to gain an admin cookie, from which we can interact with the blockhain api to leak credentials. We can then use these credentials to login to the system. We have permissions to run forge as another user. Using this privillege we run forge with a malicious build script to gain a shell as that user. This user has access to run pacman as root so we use this to install a malicious pacman package to get the ssh keys of root.</p><img src="https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png" style="float: right; width: 23%;">
           
-            <h2><a href="/htb/2025/03/10/BlockBlock.html">Blockblock</a></h2>
-            <small>2025-03-10 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
-            <hr style="width:100%; background: #373c3e;">
-            <p style="text-align: justify; width: 75%; float: left;"></p><img src="https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png" style="float: right; width: 23%;">
-          
             <h2><a href="/htb/2025/03/08/Chemistry.html">Chemistry</a></h2>
             <small>2025-03-08 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
@@ -120,11 +120,6 @@ He<span class="sb">`</span>s right here by the way, say hi! <span class="nt">---
             <small>2025-02-25 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
             <p style="text-align: justify; width: 75%; float: left;">Yummy is running a website for booking a restaurant. The site allows us to download an iCalendar file, the endpoint of which is vulnerable to an LFI. Using this we're able to download the web files and spot a vulnerability with accessing the Admin dashboard. The dashboard is vulnerable to SQLi which gives us an Arbitrary file write vulnerability. Mixing this with the crontab information we're able to get a shell on the box.</p><img src="https://labs.hackthebox.com/storage/avatars/5ca57613886666c4c33ef23876b3f054.png" style="float: right; width: 23%;">
-          
-            <h2><a href="/htb/2025/02/18/DarkCorp.html">Darkcorp</a></h2>
-            <small>2025-02-18 by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
-            <hr style="width:100%; background: #373c3e;">
-            <p style="text-align: justify; width: 75%; float: left;"></p><img src="https://labs.hackthebox.com/storage/avatars/93fba06a4780b65be5a5a4f9512b8e78.png" style="float: right; width: 23%;">
           
             <h2><a href="/htb/2025/02/14/Nibbles.html">Nibbles</a></h2>
             <small>2025-02-14 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>

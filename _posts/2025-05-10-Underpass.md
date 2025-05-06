@@ -25,6 +25,7 @@ PORT   STATE SERVICE
 When we visit the website all we're greeted with is the default `apache` website.
 ![Default apache website](/assets/img/img_Underpass/Underpass-1746437564868.png)
 
+So let's scan `UDP` ports.
 ```
 PORT    STATE SERVICE VERSION
 161/udp open  snmp    SNMPv1 server; net-snmp SNMPv3 server (public)
@@ -41,14 +42,16 @@ Service Info: Host: UnDerPass.htb is the only daloradius server in the basin!
 
 Looking up the term `daloradius` we see that it's a web platform to manage ISP deployments.
 
-If we try to visit: `http://10.10.11.48/daloradius`. We get a forbidden webpage.
+If we try to visit: [http://10.10.11.48/daloradius](http://10.10.11.48/daloradius). We get a forbidden webpage.
+
 ![Daloradius Forbidden](/assets/img/img_Underpass/Underpass-1746440428813.png)
+
 Since [daloradius](https://github.com/lirantal/daloradius) is open source, we can look through directories in the source and check if they exist on the box.
 
 Looking through the source we can see a login page: `/app/users/login.php`
 ![Daloradius Login Path](/assets/img/img_Underpass/Underpass-1746440607075.png)
 
-If we visit http://10.10.11.48/daloradius/app/users/login.php we are greeted by said login page.
+If we visit [http://10.10.11.48/daloradius/app/users/login.php](http://10.10.11.48/daloradius/app/users/login.php) we are greeted by said login page.
 
 ![Daloradius User Login Page](/assets/img/img_Underpass/Underpass-1746440648730.png)
 
@@ -78,7 +81,7 @@ Let's take a look at the source code again and find the directory `/app/operator
 
 ![Daloradius Operators Path](/assets/img/img_Underpass/Underpass-1746441057718.png)
 
-If we visit http://10.10.11.48/daloradius/app/operators/login.php we are greeted with the exact same login page.
+If we visit [http://10.10.11.48/daloradius/app/operators/login.php](http://10.10.11.48/daloradius/app/operators/login.php) we are greeted with the exact same login page.
 
 ![Daloradius Operators Login](/assets/img/img_Underpass/Underpass-1746442054856.png)
 
