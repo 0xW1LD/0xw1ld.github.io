@@ -1,8 +1,9 @@
 ---
 layout: default
+title: Home
 ---
 
-# About Me
+## About Me
 ```shell
 $ whoami
 0xW1LD
