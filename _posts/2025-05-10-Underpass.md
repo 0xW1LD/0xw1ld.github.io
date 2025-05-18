@@ -9,7 +9,7 @@ tags:
   - diff/easy
 category:
   - HTB
-description: Underpass is running a default apache website. If we check udp ports we find that a daloradius is running. Looking through the source of daloradius we find a couple of login pages and default credentials. Using these credentials we login to a dashboard and find credentials for svcMosh. We use his credentials to ssh on the box. svcMosh can run Mosh-server as root which we can use to spawn a root terminal.
+description: Underpass is running a default apache website. If we check udp ports we find that a daloradius is running. Looking through the source of daloradius we find a couple of login pages and default credentials. Using these credentials we login to a dashboard and find credentials for svcMosh. We use his credentials to ssh on the box. svcMosh can run Mosh-server as root which we can use to spawn a root terminal. 
 image: https://labs.hackthebox.com/storage/avatars/456a4d2e52f182847fb0a2dba0420a44.png
 cssclass: custom_htb
 ---
