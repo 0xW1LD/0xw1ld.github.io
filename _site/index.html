@@ -80,6 +80,21 @@ Hey there! W1LD here, Jack of All Trades, Founding Member of OSI, Community Cont
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/05/24/EscapeTwo.html">EscapeTwo</a></h2>
+            <small>2025-05-24 by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Escape two is an assumed breach scenario where we start of as Rose. Rose is able to view an SMB share that contains excel files which contain additional credentials for SA. SA is a service account running mssql which we have access to xp_cmdline to get a foothold. With this foothold we can look around and find a file with a cleartext password which, when password spraying, leads us to Ryan's account. Ryan has an ACL to write owner the CA account, which is the Certificate Authority service. Using the CA service we find a vulnerable certificate template that needs a slight edit for the ESC to work. Once we edit and exploit the template we're able to grab the Administrator's certificates and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de580e1.png" style="float: right; width: 23%;">
+          
+            <h2><a href="/htb/2025/05/16/Heal.html">Heal</a></h2>
+            <small>2025-05-16 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Heal is running a resume builder website running Ruby on Rails as an api. We can abuse an LFI to gather credentials for another subdomain, Lime Survey. We can use these credentials to conduct an authenticated RCE which gets us a foothold. We use this foothold to locate databse credentials which we discover is the reused password of a user on the box. After which we can find a consul service running as root using a version with an RCE which we can use to escalate privileges.</p><img src="https://labs.hackthebox.com/storage/avatars/dcd5ef09ab764228c64385374ac744c1.png" style="float: right; width: 23%;">
+          
+            <h2><a href="/htb/2025/05/10/Underpass.html">Underpass</a></h2>
+            <small>2025-05-10 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Underpass is running a default apache website. If we check udp ports we find that a daloradius is running. Looking through the source of daloradius we find a couple of login pages and default credentials. Using these credentials we login to a dashboard and find credentials for svcMosh. We use his credentials to ssh on the box. svcMosh can run Mosh-server as root which we can use to spawn a root terminal.</p><img src="https://labs.hackthebox.com/storage/avatars/456a4d2e52f182847fb0a2dba0420a44.png" style="float: right; width: 23%;">
+          
             <h2><a href="/htb/2025/05/05/Underpass.html">Underpass</a></h2>
             <small>2025-05-05 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
