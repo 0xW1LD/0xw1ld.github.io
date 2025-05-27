@@ -19,7 +19,7 @@ cssclass: custom_htb
 # Nmap
 Our port scan finds the following ports open:
 
-```bash
+{% highlight bash linenos%}
 $ nmap -p- --min-rate 10000 10.129.137.51
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-01-12 21:33 AEDT
 Nmap scan report for 10.129.137.51
@@ -50,7 +50,7 @@ PORT      STATE SERVICE
 49716/tcp open  unknown
 49735/tcp open  unknown
 59896/tcp open  unknown
-```
+{% endhighlight %}
 
 # Foothold
 

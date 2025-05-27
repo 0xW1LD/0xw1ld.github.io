@@ -5,3 +5,9 @@ show_downloads: false
 google_analytics: G-BLW6GLT2VS
 theme: jekyll-theme-minimal
 author: "0xW1LD"
+markdown: kramdown
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true

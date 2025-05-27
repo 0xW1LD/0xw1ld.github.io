@@ -66,13 +66,12 @@
 }
 
 .highlight .err {
-	color: #a61717;
-	background-color: #e3d2d2
+	color: #e3d2d2
 }
 
 .highlight .gd {
-	color: #000000;
-	background-color: #ffdddd
+	color: #e8e6e3;
+	background-color: #470000
 }
 
 .highlight .ge {
@@ -188,11 +187,11 @@
 }
 
 .highlight .s2 {
-	color: #d14
+	color: #ef3564
 }
 
 .highlight .se {
-	color: #d14
+	color: #ef3564
 }
 
 .highlight .sh {
@@ -212,7 +211,7 @@
 }
 
 .highlight .s1 {
-	color: #d14
+	color: #ef3564;
 }
 
 .highlight .ss {
@@ -232,7 +231,7 @@
 }
 
 .highlight .nb {
-	color: #0086B3
+	color: #72ffff
 }
 
 .highlight .nc {
@@ -254,7 +253,7 @@
 }
 
 .highlight .ne {
-	color: #990000;
+	color: #ff6161;
 	font-weight: bold
 }
 
@@ -264,7 +263,7 @@
 }
 
 .highlight .nl {
-	color: #990000;
+	color: #ff6161;
 	font-weight: bold
 }
 
@@ -289,7 +288,7 @@
 }
 
 .highlight .nv {
-	color: #008080
+	color: #72ffff
 }
 
 .highlight .ow {
@@ -307,7 +306,8 @@
 }
 
 .highlight {
-	background-color: rgb(20, 22, 23)
+	background-color: rgb(20, 22, 23);
+	border-radius: 7px;
 }
 
 html {
@@ -408,20 +408,23 @@ pre {
 }
 
 pre {
-	padding: 8px 15px;
+	padding: 4px 4px 0px 4px;
 	background: rgb(20, 22, 23);
 	border-radius: 5px;
-	border: 1px solid #373c3e;
-	overflow-x: auto;
 	scrollbar-color: #5f5f5f #373c3e;
+	overflow-x: scroll;
 	scrollbar-width: thin;
-	white-space: pre-wrap;       /* Since CSS 2.1 */
+	white-space: pre;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+pre.lineno{
+	color: #444;
+}
+/**
 table {
 	width: 100%;
 	border-collapse: collapse
@@ -431,7 +434,6 @@ th,
 td {
 	text-align: left;
 	padding: 5px 10px;
-	border-bottom: 1px solid #e5e5e5
 }
 
 dt {
@@ -442,6 +444,7 @@ dt {
 th {
 	color: #444
 }
+**/
 
 img {
 	max-width: 100%;
