@@ -88,8 +88,8 @@
 }
 
 .highlight .gi {
-	color: #000000;
-	background-color: #ddffdd
+	color: #e8e6e3;
+	background-color: #124700
 }
 
 .highlight .go {
@@ -321,7 +321,7 @@ html {
 body {
 	background: rgba(0, 0, 0, 0);
 	padding: 50px;
-	font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #a0988b;
 	font-weight: 400
 }
@@ -395,10 +395,14 @@ a:hover small {
 }
 
 blockquote {
-	border-left: 1px solid #e5e5e5;
-	margin: 0;
-	padding: 0 0 0 20px;
-	font-style: italic
+	border-left: 2px solid #e5e5e5;
+	margin: 20px;
+	margin-left: 0px;
+	padding: 15px 0 1px 20px;
+	font-style: italic;
+	background-color: #00527a;
+	color: #e5e5e5;
+	border-radius: 2px;
 }
 
 code,
