@@ -75,7 +75,7 @@
 }
 
 .highlight .ge {
-	color: #000000;
+	color: #e8e6e3;
 	font-style: italic
 }
 
@@ -113,12 +113,12 @@
 }
 
 .highlight .kc {
-	color: #000000;
+	color: #e8e6e3;
 	font-weight: bold
 }
 
 .highlight .kd {
-	color: #000000;
+	color: #e8e6e3;
 	font-weight: bold
 }
 
@@ -128,12 +128,12 @@
 }
 
 .highlight .kp {
-	color: #000000;
+	color: #e8e6e3;
 	font-weight: bold
 }
 
 .highlight .kr {
-	color: #000000;
+	color: #e8e6e3;
 	font-weight: bold
 }
 
@@ -398,7 +398,7 @@ blockquote {
 	border-left: 2px solid #e5e5e5;
 	margin: 20px;
 	margin-left: 0px;
-	padding: 15px 0 1px 20px;
+	padding: 15px 15px 5px 20px;
 	font-style: italic;
 	background-color: #00527a;
 	color: #e5e5e5;

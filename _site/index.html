@@ -97,6 +97,11 @@ Hey there! W1LD here,
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/05/25/Checker.html">Checker</a></h2>
+            <small>2025-05-25 by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Checker is running Bookstack and TeamPass on ports 80 and 8080 respectively. Teampass has an SQLi where we can leak credentials which we can use to login. TeamPass contains a couple of credentials for ssh and bookstack. We login on BookStack and looking around we find interesting documentation. The version of bookstack is vulnerable to an LFI via SSRF which we can use to steal the OTP key for ssh. Logging into ssh we find that the user has super user privileges to a script that is used to check for a password leak. Reversing the binary we see that it accesses a shared memory address, using this we can inject malicious code to achieve root.</p><img src="https://labs.hackthebox.com/storage/avatars/afe87a33205a5ffd978c805aa93488a9.png" style="float: right; width: 23%;">
+          
             <h2><a href="/htb/2025/05/24/EscapeTwo.html">EscapeTwo</a></h2>
             <small>2025-05-24 by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
