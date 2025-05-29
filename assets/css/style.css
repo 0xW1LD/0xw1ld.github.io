@@ -308,6 +308,7 @@
 .highlight {
 	background-color: rgb(20, 22, 23);
 	border-radius: 7px;
+	overflow-x: scroll;
 }
 
 html {
@@ -416,7 +417,6 @@ pre {
 	background: rgb(20, 22, 23);
 	border-radius: 5px;
 	scrollbar-color: #5f5f5f #373c3e;
-	overflow-x: scroll;
 	scrollbar-width: thin;
 	white-space: pre;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
