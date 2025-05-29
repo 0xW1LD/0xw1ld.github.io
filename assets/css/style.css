@@ -308,6 +308,9 @@
 .highlight {
 	background-color: rgb(20, 22, 23);
 	border-radius: 7px;
+}
+
+pre.highlight{
 	overflow-x: scroll;
 }
 
