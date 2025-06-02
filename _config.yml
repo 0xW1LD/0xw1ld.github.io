@@ -8,6 +8,7 @@ author: "0xW1LD"
 url: "https://0xw1ld.github.io"
 plugins:
   - jekyll-sitemap
+  - jekyll-gfm-admonitions
 markdown: kramdown
 kramdown:
     highlighter: rouge
