@@ -25,6 +25,7 @@
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -77,7 +78,6 @@
 8
 9
 10
-11
 </pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">whoami
 </span>0xW1LD
 <span class="nv">$ </span><span class="nb">id
@@ -85,7 +85,6 @@ groups</span><span class="o">=</span>1000<span class="o">(</span>Discord-@w1ld__
 <span class="nv">$ </span><span class="nb">cat </span>README.txt
 
 Hey there! W1LD here,
-Jack of All Trades
 Founding Member of OSI
 Community Contributor at the HTB discord server
 all around W1ld Card.
@@ -94,6 +93,16 @@ all around W1ld Card.
 
         
         <h1>HTB</h1>
+          
+            <h2><a href="/htb/2025/06/02/BF.html">Backfire</a></h2>
+            <small>2025-06-02 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Backfire is a hackback scenario linux box which is still running a file server on port 8000 by mistake of the users. It contains a patch file and a yaotl file for havoc C2. Using information from these files we can find a CVE for unauthenticated SSRF, we combine this with an authenticated RCE through websockets to gain a foothold. We can now find Hardhat, another C2, which is vulnerable to an authentication bypass. Hardhat C2, offers us a direct terminal as Sergej. Sergej is able to execute iptables and iptables-save as root which we are able to use as an arbitrary write, to write our ssh key to the root directory.</p><img src="/assets/img/img_Backfire/Pasted%20image%2020250113013147.png" style="float: right; width: 23%;">
+          
+            <h2><a href="/htb/2025/05/31/Checker.html">Checker</a></h2>
+            <small>2025-05-31 by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Checker is running Bookstack and TeamPass on ports 80 and 8080 respectively. Teampass has an SQLi where we can leak credentials which we can use to login. TeamPass contains a couple of credentials for ssh and bookstack. We login on BookStack and looking around we find interesting documentation. The version of bookstack is vulnerable to an LFI via SSRF which we can use to steal the OTP key for ssh. Logging into ssh we find that the user has super user privileges to a script that is used to check for a password leak. Reversing the binary we see that it accesses a shared memory address, using this we can inject malicious code to achieve root.</p><img src="https://labs.hackthebox.com/storage/avatars/afe87a33205a5ffd978c805aa93488a9.png" style="float: right; width: 23%;">
           
             <h2><a href="/htb/2025/05/24/EscapeTwo.html">EscapeTwo</a></h2>
             <small>2025-05-24 by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
