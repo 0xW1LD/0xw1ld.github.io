@@ -312,7 +312,7 @@
 
 pre.highlight:before {
 	font-family: FontAwesome;
-	content: "\f056 \f358 \f057";
+	content: "\f057 \f056 \f13a";
 	letter-spacing: 0.5em;
 	color: #dfdfdf;
 	position: sticky;
