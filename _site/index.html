@@ -25,6 +25,7 @@
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <script src="https://kit.fontawesome.com/848cf172bf.js" crossorigin="anonymous"></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -93,8 +94,8 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
-            <h2><a href="/htb/2025/06/02/Backfire.html">Backfire</a></h2>
-            <small>2025-06-02 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <h2><a href="/htb/2025/06/07/Backfire.html">Backfire</a></h2>
+            <small>2025-06-07 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
             <p style="text-align: justify; width: 75%; float: left;">Backfire is a hackback scenario linux box which is still running a file server on port 8000 by mistake of the users. It contains a patch file and a yaotl file for havoc C2. Using information from these files we can find a CVE for unauthenticated SSRF, we combine this with an authenticated RCE through websockets to gain a foothold. We can now find Hardhat, another C2, which is vulnerable to an authentication bypass. Hardhat C2, offers us a direct terminal as Sergej. Sergej is able to execute iptables and iptables-save as root which we are able to use as an arbitrary write, to write our ssh key to the root directory.</p><img src="/assets/img/img_Backfire/Pasted%20image%2020250113013147.png" style="float: right; width: 23%;">
           

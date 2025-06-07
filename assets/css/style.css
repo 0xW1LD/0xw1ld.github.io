@@ -31,11 +31,11 @@
 }
 
 .highlight table td {
-	padding: 5px
+	padding: 5px;
 }
 
 .highlight table pre {
-	margin: 0
+	margin: 0;
 }
 
 .highlight .cm {
@@ -310,8 +310,19 @@
 	border-radius: 7px;
 }
 
+pre.highlight:before {
+	font-family: FontAwesome;
+	content: "\f056 \f358 \f057";
+	letter-spacing: 0.5em;
+	color: #dfdfdf;
+	position: sticky;
+	left: 10px;
+	top: 10px
+}
+
 pre.highlight{
 	overflow-x: auto;
+	background: rgb(20, 22, 23);
 }
 
 html {
@@ -417,7 +428,6 @@ pre {
 
 pre {
 	padding: 4px 4px 0px 4px;
-	background: rgb(20, 22, 23);
 	border-radius: 5px;
 	scrollbar-color: #5f5f5f #373c3e;
 	scrollbar-width: thin;
@@ -675,44 +685,36 @@ screen and (max-width: 480px) {
 }
 
 blockquote {
-	@extend .alert;
-	@extend .alert-primary;
-	@extend .pb-0;
 	font-size:15px;
   }
-  
-  blockquote.success {
-	@extend .alert-success;
-  }
+
   blockquote.success p:before {
-	content: "✓ Success ";
+	content: "✓ SUCCESS \A";
 	font-weight:bold;
-	font-size:16px;
+	font-size:17px;
+	display: block;
   }
-  
-  blockquote.danger {
-	@extend .alert-danger;
-  }
-  blockquote.danger p:before {
-	content: "⊠ Danger ";
+
+  blockquote.error p:before {
+	content: "✕ ERROR \A";
 	font-weight:bold;
-	font-size:16px;
-  }
-  
-  blockquote.warning {
-	@extend .alert-warning;
+	font-size:17px;
+	display: block;
   }
   blockquote.warning p:before {
-	content: "⚠ Warning ";
+	content: "⚠ WARNING \A";
 	font-weight:bold;
-	font-size:16px;
+	font-size:17px;
+	display: block;
   }
-  
-  blockquote.info {
-	@extend .alert-info;
-  }
+
   blockquote.info p:before {
-	content: "ⓘ Further Information ";
+	font-family: "FontAwesome";
+	content: "\f05a INFO";
 	font-weight:bold;
-	font-size:16px;
+	font-size:13px;
+	display: block;
+	letter-spacing: .2em;
+	padding: 5px 0px 5px 0px;
   }
+

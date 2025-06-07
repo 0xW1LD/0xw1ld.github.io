@@ -8,7 +8,6 @@ author: "0xW1LD"
 url: "https://0xw1ld.github.io"
 plugins:
   - jekyll-sitemap
-  - jekyll-gfm-admonitions
 markdown: kramdown
 kramdown:
     highlighter: rouge
@@ -18,9 +17,7 @@ kramdown:
 
 exclude: 
   - "**/*.ts" # Exclude source code files!
-  - "**/*.js"
   - "*.ts" # Also those in the root directory!
-  - "*.js"
   - "*.json" # Don't forget about assets!
   - node_modules/ # And large vendored directories
   # And these ignore all the artifacts the build produces:
