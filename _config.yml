@@ -9,12 +9,7 @@ url: "https://0xw1ld.github.io"
 plugins:
   - jekyll-sitemap
   - jekyll-gfm-admonitions
-markdown: kramdown
-kramdown:
-    highlighter: rouge
-    syntax_highlighter_opts:
-        block:
-            line_numbers: true
+markdown: GFM
 
 exclude: 
   - "**/*.ts" # Exclude source code files!
