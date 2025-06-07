@@ -466,8 +466,7 @@ app:[REDACTED]:19890:0:99999:7:::
 _laurel:!:20007::::::
 ```
 
->[!note]
->When attempting directory traversal through `curl` we must use the `--path-as-is` flag to force curl to use the exact path we specify.
+> When attempting directory traversal through `curl` we must use the `--path-as-is` flag to force curl to use the exact path we specify.
 
 Using this `LFI` vulnerability we're able to extract `root`'s `ssh` key:
 
