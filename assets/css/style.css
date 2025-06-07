@@ -410,14 +410,13 @@ a:hover small {
 }
 
 blockquote {
-	border-left: 2px solid #e5e5e5;
+	border-left: 5px solid #1f6feb;
 	margin: 20px;
 	margin-left: 0px;
 	padding: 10px 10px 1px 15px;
 	font-style: italic;
-	background-color: #069;
 	color: #d8d4cf;
-	border-radius: 7px;
+	box-shadow: black 5px 5px 20px;
 }
 
 code,
@@ -709,12 +708,15 @@ blockquote {
   }
 
   blockquote.info p:before {
-	font-family: "FontAwesome";
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
 	content: "\f05a\AInfo";
-	border-bottom: 1px solid #e5e5e5;
-	padding: 0px 0px 5px;
+	padding: 5px 0px 10px;
 	font-size:15px;
 	display: block;
 	letter-spacing: .2em;
+	color: #4493f8;
+	-webkit-font-smoothing: antialiased;
   }
 
