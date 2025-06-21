@@ -94,6 +94,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/06/21/Titanic.html">Titanic</a></h2>
+            <small>2025-06-21 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Titanic is running an http server on port 80 in whch you can book a trip which triggers a file download. The file download endpoint is vulnerable to an LFI. Looking around further we can find a subdomain which is running gitea, using the LFI we download the database and using a script to modify the hashes to become crackable. There's an image identification script that runs a magick version that happens to be vulnerable to an arbitrary code execution.</p><img src="https://labs.hackthebox.com/storage/avatars/eb5942ec56dd9b6feb06dcf8af8aefc6.png" style="float: right; width: 23%;">
+          
             <h2><a href="/htb/2025/06/07/Backfire.html">Backfire</a></h2>
             <small>2025-06-07 by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
