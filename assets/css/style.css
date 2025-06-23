@@ -388,11 +388,6 @@ a {
 	text-decoration: none
 }
 
-a:hover,
-a:focus {
-	color: #53a3dc;
-}
-
 a small {
 	font-size: 11px;
 	color: #777;
@@ -719,3 +714,8 @@ blockquote {
 	-webkit-font-smoothing: antialiased;
   }
 
+.active {
+	color: #ffffff;
+	border-right: 1px solid white;
+	padding: 5px;
+}
