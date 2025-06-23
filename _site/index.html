@@ -94,6 +94,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/06/28/Haze.html">Haze</a></h2>
+            <small>2025-06-28 by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Haze is running a splunk version vulnerable to an lfi which can be used to steal a password hash and splunk secret to decrypt the hash. Using the password, we access two accounts, one being a GMSA manager. Found a machine account in MSA's list with write owner privileges over support services group. This group can change passwords for a user on the box. Used this privilege chain to gain a shell as that user. This user has access to backups directory containing another splunk password hash and secret. Decrypted to gain access as another user with SEImpersonate Privileges, which we used to gain NT SYSTEM.</p><img src="https://labs.hackthebox.com/storage/avatars/44e14228c6a208714eda356bda7624a8.png" style="float: right; width: 23%;">
+          
             <h2><a href="/htb/2025/06/21/Titanic.html">Titanic</a></h2>
             <small>2025-06-21 by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
