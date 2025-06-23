@@ -2,9 +2,7 @@
 title: EscapeTwo
 layout: post
 released: 2025-01-12
-creators:
-  - ruycr4ft
-  - Llo0zy
+creators: ruycr4ft & Llo0zy
 pwned: true
 tags:
   - os/windows
