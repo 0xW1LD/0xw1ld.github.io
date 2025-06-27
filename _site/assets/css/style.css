@@ -324,7 +324,7 @@ pre.highlight{
 	overflow-x: auto;
 	background: rgb(20, 22, 23);
 }
-
+/*
 html {
 	min-height: 100%;
 	background: url("/assets/img/bg.png");
@@ -332,9 +332,12 @@ html {
 	background-attachment: fixed;
 	box-shadow: inset 0 0 0 4000px rgba(24, 26, 27, 0.9);
 }
-
+*/
 body {
+	/*
 	background: rgba(0, 0, 0, 0);
+	*/
+	background: black;
 	padding: 50px;
 	font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #a0988b;
@@ -349,7 +352,7 @@ h5,
 h6,
 strong {
 	color: #d3cfc9;
-	margin: 0 0 20px;
+	margin: 0 0 5px;
 	clear: both;
 }
 
@@ -404,16 +407,6 @@ a:hover small {
 	margin: 0 auto
 }
 
-blockquote {
-	border-left: 5px solid #1f6feb;
-	margin: 20px;
-	margin-left: 0px;
-	padding: 10px 10px 1px 15px;
-	font-style: italic;
-	color: #d8d4cf;
-	box-shadow: black 5px 5px 20px;
-}
-
 code,
 pre {
 	font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
@@ -461,6 +454,7 @@ img {
 	max-width: 100%;
 	display:block;
 	margin: 0 auto 0 auto;
+	border-radius: 15px;
 }
 
 kbd {
@@ -605,19 +599,18 @@ screen and (max-width: 960px) {
 	header,
 	section,
 	footer {
-		float: none;
 		position: static;
 		width: auto
 	}
 
-	header {
-		padding-right: 320px
+	header{
+		float: none;
+		margin: 10% 0%;
 	}
 
 	section {
-		border: 1px solid #e5e5e5;
 		border-width: 1px 0;
-		padding: 20px 0;
+		padding: 20px;
 		margin: 0 0 20px
 	}
 
@@ -679,39 +672,90 @@ screen and (max-width: 480px) {
 
 blockquote {
 	font-size:15px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	margin: 20px;
+	margin-left: 0px;
+	padding: 10px 10px 1px 15px;
+	font-style: italic;
+	color: #d8d4cf;
+	box-shadow: black 5px 5px 20px;
   }
 
-  blockquote.success p:before {
-	content: "✓ SUCCESS \A";
-	font-weight:bold;
-	font-size:17px;
-	display: block;
+  blockquote.success {
+	border-left: 5px solid #44f853;
   }
 
-  blockquote.error p:before {
-	content: "✕ ERROR \A";
-	font-weight:bold;
-	font-size:17px;
-	display: block;
+  blockquote.error {
+	border-left: 5px solid #f84444;
   }
-  blockquote.warning p:before {
-	content: "⚠ WARNING \A";
-	font-weight:bold;
-	font-size:17px;
-	display: block;
+  
+  blockquote.warning {
+	border-left: 5px solid #f8c844;
   }
 
-  blockquote.info p:before {
+  blockquote.info {
+	border-left: 5px solid #4493f8;
+  }
+
+  blockquote.success:before {
 	font: var(--fa-font-solid);
 	font-family: 'Font Awesome 6 Free';
 	font-style: normal;
-	content: "\f05a\AInfo";
-	padding: 5px 0px 10px;
-	font-size:15px;
-	display: block;
+	content: "\f058\A";
+	font-size:20px;
+	letter-spacing: .2em;
+	color: #44f853;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  }
+
+  blockquote.error:before {
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	content: "\f057\A";
+	font-size:20px;
+	letter-spacing: .2em;
+	color: #f84444;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  "}
+
+  blockquote.warning:before {
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	content: "\f06a\A";
+	font-size:20px;
+	letter-spacing: .2em;
+	color: #f8c844;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  }
+
+  blockquote.info:before {
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	content: "\f05a\A";
+	font-size:20px;
 	letter-spacing: .2em;
 	color: #4493f8;
 	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  }
+
+  blockquote p{
+	margin: auto;
+	padding: 10px 0px 20px 0px;
+	flex-grow: 2;
   }
 
 .active {
