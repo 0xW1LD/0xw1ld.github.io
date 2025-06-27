@@ -724,7 +724,7 @@ blockquote {
 	-webkit-font-smoothing: antialiased;
 	margin: auto;
 	padding: 10px 10px 20px 0px;
-  "}
+  }
 
   blockquote.warning:before {
 	font: var(--fa-font-solid);
