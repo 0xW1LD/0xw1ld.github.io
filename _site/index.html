@@ -94,6 +94,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/07/12/Dog.html">dog</a><small> by FisMathack</small></h2>
+            <small>2025-07-12 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Dog is running a dog blog webserver run by backdrop CMS, it also has an exposed git directory. Dumping the git directory we can find credentials for use to login to backdrop CMS. We can upload a malicious module to gain a foothold. Using the same password we found we conduct a password spray and find a user we can pivot to. Said user has access to run bee, a backdrop command line utility, as root, we can use the post-script function to gain root.</p><img src="https://labs.hackthebox.com/storage/avatars/426830ea2ae4f05f7892ad89195f8276.png" style="float: right; width: 23%;">
+          
             <h2><a href="/htb/2025/07/05/Cat.html">Cat</a><small> by FisMathack</small></h2>
             <small>2025-07-05 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
