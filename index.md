@@ -13,6 +13,6 @@ $ cat README.txt
 
 Hey there! W1LD here,
 Founding Member of OSI
-Community Contributor at the HTB discord server
+Volunteer Moderator at the HTB discord server
 all around W1ld Card.
 ```
