@@ -571,7 +571,7 @@ nav {
 	-webkit-font-smoothing: subpixel-antialiased;
 	text-align: right;
 	position: fixed;
-	margin-top: 45vh;
+	margin: 50vh auto;
 	width: 15%;
 }
 
