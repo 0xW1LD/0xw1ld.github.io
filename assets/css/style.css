@@ -610,6 +610,10 @@ screen and (max-width: 960px) {
 		display: none;
 	}
 
+	section {
+		flex-basis: 100%;
+	}
+
 }
 
 @media print,
@@ -620,6 +624,10 @@ screen and (max-width: 720px) {
 	}
 	header,nav,footer {
 		display: none;
+	}
+
+	section {
+		flex-basis: 100%;
 	}
 }
 
@@ -640,6 +648,10 @@ screen and (max-width: 480px) {
 	.downloads li,
 	.downloads li+li+li {
 		width: 33%
+	}
+
+	section {
+		flex-basis: 100%;
 	}
 }
 
