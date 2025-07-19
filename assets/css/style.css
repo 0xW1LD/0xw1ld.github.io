@@ -572,6 +572,7 @@ nav {
 	text-align: right;
 	position: fixed;
 	margin-top: 45vh;
+	width: 15%;
 }
 
 nav a{
