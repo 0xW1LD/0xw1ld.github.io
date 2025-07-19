@@ -408,8 +408,8 @@ a:hover small {
 	margin: auto;
 	display: flex;
 	align-items:flex-start;
-	gap: 2vh;
 	width: 70%;
+	gap: 2vh;
 }
 
 code,
@@ -491,7 +491,6 @@ header {
 	-webkit-font-smoothing: subpixel-antialiased;
 	box-shadow: 1px 1px 5px #dddddd;
 	padding: 1vh;
-	margin: 20px;
 	background-color: /*#181a1b*/ black;
 	border-radius: 15px;
 	flex-basis: 20%;
@@ -559,18 +558,16 @@ strong {
 section {
 	box-shadow: 1px 1px 5px #dddddd;
 	padding: 2vh;
-	padding-bottom: 10vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
-	min-width: 70%;
-	flex-basis: 70%;
+	min-width: 65%;
+	flex-basis: 65%;
 }
 nav {
 	-webkit-font-smoothing: subpixel-antialiased;
-	text-align: right;
-	position: fixed;
-	margin: 50vh auto;
-	width: 15%;
+	flex-basis: 15%;
+	position: sticky;
+	top: 2vh;
 }
 
 nav a{
@@ -595,8 +592,8 @@ hr {
 footer {
 	position:fixed;
 	bottom: 2vh;
+	left: 15%;
 	-webkit-font-smoothing: subpixel-antialiased;
-	padding: 5vh;
 }
 
 @media print,
@@ -610,6 +607,10 @@ screen and (max-width: 960px) {
 		display: none;
 	}
 
+	section {
+		flex-basis: 100%;
+	}
+
 }
 
 @media print,
@@ -620,6 +621,10 @@ screen and (max-width: 720px) {
 	}
 	header,nav,footer {
 		display: none;
+	}
+
+	section {
+		flex-basis: 100%;
 	}
 }
 
@@ -640,6 +645,10 @@ screen and (max-width: 480px) {
 	.downloads li,
 	.downloads li+li+li {
 		width: 33%
+	}
+
+	section {
+		flex-basis: 100%;
 	}
 }
 
@@ -741,7 +750,7 @@ blockquote {
 
 .active {
 	color: #ffffff;
-	border-right: 1px solid white;
+	border-left: 1px solid white;
 	padding: 5px;
 }
 
