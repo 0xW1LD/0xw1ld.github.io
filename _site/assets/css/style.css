@@ -359,7 +359,6 @@ strong {
 }
 
 p,
-ul,
 ol,
 table,
 pre,
@@ -756,4 +755,9 @@ blockquote {
 
 .language-shell {
 	flex-basis: 100%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
 }
