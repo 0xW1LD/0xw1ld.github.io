@@ -563,6 +563,7 @@ section {
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
 	min-width: 70%;
+	flex-basis: 70%;
 }
 nav {
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -619,10 +620,6 @@ screen and (max-width: 720px) {
 	}
 	header,nav,footer {
 		display: none;
-	}
-	pre,
-	code {
-		word-wrap: normal
 	}
 }
 

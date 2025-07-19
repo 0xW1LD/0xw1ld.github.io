@@ -562,16 +562,14 @@ section {
 	padding-bottom: 10vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-basis: 70%;
 	min-width: 70%;
+	flex-basis: 70%;
 }
 nav {
 	-webkit-font-smoothing: subpixel-antialiased;
 	text-align: right;
 	position: fixed;
-	margin-top: 45vh;
+	margin: 50vh auto;
 	width: 15%;
 }
 
@@ -622,10 +620,6 @@ screen and (max-width: 720px) {
 	}
 	header,nav,footer {
 		display: none;
-	}
-	pre,
-	code {
-		word-wrap: normal
 	}
 }
 
