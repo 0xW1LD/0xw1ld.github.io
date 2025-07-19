@@ -490,7 +490,7 @@ kbd {
 header {
 	-webkit-font-smoothing: subpixel-antialiased;
 	box-shadow: 1px 1px 5px #dddddd;
-	padding: 20px;
+	padding: 1vh;
 	margin: 20px;
 	background-color: /*#181a1b*/ black;
 	border-radius: 15px;
