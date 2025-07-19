@@ -562,9 +562,6 @@ section {
 	padding-bottom: 10vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
-	display: flex;
-	flex-wrap: wrap;
-	flex-basis: 70%;
 	min-width: 70%;
 }
 nav {
