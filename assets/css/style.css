@@ -566,7 +566,8 @@ nav {
 	-webkit-font-smoothing: subpixel-antialiased;
 	flex-basis: 15%;
 	position: sticky;
-	top: 2vh;
+	top: 58px;
+	text-wrap:nowrap;
 }
 
 nav a{
