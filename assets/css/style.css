@@ -568,9 +568,10 @@ nav {
 	position: sticky;
 	top: 58px;
 	text-wrap:nowrap;
+	text-align: right;
 }
 
-nav a{
+ul a{
 	color: #d3cfc9;
 }
 
@@ -750,7 +751,7 @@ blockquote {
 
 .active {
 	color: #ffffff;
-	border-left: 1px solid white;
+	border-right: 1px solid white;
 	padding: 5px;
 }
 
