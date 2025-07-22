@@ -94,6 +94,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/07/26/Cypher.html">Cypher</a><small> by Techromancer</small></h2>
+            <small>2025-07-26 written by 0xW1LD<p style="float: right;">diff/medium&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Cypher is running a web server which has an exposed testing directory which contains a jar file. Analyzing the jar file and the login page on the site leads us to a neo4j cypher injection exploit which when calling a custom function on the jar file leads to RCE. Through this we are able to get a reverse shell. Looking through the bash history file we find the password of the user. The user is able to run bbot, an osint script as root. Using this script we can take advantage of debug mode and set a custom YARA file to get an arbitrary file read. We can also write a custom module to achieve code execution as root.</p><img src="https://labs.hackthebox.com/storage/avatars/765cd4be6f3a366ca83c7ea60bbcaaa8.png" style="float: right; width: 23%; height: 23%;">
+          
             <h2><a href="/htb/2025/07/19/Scepter.html">Scepter</a><small> by Emsec</small></h2>
             <small>2025-07-19 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">

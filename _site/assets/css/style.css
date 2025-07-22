@@ -559,16 +559,17 @@ section {
 	padding: 2vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
-	min-width: 65%;
-	flex-basis: 65%;
+	min-width: 70%;
+	flex-basis: 70%;
 }
 nav {
 	-webkit-font-smoothing: subpixel-antialiased;
-	flex-basis: 15%;
+	flex-basis: 20%;
 	position: sticky;
 	top: 58px;
 	text-wrap:nowrap;
 	text-align: right;
+	border-radius: 15px;
 }
 
 ul a{
