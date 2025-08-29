@@ -569,6 +569,8 @@ section {
 nav {
 	-webkit-font-smoothing: subpixel-antialiased;
 	flex-basis: 20%;
+	box-shadow: 2px 2px 1px #dddddd;
+	padding: 2vh;
 	position: sticky;
 	top: 58px;
 	text-wrap:nowrap;
