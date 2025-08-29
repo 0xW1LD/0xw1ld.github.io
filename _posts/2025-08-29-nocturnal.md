@@ -247,11 +247,9 @@ sqlite> select * from users;
 > ``$blacklist_chars = [';', '&', '|', '$', ' ', '`', '{', '}', '&&'];``
 > We can use newline characters and tabs to bypass the filter and get remote code execution.
 > Sending: `w1ld%0Acat%09%2Fetc%2Fpasswd%3E` in the password field through burp allows for remote code execution and for us to view it in the output.
-> ![./assets/img/img_nocturnal/nocturnal-1744899420035.png](/assets/img/img_nocturnal/./assets/img/img_nocturnal/nocturnal-1744899420035.png)
+> ![nocturnal-1744899420035.png](/assets/img/img_nocturnal/nocturnal-1744899420035.png)
 > We can use this to enumerate the folders and find the database in `../nocturnal_database/nocturnal_database.db`
 > After we find it we can copy it back to the current directory and we can download a backup.
-{:.info}
-
 
 We find several hashes, let's crack them.
 ```bash
