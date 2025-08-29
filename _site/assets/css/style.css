@@ -488,7 +488,7 @@ kbd {
 
 header {
 	-webkit-font-smoothing: subpixel-antialiased;
-	box-shadow: 1px 1px 5px #dddddd;
+	box-shadow: 2px 2px 1px #dddddd;
 	padding: 1vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 15px;
@@ -559,7 +559,7 @@ strong {
 }
 
 section {
-	box-shadow: 1px 1px 5px #dddddd;
+	box-shadow: 2px 2px 1px #dddddd;
 	padding: 2vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
