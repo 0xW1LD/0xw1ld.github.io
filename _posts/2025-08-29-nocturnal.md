@@ -209,15 +209,10 @@ We get `amanda` so let's visit http://nocturnal.htb/view.php?username=amanda&fil
 ![nocturnal-1744501088787.png](/assets/img/img_nocturnal/nocturnal-1744501088787.png)
 Let's download the file and view the contents.
 > Dear Amanda,
-> 
 > Nocturnal has set the following temporary password for you: arHkG7HAI68X8s1J. This password has been set for all our services, so it is essential that you change it on your first login to ensure the security of your account and our infrastructure.
-> 
 > The file has been created and provided by Nocturnal's IT team. If you have any questions or need additional assistance during the password change process, please do not hesitate to contact us.
-> 
 > Remember that maintaining the security of your credentials is paramount to protecting your information and that of the company. We appreciate your prompt attention to this matter.
-> 
 > Yours sincerely,
-> 
 > Nocturnal's IT team
 
 We have a default password! Let's use this to attempt to login into `amanda's` account
