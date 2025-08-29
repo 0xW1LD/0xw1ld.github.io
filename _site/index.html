@@ -51,7 +51,7 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="http://localhost:4000/">0xW1LD</a></h1>
+        <h2><a href="http://localhost:4000/">0xW1LD</a></h2>
 
         
           <img src="/assets/img/logo.png" alt="Logo" />
@@ -93,6 +93,21 @@ all around W1ld Card.
 
         
         <h1>HTB</h1>
+          
+            <h2><a href="/htb/2025/08/31/eureka.html">Eureka</a><small> by Spectra199</small></h2>
+            <small>2025-08-31 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Eureka is running a website and has an open port to Spring Boot Eureka. Looking through endpoints of the API we're able to extract a heapdump with credentials for oscar190. Using these credentials we login to the Eureka dashboard and redirect the application instance *USER-MANAGEMENT-SERVICE* to ourselves to intercept a login for miranda-wise, our user. We can see that a certain script runs every so often which takes a log file we can edit as input. Using this we can do command execution by editing the contents of the log file.</p><img src="https://labs.hackthebox.com/storage/avatars/721477107c34105c91220b678c1f1ec6.png" style="float: right; width: 23%; height: 23%;">
+          
+            <h2><a href="/htb/2025/08/30/TheFrizz.html">The Frizz</a><small> by 0xPizzaCat</small></h2>
+            <small>2025-08-30 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">We start with a windows box running Gibbons-LMS which we find is vulnerable to an arbitrary file write which we can use to upload an RCE. Once we get a foothold we locate the database and extract crackable password hashes. We use the found passwords to view the site, we can also see the posts on the database, we see a reference to the RecycleBin. We can find an archive containing config files with an encoded password. We utilize a password spray to gain a foothold onto the AD domain. From this foothold on the domain we can run bloodhound to find vulnerable ACLs which we can follow to gain GPO permissions. We abuse these GPO permissions to create a local admin account and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/c91ef1b641cf88156c7a9d3793d54216.png" style="float: right; width: 23%; height: 23%;">
+          
+            <h2><a href="/htb/2025/08/29/nocturnal.html">Nocturnal</a><small> by FisMatHack</small></h2>
+            <small>2025-08-29 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Nocturnal runs a webserver on port 80 with a file upload portal. Retrieved Amanda’s temporary password from an `.odt` file in the upload directory. Logged into her ISPConfig panel account and generated a backup. Downloaded and extracted the SQLite database containing user password hashes. Cracked Tobias’ hash and accessed the system via SSH. Gained root access by exploiting a command injection vulnerability in ISPConfig’s language editor functionality.</p><img src="https://labs.hackthebox.com/storage/avatars/f6a56cec6e9826b4ed124fb4155abc66.png" style="float: right; width: 23%; height: 23%;">
           
             <h2><a href="/htb/2025/07/26/Cypher.html">Cypher</a><small> by Techromancer</small></h2>
             <small>2025-07-26 written by 0xW1LD<p style="float: right;">diff/medium&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>

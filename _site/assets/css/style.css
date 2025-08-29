@@ -633,6 +633,10 @@ screen and (max-width: 720px) {
 		display: none;
 	}
 
+	#phoneHeader{
+		display: inline;
+	}
+
 	section {
 		flex-basis: 100%;
 	}
@@ -646,6 +650,10 @@ screen and (max-width: 480px) {
 
 	header,nav,footer{
 		display: none;
+	}
+
+	#phoneHeader{
+		display: inline;
 	}
 
 	.downloads {
