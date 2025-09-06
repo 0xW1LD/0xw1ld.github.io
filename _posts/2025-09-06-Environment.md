@@ -41,10 +41,10 @@ Let's add `environment.htb` to our `/etc/hosts` file like so:
 ```
 
 Now we should be able to visit the website.
-![Save The Environment Front Page](/assets/img/img_environment/Environment-1746314828409.png)
+![Save The Environment Front Page](/assets/img/img_Environment/Environment-1746314828409.png)
 
 As we can see we are greeted by a website which seems to only have the ability to join a mailing list.
-![Signing up for the mailing list](/assets/img/img_environment/Environment-1746314925730.png)
+![Signing up for the mailing list](/assets/img/img_Environment/Environment-1746314925730.png)
 
 When signing up for a mailing list a `POST` request is sent  to `mailing` and returns the message `Email added to the mailing list successfully!`
 Let's take a look at the headers.
@@ -94,30 +94,30 @@ upload/                 [Status: 405, Size: 244869, Words: 46159, Lines: 2576, D
 Looking at the results we have 2 hits, `login`, and `upload` with the status code of `405` which is `method not allowed`. 
 
 Let's visit `login`.
-![Marketing Management Login Portal](/assets/img/img_environment/Environment-1746315268735.png)
+![Marketing Management Login Portal](/assets/img/img_Environment/Environment-1746315268735.png)
 
 We can see we are greeted by a `Marketing Management` login portal.
-![Invalid Credentials](/assets/img/img_environment/Environment-1746315342404.png)
+![Invalid Credentials](/assets/img/img_Environment/Environment-1746315342404.png)
 
 Attempting some credentials like `admin@environment.htb:password` leads to an `invalid credentials` error message.
 
 Let's take a look at `/upload`.
-![Method Not Allowed](/assets/img/img_environment/Environment-1746315472620.png)
+![Method Not Allowed](/assets/img/img_Environment/Environment-1746315472620.png)
 
 We can see a dashboard for `laravel` indicating the versions of both `php` and `laravel` of `8.2.28` and `11.30.0` respectively.
 
 If we change our request method to `POST` we get the following:
-![419 Page Expired](/assets/img/img_environment/Environment-1746324351246.png)
+![419 Page Expired](/assets/img/img_Environment/Environment-1746324351246.png)
 
 This might indicate that we need a valid token, if we take our current token and add it to the body of the request we get redirected to `/login`
 
 Looking around for vulnerabilities on `laravel` we can find an article on [Environment manipulation via query string in Laravel](https://www.cybersecurity-help.cz/vdb/SB20241112127).
 
 Attempting to inject environment arguments, http://environment.htb/?--env=local leads to our environment variable being put onto the page.
-![Altered environment](/assets/img/img_environment/Environment-1746316576608.png)
+![Altered environment](/assets/img/img_Environment/Environment-1746316576608.png)
 
 Back to `/login`, if we try to send a `POST` request with nothing but our token we get an `internal server error`. 
-![Login Internal Server Error](/assets/img/img_environment/Environment-1746324189034.png)
+![Login Internal Server Error](/assets/img/img_Environment/Environment-1746324189034.png)
 
 In the error above we can see that there is a check for `remember`, let's see if we can view the code below by setting `remember` to something not supported.
 ```http
@@ -141,7 +141,7 @@ _token=NrzeUaIYwTANRvzxCd3Hp4bPCZkmA6hRMEfDC8Y3&email=w1ld%400xw1ld.github.io&pa
 
 We see that we can view the code below in the error.
 
-![Undefined Variable $Keep_loggedin](/assets/img/img_environment/Environment-1746329062917.png)
+![Undefined Variable $Keep_loggedin](/assets/img/img_Environment/Environment-1746329062917.png)
 
 We can see that it checks if the `env` is `preprod`. So let's try it.
 
@@ -165,16 +165,16 @@ _token=NrzeUaIYwTANRvzxCd3Hp4bPCZkmA6hRMEfDC8Y3&email=w1ld%400xw1ld.github.io&pa
 ```
 
 Success! we're redirected to the management dashboard!
-![Environment.htb Management Dashboard](/assets/img/img_environment/Environment-1746329802403.png)
+![Environment.htb Management Dashboard](/assets/img/img_Environment/Environment-1746329802403.png)
 
 # Foothold
 Taking a look at the `Profile` tab, we can see that we can upload a new profile picture.
 
-![Environment Profile Tab](/assets/img/img_environment/Environment-1746331302917.png)
+![Environment Profile Tab](/assets/img/img_Environment/Environment-1746331302917.png)
 
 Uploading a malicious file like a `.php` seems to be invalid.
 
-![Invalid file detected](/assets/img/img_environment/Environment-1746330512752.png)
+![Invalid file detected](/assets/img/img_Environment/Environment-1746330512752.png)
 
 After doing some testing I've come to the conclusion that there's a file content filter as well as a file extension blacklist.
 
@@ -192,7 +192,7 @@ GIF8
 ```
 
 and visit the resulting `url` with the parameter of `cmd=id` we get the following:
-![Command execution via web shell](/assets/img/img_environment/Environment-1746356700416.png)
+![Command execution via web shell](/assets/img/img_Environment/Environment-1746356700416.png)
 
 let's upload a revshell from [revshells](https://revshells.com)
 
