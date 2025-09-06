@@ -94,8 +94,8 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
-            <h2><a href="/htb/2025/09/10/Environment.html">Environment</a><small> by coopertim13</small></h2>
-            <small>2025-09-10 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <h2><a href="/htb/2025/09/07/Environment.html">Environment</a><small> by coopertim13</small></h2>
+            <small>2025-09-07 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
             <p style="text-align: justify; width: 75%; float: left;">Environment has an environmental preservation website running laravel. We find a login page which if broken allows to read parts of the code. Using this information we inject a parameter allowing login to the dashboard without credentials. We find we are logged in as Hish, and can upload a profile picture. We upload a payload to get a shell using some filter bypasses. In Hish's home folder we find a gpg file and keys which we can use to decrypt his password. Hish can run sudo on a script with preserved BASH_ENV environment variable which if changed allows arbitrary code execution as root.</p><img src="https://labs.hackthebox.com/storage/avatars/757eeb9b0f530e71875f0219d0d477e4.png" style="float: right; width: 23%; height: 23%;">
           
