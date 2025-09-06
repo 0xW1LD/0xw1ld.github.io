@@ -338,7 +338,7 @@ body {
 	/*
 	background: rgba(0, 0, 0, 0);
 	*/
-	background: black;
+	background: rgba(10,10,12);
 	padding: 50px;
 	font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #a0988b;
@@ -487,12 +487,15 @@ kbd {
 }
 
 header {
+	background-color: #000000;
 	-webkit-font-smoothing: subpixel-antialiased;
-	box-shadow: 2px 2px 1px #dddddd;
-	padding: 1vh;
-	background-color: /*#181a1b*/ black;
-	border-radius: 15px;
 	flex-basis: 20%;
+	box-shadow: 0.5vh 0.5vh 0.55vh rgba(0,0,0,0.5);
+	padding: 2vh;
+	position: sticky;
+	top: 58px;
+	text-wrap:nowrap;
+	border-radius: 15px;
 }
 
 #phoneHeader {
@@ -559,7 +562,7 @@ strong {
 }
 
 section {
-	box-shadow: 2px 2px 1px #dddddd;
+	box-shadow: 0.5vh 0.5vh 0.55vh rgba(0,0,0,0.5);
 	padding: 2vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
@@ -567,14 +570,14 @@ section {
 	flex-basis: 70%;
 }
 nav {
+	background-color: #000000;
 	-webkit-font-smoothing: subpixel-antialiased;
 	flex-basis: 20%;
-	box-shadow: 2px 2px 1px #dddddd;
+	box-shadow: 0.5vh 0.5vh 0.55vh rgba(0,0,0,0.5);
 	padding: 2vh;
 	position: sticky;
 	top: 58px;
 	text-wrap:nowrap;
-	text-align: right;
 	border-radius: 15px;
 }
 
@@ -770,7 +773,7 @@ blockquote {
 
 .active {
 	color: #ffffff;
-	border-right: 1px solid white;
+	border-left: 0.25vh solid white;
 	padding: 5px;
 }
 
