@@ -94,6 +94,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/09/13/Planning.html">Planning</a><small> by FisMatHack & d00msl4y3r</small></h2>
+            <small>2025-09-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Planning is running a grafana public subdomain with assumed breach credentials. We find an authenticated file read and remote code execution (RCE) vulnerability which gets us a foothold. Clear text credentials can be found in the environment variables of the docker instance we're in which we can use to SSH as enzo. There's a crontab management webservice running as root for which we can find the cleartext credentials for. Using this service we can schedule a reverse shell command and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/c9efb253e7d1d9b407113e11afdaa905.png" style="float: right; width: 23%; height: 23%;">
+          
             <h2><a href="/htb/2025/09/06/Environment.html">Environment</a><small> by coopertim13</small></h2>
             <small>2025-09-06 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
