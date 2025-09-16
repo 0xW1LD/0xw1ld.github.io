@@ -92,6 +92,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/09/20/Fluffy.html">Fluffy</a><small> by ruycr4ft</small></h2>
+            <small>2025-09-20 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Fluffy is yet another assumed breach scenario where we can access an IT SMB share. The Share highlights an upgrade request pdf with vulnerabilities found on the environment. One of the vulnerabilities allows us to grab a hash through a zip file extraction. We can crack the hash to get to the user: p.agila. This user has Write permissions on the Service Accounts group which contains winrm_svc and ca_svc. Once we add the user to the group we're able to do a shadow credential attack on both these service accounts. Winrm_svc has our user flag! Using our permissions as p.agila and ca_svc we're able to change ca_svc's upn to the Administrator one to request an administrator certificate. We can use this certificate to authenticate as the Administrator, and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/ef8fc92ac7cccd8afa4412241432f064.png" style="float: right; width: 23%; height: 23%;">
+          
             <h2><a href="/htb/2025/09/13/Planning.html">Planning</a><small> by FisMatHack & d00msl4y3r</small></h2>
             <small>2025-09-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
