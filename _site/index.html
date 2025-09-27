@@ -92,6 +92,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/09/27/Puppy.html">Puppy</a><small> by tr3nb0lone</small></h2>
+            <small>2025-09-27 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Puppy is an assumed breach scenario wherein the starting credentials we're given has access to add himself to the Developers Group. The group has access to the DEV SMB share which contains a keyfile database backup. One of these credentials is for a Remote Management User whose account is currently disabled. One of the other credentials provided allows us to enable his account and change his password. Just like that we get user, we find a backups folder storing additional credentials for another Remote Manager User. Said user has an admin account and hints towards browser credentials so we dump DPAPI and get an additional password which works for their admin account. Just like that we have root.</p><img src="https://labs.hackthebox.com/storage/avatars/6a127b39657062e42c1a8dfdcd23475d.png" style="float: right; width: 23%; height: 23%;">
+          
             <h2><a href="/htb/2025/09/20/Fluffy.html">Fluffy</a><small> by ruycr4ft</small></h2>
             <small>2025-09-20 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
