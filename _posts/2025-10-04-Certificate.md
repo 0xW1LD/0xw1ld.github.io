@@ -344,6 +344,7 @@ Certipy v5.0.2 - by Oliver Lyak (ly4k)
 ```
 
 > The reason it wouldn't work with the current template is because there's a policy preventing us from requesting the certificate without it being signed.
+{:.info}
 
 And let's authenticate!
 ```bash
@@ -507,7 +508,6 @@ Certipy v5.0.2 - by Oliver Lyak (ly4k)
 Just like that, we have Root!
 
 # Beyond Root
-
 I was really interested to know more about that `nullbyte` exploit. Looking around we can find [0xdf](https://0xdf.gitlab.io/2024/01/13/htb-zipping.html#beyond-root---unintended-footholds) did a similar thing on the `Zipping` box.
 
 I tried to do the manual method he showed where he used a `hex editor` to edit the bytes. Editing only the second instance of the `filename` generated errors when uploaded. However, if we edited both instances, we would be able to submit the file and not have to use a sacrificial zipfile as we did in python.
