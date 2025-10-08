@@ -314,7 +314,7 @@
 
 pre.highlight:before {
 	font-family: FontAwesome;
-	content: " \f057 \f056 \f13a";
+	content: " \f057 \f056 \f13a ";
 	letter-spacing: 0.5em;
 	color: #e5e5e5;
 	position: sticky;
@@ -322,7 +322,7 @@ pre.highlight:before {
 	left: 0em;
 	width: 100%;
 	display: block;
-	background-color: #0f0f0f;
+	background-color: #1f1f1f;
 	padding: 0.5em 0em 0.25em 0em;
 	margin: 0em;
 	box-shadow: black 0em 0.1em 0.5em;
