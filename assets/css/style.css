@@ -317,8 +317,12 @@ pre.highlight:before {
 	letter-spacing: 0.5em;
 	color: #e5e5e5;
 	position: sticky;
-	left: 10px;
-	top: 10px
+	left: 0em;
+	top: 0em;
+	width: 100%;
+	display: inline-block;
+	background-color: inherit;
+	padding: 0.25em 0.25em 0.25em 1em;
 }
 
 pre.highlight{
@@ -363,7 +367,7 @@ ol,
 table,
 pre,
 dl {
-	margin: 0 0 20px
+	max-height: 25em;
 }
 
 h1,
@@ -418,7 +422,6 @@ pre {
 }
 
 pre {
-	padding: 4px 4px 0px 4px;
 	border-radius: 5px;
 	scrollbar-color: #dddddd #000000;
 	scrollbar-width: thin;
