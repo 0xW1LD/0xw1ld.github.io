@@ -313,21 +313,24 @@
 
 pre.highlight:before {
 	font-family: FontAwesome;
-	content: "\f057 \f056 \f13a";
+	content: " \f057 \f056 \f13a";
 	letter-spacing: 0.5em;
 	color: #e5e5e5;
 	position: sticky;
+	top: 0;
 	left: 0em;
-	top: 0em;
 	width: 100%;
-	display: inline-block;
-	background-color: inherit;
-	padding: 0.25em 0.25em 0.25em 1em;
+	display: block;
+	background-color: #0f0f0f;
+	padding: 0.25em 0em 0.25em 0em;
+	margin: 0em;
+	box-shadow: black 0em 0.1em 0.5em;
 }
 
 pre.highlight{
 	overflow-x: auto;
 	background: #0f0f0f;
+	position: relative;
 }
 /*
 html {
@@ -423,8 +426,9 @@ pre {
 
 pre {
 	border-radius: 5px;
-	scrollbar-color: #dddddd #000000;
+	scrollbar-color: #dddddd #0f0f0f;
 	scrollbar-width: thin;
+	scrollbar-gutter: stable;
 	white-space: pre;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
