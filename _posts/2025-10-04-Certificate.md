@@ -54,16 +54,27 @@ Service Info: Host: certificate.htb
 ```
 # Foothold
 Looking at the `http` website we can find a `certificate training` website.
+
 ![Certificate Training](/assets/img/img_Certificate/Certificate-1748732715931.png)
+
 Looking around we can see that we can `register` an account, we can also choose to register a `teacher` account, however we must contact support to validate our account.
+
 ![Certificate Account Register](/assets/img/img_Certificate/Certificate-1748733108620.png)
+
 Let's first register as a `student` and `login`. Taking a look around we can go to `courses` and `enrol` into any one of these courses. 
+
 ![Course](/assets/img/img_Certificate/Certificate-1748734206106.png)
+
 If we enrol onto a course we can see a success message, scrolling down reveals the course-outline.
+
 ![Course Outline](/assets/img/img_Certificate/Certificate-1748734286098.png)
+
 The `Watch` button does nothing but the `Submit` button leads us to `/uploads.php` with a parameter of `s_id=4x` where `x` seems to be the quiz number.
+
 ![Upload](/assets/img/img_Certificate/Certificate-1748734381319.png)
+
 When we click `submit` we're greeted with an upload form that mentions the file types `pdf,docx,pptx,xlsx,zip`.
+
 
 So let's write ourselves a `php` shell.
 ```php

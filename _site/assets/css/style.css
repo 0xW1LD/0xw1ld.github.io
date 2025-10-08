@@ -36,6 +36,7 @@
 
 .highlight table pre {
 	margin: 0;
+	max-height: 20em;
 }
 
 .highlight .cm {
@@ -317,20 +318,22 @@ pre.highlight:before {
 	letter-spacing: 0.5em;
 	color: #e5e5e5;
 	position: sticky;
-	top: 0;
+	top: 0em;
 	left: 0em;
 	width: 100%;
 	display: block;
 	background-color: #0f0f0f;
-	padding: 0.25em 0em 0.25em 0em;
+	padding: 0.5em 0em 0.25em 0em;
 	margin: 0em;
 	box-shadow: black 0em 0.1em 0.5em;
 }
 
 pre.highlight{
+	margin: 1em 0em;
 	overflow-x: auto;
 	background: #0f0f0f;
 	position: relative;
+	display: block;
 }
 /*
 html {
@@ -363,14 +366,6 @@ strong {
 	margin: 0 0 5px;
 	clear: both;
 	flex-basis: 100%;
-}
-
-p,
-ol,
-table,
-pre,
-dl {
-	max-height: 25em;
 }
 
 h1,
@@ -462,9 +457,9 @@ th {
 **/
 
 img {
-	margin: 0 auto;
+	max-width: 100%;
+	margin: 1em auto;
 	display: block;
-	max-width:100%;
 }
 
 header img {
