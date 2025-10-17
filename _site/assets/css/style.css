@@ -589,6 +589,7 @@ ul a{
 
 li {
 	list-style-type: none;
+	margin: 0.5vh 0;
 }
 
 small {

@@ -75,22 +75,25 @@
 7
 8
 9
-10
 </pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">whoami
 </span>0xW1LD
 <span class="nv">$ </span><span class="nb">id
 groups</span><span class="o">=</span>1000<span class="o">(</span>Discord-@w1ld__<span class="o">)</span>,1001<span class="o">(</span>HTB Team-OSI<span class="o">)</span>
 <span class="nv">$ </span><span class="nb">cat </span>README.txt
-
 Hey there! W1LD here,
 Founding Member of OSI
-Volunteer Moderator at the HTB discord server
+Volunteer Moderator <span class="k">for </span>HTB Discord Server
 all around W1ld Card.
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 
         
         <h1>HTB</h1>
+          
+            <h2><a href="/htb/2025/10/18/DarkCorp.html">DarkCorp</a><small> by OxEr3bus & ctrlzero</small></h2>
+            <small>2025-10-18 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">DarkCorp is running a roundcube mail service vulnerable to stored XSS. Using this to reset the password for the b.case user' on their admin dashboard. The dashboard is vulnerable to SQLi leading to RCE with backups containing credentials. We gain access to an internal monitor that can be used to coerce authentication. Coercing authentication to the mail server machine we poison the DNS record and retrieve the admin hash. Dumping passwords to do a password spray nets an account with an ACL over another. We use this to abuse the kerberos relationship between the linux and AD machines to gather cached credentials. The credentials belong to a GPO manager which we use to create an account in the local administrators to get control over the DC</p><img src="https://labs.hackthebox.com/storage/avatars/93fba06a4780b65be5a5a4f9512b8e78.png" style="float: right; width: 23%; height: 23%;">
           
             <h2><a href="/htb/2025/10/10/Tombwatcher.html">TombWatcher</a><small> by Sentinal & mrb3n8132</small></h2>
             <small>2025-10-10 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
