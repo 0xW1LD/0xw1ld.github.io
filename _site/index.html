@@ -90,6 +90,11 @@ all around W1ld Card.
         
         <h1>HTB</h1>
           
+            <h2><a href="/htb/2025/11/01/Voleur.html">Voleur</a><small> by baseDN</small></h2>
+            <small>2025-11-01 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+            <hr style="width:100%; background: #373c3e;">
+            <p style="text-align: justify; width: 75%; float: left;">Voleur is yet another Active Directory assumed breach scenario. The user we have access to has access to sensitive files that provide us credentials for service accounts after cracking its password. The ldap service account has write access to a support group in which is the winRM service account which we can kerberoast. The same document leads us to a deleted account which we can restore and use its credentials to access additional shares. We're able to recover backed up DPAPI secrets and pivot to another user. We can find yet another share folder which provides us the sshkey. With this access we can find backup files which we can use to dump secrets.</p><img src="https://labs.hackthebox.com/storage/avatars/635619778e50cc8f69df91cc6ae149c4.png" style="float: right; width: 23%; height: 23%;">
+          
             <h2><a href="/htb/2025/10/25/Artificial.html">Artificial</a><small> by FisMathack</small></h2>
             <small>2025-10-25 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
             <hr style="width:100%; background: #373c3e;">
