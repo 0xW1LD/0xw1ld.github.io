@@ -107,6 +107,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2025/11/08/RustyKey.html">RustKey</a><small> by EmSec</small></h2>
+              <small>2025-11-08 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">RustKey is yet another assumed breach scenario wherein NTLM authentication is disabled but an older version of Kerberos is being utilized. Gathering bloodhound data we identify several targets, the first one being it-computer3 which we can access through timeroasting. It-computer3 is a member of the helpdesk group which can add and remove members from the protected objects group and change passwords for several accounts. We can remove the IT and support groups and gain access to 2 additional accounts: BB.MORGAN, who is the user, and EE.REED. We find a memo detailing additional access provided to members of the support team, including EE.REED, on archiving utilities. We utilize this as a hint to look at registry DLL paths for 7-zip which we can modify to point to an arbitrary DLL. When we point this to our malicious DLL we gain access as MM.TURNER who we can use to conduct an RBCD attack.</p><img src="https://labs.hackthebox.com/storage/avatars/c458b48070ca6f3073128d085c9ee247.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2025/11/01/Voleur.html">Voleur</a><small> by baseDN</small></h2>
               <small>2025-11-01 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
