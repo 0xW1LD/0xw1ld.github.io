@@ -107,6 +107,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2025/11/15/outbound.html">Outbound</a><small> by TheCyberGeek</small></h2>
+              <small>2025-11-15 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Outbound is an assumed breach Linux box running roundcube mail. We're able to authenticate to roundcube and exploit a recent CVE to gain a foothold on the machine inside a docker. We can extract credentials from the database and decrypt them using openssl and the encryption key we can find in a configuration file. Reusing the decrypted password we gain access as a user on the main machine who can run below as sudo. Exploiting another CVE for below we're able to change the permissions of /etc/passwd and create a root user without a password.</p><img src="https://labs.hackthebox.com/storage/avatars/b1096fc86df3fb6035baad7f599094be.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2025/11/08/RustyKey.html">RustKey</a><small> by EmSec</small></h2>
               <small>2025-11-08 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
