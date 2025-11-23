@@ -107,6 +107,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2025/11/22/Mirage.html">Mirage</a><small> by ctrlzero & Emsec</small></h2>
+              <small>2025-11-22 written by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/windows&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Mirage is running an active directory server where we everyone can access a network file share with reports. There's mentions of a missing dns record which we exploit on NATS to gain initial credentials for NATS. We then add a consumer which we use to gain AD credentials. We're able to kerberoast one of the users. Through this user we're able to read WinLogon credentials. These credentials then lead us to another account which we have to activate, change the logonHours and password. We can then read the GMSA password of the mirage-service computer. Using this computer we're able to exploit ESC10 to gain the DC's certificate pfx file. Using this we're able to give ourselves RBCD over ldap shell and dump secrets. Just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/5c9c46ad001394e992f1c7b830ee77e5.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2025/11/15/outbound.html">Outbound</a><small> by TheCyberGeek</small></h2>
               <small>2025-11-15 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
