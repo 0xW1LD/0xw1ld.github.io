@@ -107,6 +107,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2025/11/29/Era.html">Era</a><small> by yurivich</small></h2>
+              <small>2025-11-29 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Era, in a subdomain, is running a file management service vulnerable to an authenticated IDOR attack allowing an attacker to download site backup files. We're able to extract credentials from a database and determine php wrapper functionality limited to the admin. Said credentials allow us FTP access where we can find the available php wrappers, one of which is ssh. Using one of the credentials we can change the admin's security questions and login as an admin and then utilize the parameter using the ssh wrapper to achieve RCE. Once we use RCE to achieve a shell on the box we can then find a writable monitoring binary that is regularly being executed by root. However the binary is signed so we need to copy its signing data to the binary we replace it with. Just like that we have root.</p><img src="https://labs.hackthebox.com/storage/avatars/fcd00b2542a936e4281ba19e0bd0b025.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2025/11/22/Mirage.html">Mirage</a><small> by ctrlzero & Emsec</small></h2>
               <small>2025-11-22 written by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/windows&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
