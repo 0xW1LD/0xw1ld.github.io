@@ -107,6 +107,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2025/12/13/WhiteRabbit.html">White Rabbit</a><small> by FLX0x00</small></h2>
+              <small>2025-12-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Whiterabbit is running a webserver on port 80. Fuzzing revealed uptime kuma app, with /status/temp containing subdomains. Found gophish and wikijs sites with webhook security docs. Exploited SQLi in webhook endpoint to access database showing command logs with restic backup repository and password. Downloaded repository containing Bob's SSH keys. SSH'd in, landing in Docker container with sudo privileges for restic. Used restic to read root folder with more SSH keys. Accessed box as Morpheus. Found password generator binary, recreated method to generate password list. Brute forced into Neo account which has root privileges.</p><img src="https://labs.hackthebox.com/storage/avatars/acf63a6d45ca722a8203fe4ab82007a6.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2025/12/06/Editor.html">Editor</a><small> by Kavigihan & TheCyberGeek</small></h2>
               <small>2025-12-06 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
