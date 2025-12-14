@@ -771,7 +771,7 @@ int main() {
 
 Note that the start time used is based on the database dump where the exact time is shown in the `date` field. `2024-08-30 14:40:42`
 
-```SQL
+```sql
 2024-08-30 14:40:42 cd /home/neo/ && /opt/neo-password-generator/neo-password-generator | passwd
 ```
 
