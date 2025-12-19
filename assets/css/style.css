@@ -788,3 +788,11 @@ ul {
 	margin: 0;
 	padding: 0;
 }
+
+.mermaid{
+	text-align: center;
+}
+
+.mermaid svg{
+	max-width: none !important;
+}
