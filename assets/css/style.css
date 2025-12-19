@@ -588,8 +588,11 @@ ul a{
 }
 
 li {
-	list-style-type: none;
 	margin: 0.5vh 0;
+}
+
+.tag-h1 {
+	list-style-type: none;
 }
 
 small {
@@ -795,4 +798,15 @@ ul {
 
 .mermaid svg{
 	max-width: none !important;
+}
+
+rect {
+	stroke: none !important;
+	rx: 0.5em !important;
+	ry: 0.5em !important;
+}
+
+.edgeLabel {
+	border-radius: 0.5em !important;
+	padding: 0.1em 0px !important;
 }
