@@ -1,575 +1,817 @@
 @font-face {
-  font-family: "Noto Sans";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot");
-  src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot?#iefix") format("embedded-opentype"), local("Noto Sans"), local("Noto-Sans-regular"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff2") format("woff2"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff") format("woff"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.ttf") format("truetype"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.svg#NotoSans") format("svg");
+	font-family: 'Noto Sans';
+	font-weight: 400;
+	font-style: normal;
+	src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot");
+	src: url("../fonts/Noto-Sans-regular/Noto-Sans-regular.eot?#iefix") format("embedded-opentype"), local("Noto Sans"), local("Noto-Sans-regular"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff2") format("woff2"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.woff") format("woff"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.ttf") format("truetype"), url("../fonts/Noto-Sans-regular/Noto-Sans-regular.svg#NotoSans") format("svg")
 }
+
 @font-face {
-  font-family: "Noto Sans";
-  font-weight: 700;
-  font-style: normal;
-  src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot");
-  src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold"), local("Noto-Sans-700"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff2") format("woff2"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff") format("woff"), url("../fonts/Noto-Sans-700/Noto-Sans-700.ttf") format("truetype"), url("../fonts/Noto-Sans-700/Noto-Sans-700.svg#NotoSans") format("svg");
+	font-family: 'Noto Sans';
+	font-weight: 700;
+	font-style: normal;
+	src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot");
+	src: url("../fonts/Noto-Sans-700/Noto-Sans-700.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold"), local("Noto-Sans-700"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff2") format("woff2"), url("../fonts/Noto-Sans-700/Noto-Sans-700.woff") format("woff"), url("../fonts/Noto-Sans-700/Noto-Sans-700.ttf") format("truetype"), url("../fonts/Noto-Sans-700/Noto-Sans-700.svg#NotoSans") format("svg")
 }
+
 @font-face {
-  font-family: "Noto Sans";
-  font-weight: 400;
-  font-style: italic;
-  src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot");
-  src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Italic"), local("Noto-Sans-italic"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff2") format("woff2"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff") format("woff"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.ttf") format("truetype"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.svg#NotoSans") format("svg");
+	font-family: 'Noto Sans';
+	font-weight: 400;
+	font-style: italic;
+	src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot");
+	src: url("../fonts/Noto-Sans-italic/Noto-Sans-italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Italic"), local("Noto-Sans-italic"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff2") format("woff2"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.woff") format("woff"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.ttf") format("truetype"), url("../fonts/Noto-Sans-italic/Noto-Sans-italic.svg#NotoSans") format("svg")
 }
+
 @font-face {
-  font-family: "Noto Sans";
-  font-weight: 700;
-  font-style: italic;
-  src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot");
-  src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold Italic"), local("Noto-Sans-700italic"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff2") format("woff2"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff") format("woff"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.ttf") format("truetype"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans") format("svg");
+	font-family: 'Noto Sans';
+	font-weight: 700;
+	font-style: italic;
+	src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot");
+	src: url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.eot?#iefix") format("embedded-opentype"), local("Noto Sans Bold Italic"), local("Noto-Sans-700italic"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff2") format("woff2"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.woff") format("woff"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.ttf") format("truetype"), url("../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans") format("svg")
 }
+
 .highlight table td {
-  padding: 5px;
+	padding: 5px;
 }
 
 .highlight table pre {
-  margin: 0;
+	margin: 0;
+	max-height: 20em;
 }
 
 .highlight .cm {
-  color: #999988;
-  font-style: italic;
+	color: #999988;
+	font-style: italic
 }
 
 .highlight .cp {
-  color: #999999;
-  font-weight: bold;
+	color: #999999;
+	font-weight: bold
 }
 
 .highlight .c1 {
-  color: #999988;
-  font-style: italic;
+	color: #999988;
+	font-style: italic
 }
 
 .highlight .cs {
-  color: #999999;
-  font-weight: bold;
-  font-style: italic;
+	color: #999999;
+	font-weight: bold;
+	font-style: italic
 }
 
-.highlight .c, .highlight .cd {
-  color: #999988;
-  font-style: italic;
+.highlight .c,
+.highlight .cd {
+	color: #999988;
+	font-style: italic
 }
 
 .highlight .err {
-  color: #a61717;
-  background-color: #e3d2d2;
+	color: #e3d2d2
 }
 
 .highlight .gd {
-  color: #000000;
-  background-color: #ffdddd;
+	color: #e8e6e3;
+	background-color: #470000
 }
 
 .highlight .ge {
-  color: #000000;
-  font-style: italic;
+	color: #e8e6e3;
+	font-style: italic
 }
 
 .highlight .gr {
-  color: #aa0000;
+	color: #aa0000
 }
 
 .highlight .gh {
-  color: #999999;
+	color: #999999
 }
 
 .highlight .gi {
-  color: #000000;
-  background-color: #ddffdd;
+	color: #e8e6e3;
+	background-color: #124700
 }
 
 .highlight .go {
-  color: #888888;
+	color: #888888
 }
 
 .highlight .gp {
-  color: #555555;
+	color: #61ffff
 }
 
 .highlight .gs {
-  font-weight: bold;
+	font-weight: bold
 }
 
 .highlight .gu {
-  color: #aaaaaa;
+	color: #aaaaaa
 }
 
 .highlight .gt {
-  color: #aa0000;
+	color: #aa0000
 }
 
 .highlight .kc {
-  color: #000000;
-  font-weight: bold;
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .kd {
-  color: #000000;
-  font-weight: bold;
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .kn {
-  color: #000000;
-  font-weight: bold;
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .kp {
-  color: #000000;
-  font-weight: bold;
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .kr {
-  color: #000000;
-  font-weight: bold;
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .kt {
-  color: #445588;
-  font-weight: bold;
+	color: #8ba6c5;
+	font-weight: bold
 }
 
-.highlight .k, .highlight .kv {
-  color: #000000;
-  font-weight: bold;
+.highlight .k,
+.highlight .kv {
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .mf {
-  color: #009999;
+	color: #009999
 }
 
 .highlight .mh {
-  color: #009999;
+	color: #009999
 }
 
 .highlight .il {
-  color: #009999;
+	color: #009999
 }
 
 .highlight .mi {
-  color: #009999;
+	color: #61ffff
 }
 
 .highlight .mo {
-  color: #009999;
+	color: #009999
 }
 
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #009999;
+.highlight .m,
+.highlight .mb,
+.highlight .mx {
+	color: #61ffff
 }
 
 .highlight .sb {
-  color: #d14;
+	color: #d14
 }
 
 .highlight .sc {
-  color: #d14;
+	color: #d14
 }
 
 .highlight .sd {
-  color: #d14;
+	color: #d14
 }
 
 .highlight .s2 {
-  color: #d14;
+	color: #ef3564
 }
 
 .highlight .se {
-  color: #d14;
+	color: #ef3564
 }
 
 .highlight .sh {
-  color: #d14;
+	color: #d14
 }
 
 .highlight .si {
-  color: #d14;
+	color: #d14
 }
 
 .highlight .sx {
-  color: #d14;
+	color: #d14
 }
 
 .highlight .sr {
-  color: #009926;
+	color: #009926
 }
 
 .highlight .s1 {
-  color: #d14;
+	color: #ef3564;
 }
 
 .highlight .ss {
-  color: #990073;
+	color: #990073
 }
 
 .highlight .s {
-  color: #d14;
+	color: #ef3564
 }
 
 .highlight .na {
-  color: #008080;
+	color: #72ffff
 }
 
 .highlight .bp {
-  color: #999999;
+	color: #999999
 }
 
 .highlight .nb {
-  color: #0086B3;
+	color: #72ffff
 }
 
 .highlight .nc {
-  color: #445588;
-  font-weight: bold;
+	color: #445588;
+	font-weight: bold
 }
 
 .highlight .no {
-  color: #008080;
+	color: #72FFFF
 }
 
 .highlight .nd {
-  color: #3c5d5d;
-  font-weight: bold;
+	color: #b8b2a8;
+	font-weight: bold
 }
 
 .highlight .ni {
-  color: #800080;
+	color: #800080
 }
 
 .highlight .ne {
-  color: #990000;
-  font-weight: bold;
+	color: #ff6161;
+	font-weight: bold
 }
 
 .highlight .nf {
-  color: #990000;
-  font-weight: bold;
+	color: #ff6161;
+	font-weight: bold
 }
 
 .highlight .nl {
-  color: #990000;
-  font-weight: bold;
+	color: #ff6161;
+	font-weight: bold
 }
 
 .highlight .nn {
-  color: #555555;
+	color: #b2aca2
 }
 
 .highlight .nt {
-  color: #000080;
+	color: #7Faeff
 }
 
 .highlight .vc {
-  color: #008080;
+	color: #008080
 }
 
 .highlight .vg {
-  color: #008080;
+	color: #008080
 }
 
 .highlight .vi {
-  color: #008080;
+	color: #008080
 }
 
 .highlight .nv {
-  color: #008080;
+	color: #72ffff
 }
 
 .highlight .ow {
-  color: #000000;
-  font-weight: bold;
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .o {
-  color: #000000;
-  font-weight: bold;
+	color: #e8e6e3;
+	font-weight: bold
 }
 
 .highlight .w {
-  color: #bbbbbb;
+	color: #bbbbbb
 }
 
 .highlight {
-  background-color: #f8f8f8;
+	/*background-color: rgb(20, 22, 23);*/
+	border-radius: 7px;
+	width: auto;
 }
 
+pre.highlight:before {
+	font-family: FontAwesome;
+	content: " \f057 \f056 \f13a ";
+	letter-spacing: 0.5em;
+	color: #e5e5e5;
+	position: sticky;
+	top: 0em;
+	left: 0em;
+	width: 100%;
+	display: block;
+	background-color: #1f1f1f;
+	padding: 0.5em 0em 0.25em 0em;
+	margin: 0em;
+	box-shadow: black 0em 0.1em 0.5em;
+}
+
+pre.highlight{
+	margin: 1em 0em;
+	overflow-x: auto;
+	background: #0f0f0f;
+	position: relative;
+	display: block;
+}
+/*
+html {
+	min-height: 100%;
+	background: url("/assets/img/bg.png");
+	background-size: cover;
+	background-attachment: fixed;
+	box-shadow: inset 0 0 0 4000px rgba(24, 26, 27, 0.9);
+}
+*/
 body {
-  background-color: #fff;
-  padding: 50px;
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #727272;
-  font-weight: 400;
+	/*
+	background: rgba(0, 0, 0, 0);
+	*/
+	background: rgba(10,10,12);
+	padding: 50px;
+	font: 15px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #a0988b;
+	font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #222;
-  margin: 0 0 20px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+	color: #d3cfc9;
+	margin: 0 0 5px;
+	clear: both;
+	flex-basis: 100%;
 }
 
-p, ul, ol, table, pre, dl {
-  margin: 0 0 20px;
-}
-
-h1, h2, h3 {
-  line-height: 1.1;
+h1,
+h2,
+h3 {
+	line-height: 1.1
 }
 
 h1 {
-  font-size: 28px;
+	font-size: 28px
 }
 
 h2 {
-  color: #393939;
+	color: #C4BFB7
 }
 
-h3, h4, h5, h6 {
-  color: #494949;
+h3,
+h4,
+h5,
+h6 {
+	color: #bab4ab
 }
 
 a {
-  color: #267CB9;
-  text-decoration: none;
-}
-
-a:hover, a:focus {
-  color: #069;
-  font-weight: bold;
+	color: #5ebcff;
+	text-decoration: none
 }
 
 a small {
-  font-size: 11px;
-  color: #777;
-  margin-top: -0.3em;
-  display: block;
+	font-size: 11px;
+	color: #777;
+	margin-top: -0.3em;
+	display: block
 }
 
 a:hover small {
-  color: #777;
+	color: #777
 }
 
 .wrapper {
-  width: 860px;
-  margin: 0 auto;
+	margin: auto;
+	display: flex;
+	align-items:flex-start;
+	width: 70%;
+	gap: 2vh;
 }
 
-blockquote {
-  border-left: 1px solid #e5e5e5;
-  margin: 0;
-  padding: 0 0 0 20px;
-  font-style: italic;
-}
-
-code, pre {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-  color: #333;
+code,
+pre {
+	font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+	color: #f8f8f8
 }
 
 pre {
-  padding: 8px 15px;
-  background: #f8f8f8;
-  border-radius: 5px;
-  border: 1px solid #e5e5e5;
-  overflow-x: auto;
+	border-radius: 5px;
+	scrollbar-color: #dddddd #0f0f0f;
+	scrollbar-width: thin;
+	scrollbar-gutter: stable;
+	white-space: pre;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+pre.lineno{
+	color: #444;
+}
+/**
 table {
-  width: 100%;
-  border-collapse: collapse;
+	width: 100%;
+	border-collapse: collapse
 }
 
-th, td {
-  text-align: left;
-  padding: 5px 10px;
-  border-bottom: 1px solid #e5e5e5;
+th,
+td {
+	text-align: left;
+	padding: 5px 10px;
 }
 
 dt {
-  color: #444;
-  font-weight: 700;
+	color: #444;
+	font-weight: 700
 }
 
 th {
-  color: #444;
+	color: #444
 }
+**/
 
 img {
-  max-width: 100%;
+	max-width: 100%;
+	margin: 1em auto;
+	display: block;
 }
 
+header img {
+	max-width: 100%;
+	border-radius: 15px;
+}
+/*
+section > * {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+*/
+
+
 kbd {
-  background-color: #fafbfc;
-  border: 1px solid #c6cbd1;
-  border-bottom-color: #959da5;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #959da5;
-  color: #444d56;
-  display: inline-block;
-  font-size: 11px;
-  line-height: 10px;
-  padding: 3px 5px;
-  vertical-align: middle;
+	background-color: #fafbfc;
+	border: 1px solid #c6cbd1;
+	border-bottom-color: #959da5;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 #959da5;
+	color: #444d56;
+	display: inline-block;
+	font-size: 11px;
+	line-height: 10px;
+	padding: 3px 5px;
+	vertical-align: middle
 }
 
 header {
-  width: 270px;
-  float: left;
-  position: fixed;
-  -webkit-font-smoothing: subpixel-antialiased;
+	background-color: #000000;
+	-webkit-font-smoothing: subpixel-antialiased;
+	flex-basis: 20%;
+	box-shadow: 0.5vh 0.5vh 0.55vh rgba(0,0,0,0.5);
+	padding: 2vh;
+	position: sticky;
+	top: 58px;
+	text-wrap:nowrap;
+	border-radius: 15px;
+}
+
+#phoneHeader {
+	display: none;
 }
 
 ul.downloads {
-  list-style: none;
-  height: 40px;
-  padding: 0;
-  background: #f4f4f4;
-  border-radius: 5px;
-  border: 1px solid #e0e0e0;
-  width: 270px;
+	list-style: none;
+	height: 40px;
+	padding: 0;
+	background: #f4f4f4;
+	border-radius: 5px;
+	border: 1px solid #e0e0e0;
+	width: 270px
 }
 
 .downloads li {
-  width: 89px;
-  float: left;
-  border-right: 1px solid #e0e0e0;
-  height: 40px;
+	width: 89px;
+	float: left;
+	border-right: 1px solid #e0e0e0;
+	height: 40px
 }
 
 .downloads li:first-child a {
-  border-radius: 5px 0 0 5px;
+	border-radius: 5px 0 0 5px
 }
 
 .downloads li:last-child a {
-  border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0
 }
 
 .downloads a {
-  line-height: 1;
-  font-size: 11px;
-  color: #676767;
-  display: block;
-  text-align: center;
-  padding-top: 6px;
-  height: 34px;
+	line-height: 1;
+	font-size: 11px;
+	color: #676767;
+	display: block;
+	text-align: center;
+	padding-top: 6px;
+	height: 34px
 }
 
-.downloads a:hover, .downloads a:focus {
-  color: #675C5C;
-  font-weight: bold;
+.downloads a:hover,
+.downloads a:focus {
+	color: #675C5C;
 }
 
 .downloads ul a:active {
-  background-color: #f0f0f0;
+	background-color: #f0f0f0
 }
 
 strong {
-  color: #222;
-  font-weight: 700;
+	font-weight: 700
 }
 
-.downloads li + li + li {
-  border-right: none;
-  width: 89px;
+.downloads li+li+li {
+	border-right: none;
+	width: 89px
 }
 
 .downloads a strong {
-  font-size: 14px;
-  display: block;
-  color: #222;
+	font-size: 14px;
+	display: block;
+	color: #222
 }
 
 section {
-  width: 500px;
-  float: right;
-  padding-bottom: 50px;
+	box-shadow: 0.5vh 0.5vh 0.55vh rgba(0,0,0,0.5);
+	padding: 2vh;
+	background-color: /*#181a1b*/ black;
+	border-radius: 10px;
+	min-width: 70%;
+	flex-basis: 70%;
+}
+nav {
+	background-color: #000000;
+	-webkit-font-smoothing: subpixel-antialiased;
+	flex-basis: 20%;
+	box-shadow: 0.5vh 0.5vh 0.55vh rgba(0,0,0,0.5);
+	padding: 2vh;
+	position: sticky;
+	top: 58px;
+	text-wrap:nowrap;
+	border-radius: 15px;
+}
+
+ul a{
+	color: #d3cfc9;
+}
+
+ul {
+	margin: 0;
+}
+
+.tag-h1 {
+	list-style-type: none;
+	padding: 0;
+}
+
+nav ul {
+	padding: 0;
+}
+
+li {
+	margin: 0.5vh 0;
 }
 
 small {
-  font-size: 11px;
+	font-size: 11px
 }
 
 hr {
-  border: 0;
-  background: #e5e5e5;
-  height: 1px;
-  margin: 0 0 20px;
+	border: 0;
+	background: #e5e5e5;
+	height: 1px;
+	margin: 0 0 20px
 }
 
 footer {
-  width: 270px;
-  float: left;
-  position: fixed;
-  bottom: 50px;
-  -webkit-font-smoothing: subpixel-antialiased;
+	position:fixed;
+	bottom: 2vh;
+	left: 15%;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
-@media print, screen and (max-width: 960px) {
-  div.wrapper {
-    width: auto;
-    margin: 0;
-  }
-  header, section, footer {
-    float: none;
-    position: static;
-    width: auto;
-  }
-  header {
-    padding-right: 320px;
-  }
-  section {
-    border: 1px solid #e5e5e5;
-    border-width: 1px 0;
-    padding: 20px 0;
-    margin: 0 0 20px;
-  }
-  header a small {
-    display: inline;
-  }
-  header ul {
-    position: absolute;
-    right: 50px;
-    top: 52px;
-  }
+@media print,
+screen and (max-width: 960px) {
+	div.wrapper {
+		width: auto;
+		margin: 0
+	}
+
+	header,nav,footer{
+		display: none;
+	}
+
+	#phoneHeader{
+		display: inline;
+	}
+
+	section {
+		flex-basis: 100%;
+	}
+
 }
-@media print, screen and (max-width: 720px) {
-  body {
-    word-wrap: break-word;
-  }
-  header {
-    padding: 0;
-  }
-  header ul, header p.view {
-    position: static;
-  }
-  pre, code {
-    word-wrap: normal;
-  }
+
+@media print,
+screen and (max-width: 720px) {
+	body {
+		word-wrap: break-word;
+		flex-direction: column;
+	}
+	header,nav,footer {
+		display: none;
+	}
+
+	#phoneHeader{
+		display: inline;
+	}
+
+	section {
+		flex-basis: 100%;
+	}
 }
-@media print, screen and (max-width: 480px) {
-  body {
-    padding: 15px;
-  }
-  .downloads {
-    width: 99%;
-  }
-  .downloads li, .downloads li + li + li {
-    width: 33%;
-  }
+
+@media print,
+screen and (max-width: 480px) {
+	body {
+		padding: 15px
+	}
+
+	header,nav,footer{
+		display: none;
+	}
+
+	#phoneHeader{
+		display: inline;
+	}
+
+	.downloads {
+		width: 99%
+	}
+
+	.downloads li,
+	.downloads li+li+li {
+		width: 33%
+	}
+
+	section {
+		flex-basis: 100%;
+	}
 }
+
 @media print {
-  body {
-    padding: 0.4in;
-    font-size: 12pt;
-    color: #444;
-  }
+	body {
+		padding: 0.4in;
+		font-size: 12pt;
+		color: #444
+	}
 }
 
-/*# sourceMappingURL=style.css.map */
+blockquote {
+	font-size:15px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	margin: 20px;
+	margin-left: 0px;
+	padding: 10px 10px 1px 15px;
+	font-style: italic;
+	color: #d8d4cf;
+	box-shadow: black 5px 5px 20px;
+  }
+
+  blockquote.success {
+	border-left: 5px solid #44f853;
+  }
+
+  blockquote.error {
+	border-left: 5px solid #f84444;
+  }
+  
+  blockquote.warning {
+	border-left: 5px solid #f8c844;
+  }
+
+  blockquote.info {
+	border-left: 5px solid #4493f8;
+  }
+
+  blockquote.success:before {
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	content: "\f058\A";
+	font-size:20px;
+	letter-spacing: .2em;
+	color: #44f853;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  }
+
+  blockquote.error:before {
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	content: "\f057\A";
+	font-size:20px;
+	letter-spacing: .2em;
+	color: #f84444;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  }
+
+  blockquote.warning:before {
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	content: "\f06a\A";
+	font-size:20px;
+	letter-spacing: .2em;
+	color: #f8c844;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  }
+
+  blockquote.info:before {
+	font: var(--fa-font-solid);
+	font-family: 'Font Awesome 6 Free';
+	font-style: normal;
+	content: "\f05a\A";
+	font-size:20px;
+	letter-spacing: .2em;
+	color: #4493f8;
+	-webkit-font-smoothing: antialiased;
+	margin: auto;
+	padding: 10px 10px 20px 0px;
+  }
+
+  blockquote p{
+	margin: auto;
+	padding: 10px 0px 20px 0px;
+	flex-grow: 2;
+  }
+
+.active {
+	color: #ffffff;
+	border-left: 0.25vh solid white;
+	padding: 5px;
+}
+
+.language-shell {
+	flex-basis: 100%;
+}
+
+
+.mermaid{
+	text-align: center;
+}
+
+.mermaid svg{
+	max-width: none !important;
+}
+
+rect {
+	stroke: none !important;
+	rx: 0.5em !important;
+	ry: 0.5em !important;
+}
+
+.edgeLabel {
+	border-radius: 0.5em !important;
+	padding: 0.1em 0px !important;
+}

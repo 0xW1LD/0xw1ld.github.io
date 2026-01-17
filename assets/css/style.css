@@ -587,13 +587,21 @@ ul a{
 	color: #d3cfc9;
 }
 
-li {
-	margin: 0.5vh 0;
+ul {
+	margin: 0;
 }
 
 .tag-h1 {
 	list-style-type: none;
 	padding: 0;
+}
+
+nav ul {
+	padding: 0;
+}
+
+li {
+	margin: 0.5vh 0;
 }
 
 small {
@@ -788,9 +796,6 @@ blockquote {
 	flex-basis: 100%;
 }
 
-ul {
-	margin: 0;
-}
 
 .mermaid{
 	text-align: center;
