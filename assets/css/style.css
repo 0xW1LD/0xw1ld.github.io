@@ -593,6 +593,7 @@ li {
 
 .tag-h1 {
 	list-style-type: none;
+	padding: 0;
 }
 
 small {
@@ -789,7 +790,6 @@ blockquote {
 
 ul {
 	margin: 0;
-	padding: 0;
 }
 
 .mermaid{
