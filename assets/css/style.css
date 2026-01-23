@@ -423,7 +423,7 @@ pre {
 	border-radius: 5px;
 	scrollbar-color: #dddddd #0f0f0f;
 	scrollbar-width: thin;
-	scrollbar-gutter: stable;
+	scrollbar-gutter: auto;
 	white-space: pre;       /* Since CSS 2.1 */
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */

@@ -107,6 +107,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/01/24/Imagery.html">Imagery</a><small> by Nab6eel</small></h2>
+              <small>2026-01-24 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Imagery is running an http webserver image gallery service. There is a blind stored xss vulnerability that allows an attacker to steal the administrator session cookie. With this access an attacker is able to view logs and other files through file traversal. With this file traversal an attacker can exfiltrate the database and gain access to the test user account which has access to the experimental features of the site. One of of these features which is cropping an image is vulnerable to a command injection vulnerability which we use to gain a foothold. An attacker can then locate an encrypted backup, which can be brute forced, which contains an older database containing the user's reused password. Finally we find that the user has sudo permissions to run Charcol, a backup suite, which can be used to create automations as root. An attacker can automate a reverse shell and just like that gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/662ccbe3935d62aee031d620014adac4.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/01/17/HackNet.html">HackNet</a><small> by m4rsh3ll</small></h2>
               <small>2026-01-17 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p><p style="float: right;">boxes&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
