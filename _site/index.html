@@ -91,21 +91,12 @@ all around W1ld Card.
       
         
           
-        
-          
-            <h1>⭐</h1>
-            
-              <h2><a href="/%E2%AD%90/2025/10/18/DarkCorp.html">DarkCorp</a><small> by OxEr3bus & ctrlzero</small></h2>
-              <small>2025-10-18 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
-              <hr style="width:100%; background: #373c3e;">
-              <p style="text-align: justify; width: 75%; float: left;">DarkCorp is running a roundcube mail service vulnerable to stored XSS. Using this to reset the password for the b.case user' on their admin dashboard. The dashboard is vulnerable to SQLi leading to RCE with backups containing credentials. We gain access to an internal monitor that can be used to coerce authentication. Coercing authentication to the mail server machine we poison the DNS record and retrieve the admin hash. Dumping passwords to do a password spray nets an account with an ACL over another. We use this to abuse the kerberos relationship between the linux and AD machines to gather cached credentials. The credentials belong to a GPO manager which we use to create an account in the local administrators to get control over the DC</p><img src="https://labs.hackthebox.com/storage/avatars/93fba06a4780b65be5a5a4f9512b8e78.png" style="float: right; width: 23%; height: 23%;">
-            
-          
-        
-      
-        
-          
             <h1>HTB</h1>
+            
+              <h2><a href="/htb/2026/01/31/codetwo.html">CodeTwo</a><small> by FisMathack</small></h2>
+              <small>2026-01-31 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Codetwo is running a JavaScript code parsing website on port 8000. Downloading the app we find a flask application using a vulnerable version of js2py. Exploiting this we're able to achieve remote code execution using a modified PoC. We can then find password hashes that are easily cracked and abuse password-reuse on ssh to get User. We then find that the user has permissions to run a backup program as root which we can use to backup root's directory and steal their ssh key to get root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/ea23d7bc12459ef0c3db19067f02352a.png" style="float: right; width: 23%; height: 23%;">
             
               <h2><a href="/htb/2026/01/24/Imagery.html">Imagery</a><small> by Nab6eel</small></h2>
               <small>2026-01-24 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
@@ -161,6 +152,11 @@ all around W1ld Card.
               <small>2025-10-25 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Artificial is running an AI model hosting site that allows us to gain a reverse shell by uploading a malicious h5 model. We can find a database with crackable passwords and login using gael's credentials via ssh. We can find backrest, a frontend for restic that allows us to backup files in /root's directory, we can grab the flag and root's ssh key, and use the ssh key to remote into the machine as root.</p><img src="https://labs.hackthebox.com/storage/avatars/e6633d6c2b1d824c3756eb21aeed7590.png" style="float: right; width: 23%; height: 23%;">
+            
+              <h2><a href="/htb/2025/10/18/DarkCorp.html">DarkCorp</a><small> by OxEr3bus & ctrlzero</small></h2>
+              <small>2025-10-18 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">DarkCorp is running a roundcube mail service vulnerable to stored XSS. Using this to reset the password for the b.case user' on their admin dashboard. The dashboard is vulnerable to SQLi leading to RCE with backups containing credentials. We gain access to an internal monitor that can be used to coerce authentication. Coercing authentication to the mail server machine we poison the DNS record and retrieve the admin hash. Dumping passwords to do a password spray nets an account with an ACL over another. We use this to abuse the kerberos relationship between the linux and AD machines to gather cached credentials. The credentials belong to a GPO manager which we use to create an account in the local administrators to get control over the DC</p><img src="https://labs.hackthebox.com/storage/avatars/93fba06a4780b65be5a5a4f9512b8e78.png" style="float: right; width: 23%; height: 23%;">
             
               <h2><a href="/htb/2025/10/10/Tombwatcher.html">TombWatcher</a><small> by Sentinal & mrb3n8132</small></h2>
               <small>2025-10-10 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
@@ -307,8 +303,6 @@ all around W1ld Card.
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Caption is running a caption portal on port 80 and a gitbucket instance on port 8080. In gitbucket we find credentials for margo which we can use to login. Several pages on this site are vulnerable to a stored XSS. Through this we are able to steal cookies. However, we are unable to access the downloads directory due to haproxy; so we must smuggle our request by upgrading to http 2 using h2smuggle. We can then access the downloads directory and find an arbitrary file read used on margo's ssh key. Finally we find the logservice and create a client that we can use to execute arbitrary commands as root.</p><img src="https://labs.hackthebox.com/storage/avatars/d3cb6edd2a219f122696655d0015b101.png" style="float: right; width: 23%; height: 23%;">
             
-          
-        
           
         
       
