@@ -93,6 +93,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/02/07/signed.html">Signed</a><small> by Kavigihan</small></h2>
+              <small>2026-02-07 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Signed is an active directory assumed breach scenario only running MSSQL. Authenticating to MSSQL we're able to do an xp_dirtree towards ourselves to capture an NTLMv2 hash which cracks into mssql's password. We then are able to enumerate users and groups and find a high privilege IT group. We use the mssqlsvc account to conduct a silver ticket attack against said group to gain higher privileges. We can then utilize xp_cmdshell to gain RCE as mssqlsvc on the box. We can find the rest of the AD suite listening on the machine so we expose those using a socks proxy and conduct an NTLM reflection attack to gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/7aaaac3fafe5bc8737560ba0264c4577.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/01/31/codetwo.html">CodeTwo</a><small> by FisMathack</small></h2>
               <small>2026-01-31 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
