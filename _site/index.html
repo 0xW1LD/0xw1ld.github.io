@@ -93,11 +93,6 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
-              <h2><a href="/htb/2026/03/05/pirate.html">Pirate</a><small> by ruycr4ft</small></h2>
-              <small>2026-03-05 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
-              <hr style="width:100%; background: #373c3e;">
-              <p style="text-align: justify; width: 75%; float: left;">Pirate is an Active Directory assumed breach scenario with credentials for user: pentest. Initial enumeration reveals several gMSA accounts wherein Domain Secure Servers group can read their credentials. We find MS01, a member of the DSS group, is also a member of PreWin2k which indicates that its password is also its name. Going through this chain we get a foothold on both the DC01 and WEB01 tunnelling through the DC. We then setup an ntlm relay to add a domain computer which we then use for resource based constrained delegation. We dump registry passwords and are able to gain access to a.white who can force a password change for a.white_adm. We then are able to do SPN jacking on DC01 and exploit the constrained delegation of a.white_adm to get root.</p><img src="/assets/img/img_pirate/pirate-1772345556990.png" style="float: right; width: 23%; height: 23%;">
-            
               <h2><a href="/htb/2026/02/21/giveback.html">Giveback</a><small> by babywyrm</small></h2>
               <small>2026-02-21 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">

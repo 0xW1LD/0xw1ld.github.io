@@ -390,8 +390,13 @@ h6 {
 }
 
 a {
-	color: #5ebcff;
+	color: #FFFFFF;
 	text-decoration: none
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #72FFFF;
 }
 
 a small {
