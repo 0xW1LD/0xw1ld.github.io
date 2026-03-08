@@ -1,7 +1,6 @@
 ---
 title: Expressway
-layout:
-  - post
+layout: post
 released: 2025-09-21
 creators: dakkmaddy
 pwned: true
@@ -149,8 +148,3 @@ root@expressway:/#
 ```
 
 This was actually what was first found by my team and it seems most everyone else as  it's one of the more well known exploits as it's been talked about a lot recently.
-
-# Credentials
-```
-freakingrockstarontheroad
-```

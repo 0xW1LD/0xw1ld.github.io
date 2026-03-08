@@ -93,6 +93,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/03/08/expressway.html">Expressway</a><small> by dakkmaddy</small></h2>
+              <small>2026-03-08 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Expressway is running isakmp on port 500 UDP, which allows us to retrieve a user and a psk hash which can be cracked to retrieve a password. We then ssh into the target using these credentials and find a vulnerable sudo version and a host which could be configured in the sudoers file. Abusing the host-any privilege we can escalate to root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/75c168f01f04e5f256838733b77f13ec.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/02/21/giveback.html">Giveback</a><small> by babywyrm</small></h2>
               <small>2026-02-21 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
