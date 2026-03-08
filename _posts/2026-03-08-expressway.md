@@ -137,7 +137,7 @@ ike            SERVERS, !PROD = NOPASSWD:ALL
 ike         offramp.expressway.htb  = NOPASSWD:ALL
 ```
 
-We can see that the host `offramp.expressway.htb` has the configuration of `NOPASSWD:ALL`, noticeably the second like for the `ike` user is redundant as the first line should already provide us with the required permissions as `SERVERS` contains the `offramp.expressway.htb` host.
+We can see that the host `offramp.expressway.htb` has the configuration of `NOPASSWD:ALL`, noticeably the second line for the `ike` user is redundant as the first line should already provide us with the required permissions as `SERVERS` contains the `offramp.expressway.htb` host.
 
 ## Chwoot
 Other than the `host-alias` privilege escalation vector, we can instead exploit another vulnerability in the same `sudo` version. We can use the following [PoC](https://github.com/pr0v3rbs/CVE-2025-32463_chwoot/tree/main).
