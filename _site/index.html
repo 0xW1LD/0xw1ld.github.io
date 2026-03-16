@@ -93,6 +93,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/03/16/gavel.html">Gavel</a><small> by Shadow21A</small></h2>
+              <small>2026-03-16 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Gavel is running an auction website which is vulnerable to a unique SQL injection vulnerability despite utilising prepared statements which we can discern since there's an exposed git directory which we can dump. We're able to extract the database and crack admin credentials for the website. We can then exploit an RCE flaw in the admin panel and swap over to the user using the credentials we found and cracked. The user is able to utilize a custom binary which takes in yaml files that can execute php code as root. However, there is a configuration file that disallows us from running any system commands. Thus we have to overwrite this file and then we're able to run system commands to gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/2e446c813e2fa67622764672b9df57bb.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/03/08/expressway.html">Expressway</a><small> by dakkmaddy</small></h2>
               <small>2026-03-08 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
