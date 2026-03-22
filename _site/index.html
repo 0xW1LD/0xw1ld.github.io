@@ -93,6 +93,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/03/22/conversor.html">Conversor</a><small> by FisMathack</small></h2>
+              <small>2026-03-22 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Conversor is running a webserver that allows a user to upload xml and xslt files that immediately get processes. Additionally we can download the source code and find that there is a crontab configuration running python files in one of the web directories. Abusing this we can upload an XSLT file that writes a script that gets executed by the crontab to get a foothold. We then grab hashes from the database and crack them to get to user. Lastly we abuse the sudo configuration for the needrestart binary either using a malicious configuration file or a shared object library to get root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/0b659c391f2803c247e79c77a3284f96.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/03/16/gavel.html">Gavel</a><small> by Shadow21A</small></h2>
               <small>2026-03-16 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
