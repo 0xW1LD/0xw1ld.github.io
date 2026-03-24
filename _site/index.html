@@ -93,6 +93,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/03/28/browsed.html">Browsed</a><small> by Tensho</small></h2>
+              <small>2026-03-28 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Browsed is running an http website accepting browser extensions that can allow us to run javascript as the server. Uploading a callback client we find a domain name for the internal gitea repository that's actually exposed publicly. We're able to find an under-development project that is probably running locally and contains a command injection vulnerability. We chain our server side javascript with the command injection to get user. User is able to execute a script as root that imports a file and we're able to write to the pycache directory. We're able to create and compile a  malicious library file that ignores validation and is run as the super user to get root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/e8bbf358e6247fc98dcb76a3819bb5d0.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/03/22/conversor.html">Conversor</a><small> by FisMathack</small></h2>
               <small>2026-03-22 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
