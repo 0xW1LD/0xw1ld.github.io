@@ -93,10 +93,10 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
-              <h2><a href="/htb/2026/04/05/darkzero.html">DarkZero</a><small> by 0xEr3bus</small></h2>
-              <small>2026-04-05 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/windows&nbsp;</p></small>
+              <h2><a href="/htb/2026/03/31/principal.html">Principal</a><small> by ippsec</small></h2>
+              <small>2026-03-31 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
-              <p style="text-align: justify; width: 75%; float: left;">DarkZero is an Active Directory machine with another assumed breach scenario. We find that MSSQL is running containing a link to another forest's DC. We enable xp_cmdshell on the linked computer and gain a service account which is missing privileges. We recover credentials and are able to escalate to a service shell to recover our privileges. Gaining back SeImpersonate privileges we can utilize a potato privilege escalation to get Administrator on DC02. Using this access we find our forest trust permits delegation across the trust. We abuse this delegation using our MSSQL access to retrieve a TGT and gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/78acdd0d87ed629f6cd2dc378bdcddac.png" style="float: right; width: 23%; height: 23%;">
+              <p style="text-align: justify; width: 75%; float: left;">Principal is running a Spring Boot Jetty application using a vulnerable version of pac4js-jwt. We're able to enumerate the web application to locate a public RSA key as well as the encryption algorithm and JWT claims requirements. We can write an automation to generate a JWE which we can use to authenticate as admin to the principal dashboard. We can locate clear-text credentials and a list of users which we can password spray against to get ssh access as the srv-deploy user. We're a member of a group with read access to a private ssh key whose public key is trusted, we use this private key to sign an ssh key we generate so we can ssh as root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a3257c109bddf7358350a2cf02b8ae81.png" style="float: right; width: 23%; height: 23%;">
             
               <h2><a href="/htb/2026/03/28/browsed.html">Browsed</a><small> by Tensho</small></h2>
               <small>2026-03-28 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>

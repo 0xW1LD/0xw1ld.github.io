@@ -144,10 +144,10 @@ We find a couple of open ports:
 	- Jetty is an open source Java web server, we can also see several of the requests that `nmap` attempted to send testing for `Real Time Streaming Protocol(RTSP)` or `Socks5`, both of which were unsuccessful
 ## Port 8080 - Jetty Web Server
 Visiting the `Web Server` we're greated with a login page to `Principal Internal Platform`, which seems to be a `Unified Operations Dashboard`.
-![Principal Dashboard](./assets/img/img_principal/principal-1774943848191.png)
+![Principal Dashboard](/assets/img/img_principal/principal-1774943848191.png)
 
 We can see that the version is `v1.2.0` and that it's `Powered by pac4j`. Attempting to check the `404` page we're greeted by the default `Spring Boot - 404 page`
-![Spring Boot Error Page](./assets/img/img_principal/principal-1774943974081.png)
+![Spring Boot Error Page](/assets/img/img_principal/principal-1774943974081.png)
 
 # User
 Doing some research, we can find [CVE-2026-29000](https://nvd.nist.gov/vuln/detail/CVE-2026-29000.
@@ -217,9 +217,9 @@ class TokenManager {
 
 ```
 
-Most importantly is the `/api/auth/jwks`, which leads us to the `public key` used for `token verification.` So we have to first build a `JWT` with all the requirements specified in the `JWT Claims Schema`, sign it with `None` instead of `RS256` and then encrypt it with `RSA-OAEP-256` algorithm using `A128GCM` encryption using the `n` and `e` parameters. We find in the `public key` endpoint. This is far too complex to do manually so I automated it in `Rust`.
+Most importantly is the `/api/auth/jwks`, which leads us to the `public key` used for `token verification.` So we have to first build a `JWT` with all the requirements specified in the `JWT Claims Schema`, sign it with `None` instead of `RS256` and then encrypt it with `RSA-OAEP-256` algorithm using `A128GCM` encryption using the `n` and `e` parameters. We find in the `public key` endpoint. This is far too complex to do manually so I automated it in Rust.
 
-```Rust
+```rust
 use reqwest::Client;
 use anyhow::Result;
 use josekit::jws::JwsHeader;
@@ -303,7 +303,7 @@ eyJhbGciOiJSU0EtT0FFUC0yNTYiLCJlbmMiOiJBMTI4R0NNIiwia2lkIjoiXCJlbmMta2V5LTFcIiJ9
 ```
 
 Let's put the generated `JWE` (Json Web Encryption) into our `Session Storage`'s `auth_token` value, we get a login to the dashboard!
-![Principal Dashboard](./assets/img/img_principal/principal-1774950973307.png)
+![Principal Dashboard](/assets/img/img_principal/principal-1774950973307.png)
 
 Taking a look around we can find a `cleartext` password, which is used as the security encryption key for the `jwt`.
 ```
@@ -468,7 +468,3 @@ root@principal:~# ls -lash root.txt
 ```
 
 Just like that, we have Root!
-# Credentials
-```
-D3pl0y_$$H_Now42!
-```
