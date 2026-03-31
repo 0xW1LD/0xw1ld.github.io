@@ -285,7 +285,7 @@ async fn main() -> Result <()> {
 }
 ```
 
-> I have created an easier to read version [here](https://github.com/0xW1LD/CVE-2026-29000)
+> You can also find a more up-to-date version on my [github](https://github.com/0xW1LD/CVE-2026-29000)
 {:.info}
 
 If we run this automation I get the following response:
