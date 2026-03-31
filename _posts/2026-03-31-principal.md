@@ -142,6 +142,7 @@ We find a couple of open ports:
 	- Up to date implementation of `OpenSSH`, not likely vulnerable to any `Critical CVEs` that we can exploit to get a remote shell.
 2. `Port 8080` - `Jetty`
 	- Jetty is an open source Java web server, we can also see several of the requests that `nmap` attempted to send testing for `Real Time Streaming Protocol(RTSP)` or `Socks5`, both of which were unsuccessful
+
 ## Port 8080 - Jetty Web Server
 Visiting the `Web Server` we're greated with a login page to `Principal Internal Platform`, which seems to be a `Unified Operations Dashboard`.
 ![Principal Dashboard](/assets/img/img_principal/principal-1774943848191.png)
