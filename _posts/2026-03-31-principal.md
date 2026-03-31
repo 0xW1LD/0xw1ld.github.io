@@ -151,7 +151,7 @@ We can see that the version is `v1.2.0` and that it's `Powered by pac4j`. Attemp
 ![Spring Boot Error Page](/assets/img/img_principal/principal-1774943974081.png)
 
 # User
-Doing some research, we can find [CVE-2026-29000](https://nvd.nist.gov/vuln/detail/CVE-2026-29000.
+Doing some research, we can find [CVE-2026-29000](https://nvd.nist.gov/vuln/detail/CVE-2026-29000).
 > pac4j-jwt versions prior to 4.5.9, 5.7.9, and 6.3.3 contain an authentication bypass vulnerability in JwtAuthenticator when processing encrypted JWTs that allows remote attackers to forge authentication tokens. Attackers who possess the server's RSA public key can create a JWE-wrapped PlainJWT with arbitrary subject and role claims, bypassing signature verification to authenticate as any user including administrators.
 
 Taking a look at the `web requests` in my `web proxy`, I can immediately find the `javascript` running the application in `/static/js/app.js`
