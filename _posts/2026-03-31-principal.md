@@ -10,7 +10,7 @@ tags:
   - diff/medium
 category:
   - HTB
-description: Principal is running a Spring Boot Jetty application using a vulnerable version of pac4js-jwt. We're able to enumerate the web application to locate a public RSA key as well as the encryption algorithm and JWT claims requirements. We can write an automation to generate a JWE which we can use to authenticate as admin to the principal dashboard. We can locate clear-text credentials and a list of users which we can password spray against to get ssh access as the srv-deploy user. We're a member of a group with read access to a private ssh key whose public key is trusted, we use this private key to sign an ssh key we generate so we can ssh as root.
+description: Principal is running a Spring Boot Jetty application using a vulnerable version of pac4j-jwt. We're able to enumerate the web application to locate a public RSA key as well as the encryption algorithm and JWT claims requirements. We can write an automation to generate a JWE which we can use to authenticate as admin to the principal dashboard. We can locate clear-text credentials and a list of users which we can password spray against to get ssh access as the srv-deploy user. We're a member of a group with read access to a private ssh key whose public key is trusted, we use this private key to sign an ssh key we generate so we can ssh as root.
 image: https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a3257c109bddf7358350a2cf02b8ae81.png
 cssclasses:
   - custom_htb
