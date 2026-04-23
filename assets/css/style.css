@@ -585,7 +585,7 @@ nav {
     top: 1vh;
     text-wrap: nowrap;
     border-radius: 15px;
-    max-height: 80vh;
+    max-height: 55vh;
 	display: flex;
 	flex-direction: column;
 }
