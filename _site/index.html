@@ -24,6 +24,9 @@
 
     <link rel="stylesheet" href="/assets/css/style.css?v=">
     <script src="https://kit.fontawesome.com/848cf172bf.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/mermaid.js" type="module"></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -48,7 +51,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
+      <nav>
 
         
           <img src="/assets/img/logo.png" alt="Logo" />
@@ -62,10 +65,11 @@
         
 
         
-      </header>
+        <ul></ul>
+      </nav>
       <section>
 
-      <h2 id="about-me">About Me</h2>
+      <h1 id="about-me">About Me</h1>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -93,272 +97,272 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
-              <h2><a href="/htb/2026/04/25/sorcery.html">Sorcery</a><small> by tomadimitrie</small></h2>
+              <h2><a href="/htb/2026/04/25/sorcery.html">Sorcery</a></h2><small> by tomadimitrie</small><br>
               <small>2026-04-25 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Sorcery is running a store whose code is open sourced via gitea. Analyzing the source code we're able to construct a cypher injection to get admin access. Using admin access we're able to use a debug page to communicate with FTP and KAFKA to gather certificate files and get a reverse shell. We're able to create a DNS entry and generate a signed certificate which we use to phish the user. We can then find cleartext credentials from a notepad displayed on the screen to move to our user's admin account. We're then able to login with docker and strace it as another user, we use this to laterally move to that user. This user has a docker credential helper installed which we reverse engineer to get their credentials so we can login to docker. Inside a local docker image we can find clear-text credentials for another user who has access to FreeIPA with kerberos. We can modify a user's password to gain access to the FreeIPA dashboard which we can finally use to escalate to sysadmin.</p><img src="/assets/img/img_Sorcery/sorcery.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/04/18/airtouch.html">AirTouch</a><small> by r4ulcl</small></h2>
+              <h2><a href="/htb/2026/04/18/airtouch.html">AirTouch</a></h2><small> by r4ulcl</small><br>
               <small>2026-04-18 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Airtouch is running an SNMP server which can immediately be enumerated for an ssh password. We find several information about the network infrastructure, the machine we're on is the only one with a hard-link in a consultant VLAN while there's two other VLANs to explore. We can sniff for a 4-way handshake for the AirTouch-Internet AP and are able to crack its PSK. We can find an ip router web interface which we can find the login for by either a packet decryption or an MITM attack. Logging in we're able to swap to an admin account through a cookie and upload a reverse shell bypassing a small filter. We're then able to find backups for the WPA-EAP certs which we can use to conduct another evil-twin attack to connect to the AirTouch-Office network. We can remote onto the router on the network using a password from a script in the previous router, then pivot to root through a series of cleartext passwords.</p><img src="/assets/img/img_airtouch/airtouch-1768542372603.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/04/11/eighteen.html">Eighteen</a><small> by Kavigihan</small></h2>
+              <h2><a href="/htb/2026/04/11/eighteen.html">Eighteen</a></h2><small> by Kavigihan</small><br>
               <small>2026-04-11 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Eighteen is an assumed breach scenario running mssql accessible publicly which allows us to impersonate the appdev user. The appdev user has access over the website's database which contains an admin hashed password. We do some conversions to the hash, crack it and password spray it and gain winRM access to the DC. We then abuse badsuccessor creating a DMSA account in an OU we have CREATE_CHILD permissions over to impersonate Administrator to get root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/e9799c53134d081b7510bfe03211ffa9.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/04/05/darkzero.html">DarkZero</a><small> by 0xEr3bus</small></h2>
+              <h2><a href="/htb/2026/04/05/darkzero.html">DarkZero</a></h2><small> by 0xEr3bus</small><br>
               <small>2026-04-05 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/windows&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">DarkZero is an Active Directory machine with another assumed breach scenario. We find that MSSQL is running containing a link to another forest's DC. We enable xp_cmdshell on the linked computer and gain a service account which is missing privileges. We recover credentials and are able to escalate to a service shell to recover our privileges. Gaining back SeImpersonate privileges we can utilize a potato privilege escalation to get Administrator on DC02. Using this access we find our forest trust permits delegation across the trust. We abuse this delegation using our MSSQL access to retrieve a TGT and gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/78acdd0d87ed629f6cd2dc378bdcddac.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/03/31/principal.html">Principal</a><small> by ippsec</small></h2>
+              <h2><a href="/htb/2026/03/31/principal.html">Principal</a></h2><small> by ippsec</small><br>
               <small>2026-03-31 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Principal is running a Spring Boot Jetty application using a vulnerable version of pac4j-jwt. We're able to enumerate the web application to locate a public RSA key as well as the encryption algorithm and JWT claims requirements. We can write an automation to generate a JWE which we can use to authenticate as admin to the principal dashboard. We can locate clear-text credentials and a list of users which we can password spray against to get ssh access as the srv-deploy user. We're a member of a group with read access to a private ssh key whose public key is trusted, we use this private key to sign an ssh key we generate so we can ssh as root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a3257c109bddf7358350a2cf02b8ae81.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/03/28/browsed.html">Browsed</a><small> by Tensho</small></h2>
+              <h2><a href="/htb/2026/03/28/browsed.html">Browsed</a></h2><small> by Tensho</small><br>
               <small>2026-03-28 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Browsed is running an http website accepting browser extensions that can allow us to run javascript as the server. Uploading a callback client we find a domain name for the internal gitea repository that's actually exposed publicly. We're able to find an under-development project that is probably running locally and contains a command injection vulnerability. We chain our server side javascript with the command injection to get user. User is able to execute a script as root that imports a file and we're able to write to the pycache directory. We're able to create and compile a  malicious library file that ignores validation and is run as the super user to get root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/e8bbf358e6247fc98dcb76a3819bb5d0.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/03/22/conversor.html">Conversor</a><small> by FisMathack</small></h2>
+              <h2><a href="/htb/2026/03/22/conversor.html">Conversor</a></h2><small> by FisMathack</small><br>
               <small>2026-03-22 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Conversor is running a webserver that allows a user to upload xml and xslt files that immediately get processes. Additionally we can download the source code and find that there is a crontab configuration running python files in one of the web directories. Abusing this we can upload an XSLT file that writes a script that gets executed by the crontab to get a foothold. We then grab hashes from the database and crack them to get to user. Lastly we abuse the sudo configuration for the needrestart binary either using a malicious configuration file or a shared object library to get root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/0b659c391f2803c247e79c77a3284f96.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/03/16/gavel.html">Gavel</a><small> by Shadow21A</small></h2>
+              <h2><a href="/htb/2026/03/16/gavel.html">Gavel</a></h2><small> by Shadow21A</small><br>
               <small>2026-03-16 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Gavel is running an auction website which is vulnerable to a unique SQL injection vulnerability despite utilising prepared statements which we can discern since there's an exposed git directory which we can dump. We're able to extract the database and crack admin credentials for the website. We can then exploit an RCE flaw in the admin panel and swap over to the user using the credentials we found and cracked. The user is able to utilize a custom binary which takes in yaml files that can execute php code as root. However, there is a configuration file that disallows us from running any system commands. Thus we have to overwrite this file and then we're able to run system commands to gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/2e446c813e2fa67622764672b9df57bb.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/03/08/expressway.html">Expressway</a><small> by dakkmaddy</small></h2>
+              <h2><a href="/htb/2026/03/08/expressway.html">Expressway</a></h2><small> by dakkmaddy</small><br>
               <small>2026-03-08 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Expressway is running isakmp on port 500 UDP, which allows us to retrieve a user and a psk hash which can be cracked to retrieve a password. We then ssh into the target using these credentials and find a vulnerable sudo version and a host which could be configured in the sudoers file. Abusing the host-any privilege we can escalate to root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/75c168f01f04e5f256838733b77f13ec.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/02/21/giveback.html">Giveback</a><small> by babywyrm</small></h2>
+              <h2><a href="/htb/2026/02/21/giveback.html">Giveback</a></h2><small> by babywyrm</small><br>
               <small>2026-02-21 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Giveback is running a worpress website which is vulnerable to an RCE with a PoC. We get a foothold on a kubernetes node which we can use to pivot to a legacy machine which is vulnerable to a CGI-BIN RCE which we have root access on. We use this to interact with the kubernetes API and find the secrets for our user. We then are able to run a custom runc binary which asks for an administrator password which is one of the credentials of one of the nodes in the kubernetes cluster in base64. We exploit it using runc privilege escalation and just like that we have root!</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/243db542f3168e3393c4cabf699a665e.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/02/15/soulmate.html">Soulmate</a><small> by Kavigihan</small></h2>
+              <h2><a href="/htb/2026/02/15/soulmate.html">Soulmate</a></h2><small> by Kavigihan</small><br>
               <small>2026-02-15 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Soulmate is running a CrushFTP web service which is vulnerable to an authentication bypass with high PoC maturity. Utilizing administrator access we can give this new user access to all the folders that the ftp service has permission for. We're able to upload a web shell to the main webpage and gain a foothold. Utilizing this foothold we can find cleartext credentials in an escript file. Using these credentials we escalate to a user. An ssh erlang service is listening on the localhost which when connected to using our credentials gains us a root ssh erlang shell which we can use to run os commands as root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/2c47fcf9c85c7fbdda73a9c1b54fd60e.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/02/07/signed.html">Signed</a><small> by Kavigihan</small></h2>
+              <h2><a href="/htb/2026/02/07/signed.html">Signed</a></h2><small> by Kavigihan</small><br>
               <small>2026-02-07 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Signed is an active directory assumed breach scenario only running MSSQL. Authenticating to MSSQL we're able to do an xp_dirtree towards ourselves to capture an NTLMv2 hash which cracks into mssql's password. We then are able to enumerate users and groups and find a high privilege IT group. We use the mssqlsvc account to conduct a silver ticket attack against said group to gain higher privileges. We can then utilize xp_cmdshell to gain RCE as mssqlsvc on the box. We can find the rest of the AD suite listening on the machine so we expose those using a socks proxy and conduct an NTLM reflection attack to gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/7aaaac3fafe5bc8737560ba0264c4577.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/01/31/codetwo.html">CodeTwo</a><small> by FisMathack</small></h2>
+              <h2><a href="/htb/2026/01/31/codetwo.html">CodeTwo</a></h2><small> by FisMathack</small><br>
               <small>2026-01-31 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Codetwo is running a JavaScript code parsing website on port 8000. Downloading the app we find a flask application using a vulnerable version of js2py. Exploiting this we're able to achieve remote code execution using a modified PoC. We can then find password hashes that are easily cracked and abuse password-reuse on ssh to get User. We then find that the user has permissions to run a backup program as root which we can use to backup root's directory and steal their ssh key to get root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/ea23d7bc12459ef0c3db19067f02352a.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/01/24/Imagery.html">Imagery</a><small> by Nab6eel</small></h2>
+              <h2><a href="/htb/2026/01/24/Imagery.html">Imagery</a></h2><small> by Nab6eel</small><br>
               <small>2026-01-24 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Imagery is running an http webserver image gallery service. There is a blind stored xss vulnerability that allows an attacker to steal the administrator session cookie. With this access an attacker is able to view logs and other files through file traversal. With this file traversal an attacker can exfiltrate the database and gain access to the test user account which has access to the experimental features of the site. One of of these features which is cropping an image is vulnerable to a command injection vulnerability which we use to gain a foothold. An attacker can then locate an encrypted backup, which can be brute forced, which contains an older database containing the user's reused password. Finally we find that the user has sudo permissions to run Charcol, a backup suite, which can be used to create automations as root. An attacker can automate a reverse shell and just like that gain root.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/662ccbe3935d62aee031d620014adac4.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/01/17/HackNet.html">HackNet</a><small> by m4rsh3ll</small></h2>
+              <h2><a href="/htb/2026/01/17/HackNet.html">HackNet</a></h2><small> by m4rsh3ll</small><br>
               <small>2026-01-17 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p><p style="float: right;">boxes&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Hacknet is running a hacker forum website allowing users to post, comment, and like posts. A hidden SSTI vulnerability can be found in the username field when hovering on a user who has liked a post. We can exploit this SSTI to gather user information from the database such as names, emails, and passwords. One of these passwords can be utilized to remote into the machine through SSH. We can then exploit a django file cache to get a shell as another user on the machine. We can then find GPG encrypted backups allowing us to find a chat record containing the root password. Just like that we have root!</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/d131f54a035866ca64f0aff0a8e1fc14.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2026/01/10/Previous.html">Previous</a><small> by brun0ne</small></h2>
+              <h2><a href="/htb/2026/01/10/Previous.html">Previous</a></h2><small> by brun0ne</small><br>
               <small>2026-01-10 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Previous is running a website using an outdated version of ReactJS and NextJS frameworks allowing us to authenticate and view documentation. In the documentation endpoint we're able to exploit a file traversal vulnerability to get credentials for the NextJS framework which are being reused by the site's admin for remote access. We're able to then exploit our sudo permissions to create a custom terraform automation that runs a binary we point it to as root for privilege escalation.</p><img src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/f34c6756e7c75b48ec112831eb27940a.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/12/13/WhiteRabbit.html">White Rabbit</a><small> by FLX0x00</small></h2>
+              <h2><a href="/htb/2025/12/13/WhiteRabbit.html">White Rabbit</a></h2><small> by FLX0x00</small><br>
               <small>2025-12-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Whiterabbit is running a webserver on port 80. Fuzzing revealed uptime kuma app, with /status/temp containing subdomains. Found gophish and wikijs sites with webhook security docs. Exploited SQLi in webhook endpoint to access database showing command logs with restic backup repository and password. Downloaded repository containing Bob's SSH keys. SSH'd in, landing in Docker container with sudo privileges for restic. Used restic to read root folder with more SSH keys. Accessed box as Morpheus. Found password generator binary, recreated method to generate password list. Brute forced into Neo account which has root privileges.</p><img src="https://labs.hackthebox.com/storage/avatars/acf63a6d45ca722a8203fe4ab82007a6.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/12/06/Editor.html">Editor</a><small> by Kavigihan & TheCyberGeek</small></h2>
+              <h2><a href="/htb/2025/12/06/Editor.html">Editor</a></h2><small> by Kavigihan & TheCyberGeek</small><br>
               <small>2025-12-06 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Editor is running a wiki for a website which is vulnerable to a Server-Side Template Injection Remote Code Execution vulnerability allowing us a Foothold into the machine. We then find a cleartext credential used to connect to the database reused by a user on the machine. Finally we can locate a Set User ID binary which we can influence using PATH poisoning to escalate privileges.</p><img src="https://labs.hackthebox.com/storage/avatars/ba9dec0d022d3c3b6a96aa5dba4772c7.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/11/29/Era.html">Era</a><small> by yurivich</small></h2>
+              <h2><a href="/htb/2025/11/29/Era.html">Era</a></h2><small> by yurivich</small><br>
               <small>2025-11-29 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Era, in a subdomain, is running a file management service vulnerable to an authenticated IDOR attack allowing an attacker to download site backup files. We're able to extract credentials from a database and determine php wrapper functionality limited to the admin. Said credentials allow us FTP access where we can find the available php wrappers, one of which is ssh. Using one of the credentials we can change the admin's security questions and login as an admin and then utilize the parameter using the ssh wrapper to achieve RCE. Once we use RCE to achieve a shell on the box we can then find a writable monitoring binary that is regularly being executed by root. However the binary is signed so we need to copy its signing data to the binary we replace it with. Just like that we have root.</p><img src="https://labs.hackthebox.com/storage/avatars/fcd00b2542a936e4281ba19e0bd0b025.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/11/22/Mirage.html">Mirage</a><small> by ctrlzero & Emsec</small></h2>
+              <h2><a href="/htb/2025/11/22/Mirage.html">Mirage</a></h2><small> by ctrlzero & Emsec</small><br>
               <small>2025-11-22 written by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/windows&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Mirage is running an active directory server where we everyone can access a network file share with reports. There's mentions of a missing dns record which we exploit on NATS to gain initial credentials for NATS. We then add a consumer which we use to gain AD credentials. We're able to kerberoast one of the users. Through this user we're able to read WinLogon credentials. These credentials then lead us to another account which we have to activate, change the logonHours and password. We can then read the GMSA password of the mirage-service computer. Using this computer we're able to exploit ESC10 to gain the DC's certificate pfx file. Using this we're able to give ourselves RBCD over ldap shell and dump secrets. Just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/5c9c46ad001394e992f1c7b830ee77e5.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/11/15/outbound.html">Outbound</a><small> by TheCyberGeek</small></h2>
+              <h2><a href="/htb/2025/11/15/outbound.html">Outbound</a></h2><small> by TheCyberGeek</small><br>
               <small>2025-11-15 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Outbound is an assumed breach Linux box running roundcube mail. We're able to authenticate to roundcube and exploit a recent CVE to gain a foothold on the machine inside a docker. We can extract credentials from the database and decrypt them using openssl and the encryption key we can find in a configuration file. Reusing the decrypted password we gain access as a user on the main machine who can run below as sudo. Exploiting another CVE for below we're able to change the permissions of /etc/passwd and create a root user without a password.</p><img src="https://labs.hackthebox.com/storage/avatars/b1096fc86df3fb6035baad7f599094be.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/11/08/RustyKey.html">RustKey</a><small> by EmSec</small></h2>
+              <h2><a href="/htb/2025/11/08/RustyKey.html">RustKey</a></h2><small> by EmSec</small><br>
               <small>2025-11-08 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">RustKey is yet another assumed breach scenario wherein NTLM authentication is disabled but an older version of Kerberos is being utilized. Gathering bloodhound data we identify several targets, the first one being it-computer3 which we can access through timeroasting. It-computer3 is a member of the helpdesk group which can add and remove members from the protected objects group and change passwords for several accounts. We can remove the IT and support groups and gain access to 2 additional accounts: BB.MORGAN, who is the user, and EE.REED. We find a memo detailing additional access provided to members of the support team, including EE.REED, on archiving utilities. We utilize this as a hint to look at registry DLL paths for 7-zip which we can modify to point to an arbitrary DLL. When we point this to our malicious DLL we gain access as MM.TURNER who we can use to conduct an RBCD attack.</p><img src="https://labs.hackthebox.com/storage/avatars/c458b48070ca6f3073128d085c9ee247.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/11/01/Voleur.html">Voleur</a><small> by baseDN</small></h2>
+              <h2><a href="/htb/2025/11/01/Voleur.html">Voleur</a></h2><small> by baseDN</small><br>
               <small>2025-11-01 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Voleur is yet another Active Directory assumed breach scenario. The user we have access to has access to sensitive files that provide us credentials for service accounts after cracking its password. The ldap service account has write access to a support group in which is the winRM service account which we can kerberoast. The same document leads us to a deleted account which we can restore and use its credentials to access additional shares. We're able to recover backed up DPAPI secrets and pivot to another user. We can find yet another share folder which provides us the sshkey. With this access we can find backup files which we can use to dump secrets.</p><img src="https://labs.hackthebox.com/storage/avatars/635619778e50cc8f69df91cc6ae149c4.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/10/25/Artificial.html">Artificial</a><small> by FisMathack</small></h2>
+              <h2><a href="/htb/2025/10/25/Artificial.html">Artificial</a></h2><small> by FisMathack</small><br>
               <small>2025-10-25 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Artificial is running an AI model hosting site that allows us to gain a reverse shell by uploading a malicious h5 model. We can find a database with crackable passwords and login using gael's credentials via ssh. We can find backrest, a frontend for restic that allows us to backup files in /root's directory, we can grab the flag and root's ssh key, and use the ssh key to remote into the machine as root.</p><img src="https://labs.hackthebox.com/storage/avatars/e6633d6c2b1d824c3756eb21aeed7590.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/10/18/DarkCorp.html">DarkCorp</a><small> by OxEr3bus & ctrlzero</small></h2>
+              <h2><a href="/htb/2025/10/18/DarkCorp.html">DarkCorp</a></h2><small> by OxEr3bus & ctrlzero</small><br>
               <small>2025-10-18 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">DarkCorp is running a roundcube mail service vulnerable to stored XSS. Using this to reset the password for the b.case user' on their admin dashboard. The dashboard is vulnerable to SQLi leading to RCE with backups containing credentials. We gain access to an internal monitor that can be used to coerce authentication. Coercing authentication to the mail server machine we poison the DNS record and retrieve the admin hash. Dumping passwords to do a password spray nets an account with an ACL over another. We use this to abuse the kerberos relationship between the linux and AD machines to gather cached credentials. The credentials belong to a GPO manager which we use to create an account in the local administrators to get control over the DC</p><img src="https://labs.hackthebox.com/storage/avatars/93fba06a4780b65be5a5a4f9512b8e78.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/10/10/Tombwatcher.html">TombWatcher</a><small> by Sentinal & mrb3n8132</small></h2>
+              <h2><a href="/htb/2025/10/10/Tombwatcher.html">TombWatcher</a></h2><small> by Sentinal & mrb3n8132</small><br>
               <small>2025-10-10 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">TombWatcher is yet another assumed breach scenario, staring with Henry's credentials. Henry is able to set an SPN for Alfred so we kerberoast him. Alfred can, through a long chain of ACLs, gain access to John, our user. Using John we enumerate deleted objects and are able to restore a deleted account called cert_admin. Cert_admin can perform ESC15 which we use to gain access as Administrator.</p><img src="https://labs.hackthebox.com/storage/avatars/59c74a969b4fec16cd8072d253ca9917.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/10/04/Certificate.html">Certificate</a><small> by Spectra199</small></h2>
+              <h2><a href="/htb/2025/10/04/Certificate.html">Certificate</a></h2><small> by Spectra199</small><br>
               <small>2025-10-04 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Certificate is running a website on getting certifications. If we register as a student and enrol in a course we can upload a file. There's some filters in place but by using a nullbyte bypass we can get a shell. We can find database credentials in which contains the hash for Sara.b. Sara has a pcap file in her desktop, with a description that notes failure to find a share. We can find AS-REQ packets which we can use to recreate a krb5-18 hash for Lion.SK which is crackable. Lion.SK is a member of a group that can issue and revoke certificates. We grab a certificate for Lion.SK using which we grab a certificate for Ryan.K. Ryan.K has the privilege SeManageVolumePrivilege which allows us to escalate to root.</p><img src="https://labs.hackthebox.com/storage/avatars/9b765f2f3e0b0c8d115b5455c22101cf.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/09/27/Puppy.html">Puppy</a><small> by tr3nb0lone</small></h2>
+              <h2><a href="/htb/2025/09/27/Puppy.html">Puppy</a></h2><small> by tr3nb0lone</small><br>
               <small>2025-09-27 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Puppy is an assumed breach scenario wherein the starting credentials we're given has access to add himself to the Developers Group. The group has access to the DEV SMB share which contains a keyfile database backup. One of these credentials is for a Remote Management User whose account is currently disabled. One of the other credentials provided allows us to enable his account and change his password. Just like that we get user, we find a backups folder storing additional credentials for another Remote Manager User. Said user has an admin account and hints towards browser credentials so we dump DPAPI and get an additional password which works for their admin account. Just like that we have root.</p><img src="https://labs.hackthebox.com/storage/avatars/6a127b39657062e42c1a8dfdcd23475d.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/09/20/Fluffy.html">Fluffy</a><small> by ruycr4ft</small></h2>
+              <h2><a href="/htb/2025/09/20/Fluffy.html">Fluffy</a></h2><small> by ruycr4ft</small><br>
               <small>2025-09-20 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Fluffy is yet another assumed breach scenario where we can access an IT SMB share. The Share highlights an upgrade request pdf with vulnerabilities found on the environment. One of the vulnerabilities allows us to grab a hash through a zip file extraction. We can crack the hash to get to the user: p.agila. This user has Write permissions on the Service Accounts group which contains winrm_svc and ca_svc. Once we add the user to the group we're able to do a shadow credential attack on both these service accounts. Winrm_svc has our user flag! Using our permissions as p.agila and ca_svc we're able to change ca_svc's upn to the Administrator one to request an administrator certificate. We can use this certificate to authenticate as the Administrator, and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/ef8fc92ac7cccd8afa4412241432f064.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/09/13/Planning.html">Planning</a><small> by FisMatHack & d00msl4y3r</small></h2>
+              <h2><a href="/htb/2025/09/13/Planning.html">Planning</a></h2><small> by FisMatHack & d00msl4y3r</small><br>
               <small>2025-09-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Planning is running a grafana public subdomain with assumed breach credentials. We find an authenticated file read and remote code execution (RCE) vulnerability which gets us a foothold. Clear text credentials can be found in the environment variables of the docker instance we're in which we can use to SSH as enzo. There's a crontab management webservice running as root for which we can find the cleartext credentials for. Using this service we can schedule a reverse shell command and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/c9efb253e7d1d9b407113e11afdaa905.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/09/06/Environment.html">Environment</a><small> by coopertim13</small></h2>
+              <h2><a href="/htb/2025/09/06/Environment.html">Environment</a></h2><small> by coopertim13</small><br>
               <small>2025-09-06 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Environment has an environmental preservation website running laravel. We find a login page which if broken allows to read parts of the code. Using this information we inject a parameter allowing login to the dashboard without credentials. We find we are logged in as Hish, and can upload a profile picture. We upload a payload to get a shell using some filter bypasses. In Hish's home folder we find a gpg file and keys which we can use to decrypt his password. Hish can run sudo on a script with preserved BASH_ENV environment variable which if changed allows arbitrary code execution as root.</p><img src="https://labs.hackthebox.com/storage/avatars/757eeb9b0f530e71875f0219d0d477e4.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/08/31/eureka.html">Eureka</a><small> by Spectra199</small></h2>
+              <h2><a href="/htb/2025/08/31/eureka.html">Eureka</a></h2><small> by Spectra199</small><br>
               <small>2025-08-31 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Eureka is running a website and has an open port to Spring Boot Eureka. Looking through endpoints of the API we're able to extract a heapdump with credentials for oscar190. Using these credentials we login to the Eureka dashboard and redirect the application instance *USER-MANAGEMENT-SERVICE* to ourselves to intercept a login for miranda-wise, our user. We can see that a certain script runs every so often which takes a log file we can edit as input. Using this we can do command execution by editing the contents of the log file.</p><img src="https://labs.hackthebox.com/storage/avatars/721477107c34105c91220b678c1f1ec6.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/08/30/TheFrizz.html">The Frizz</a><small> by 0xPizzaCat</small></h2>
+              <h2><a href="/htb/2025/08/30/TheFrizz.html">The Frizz</a></h2><small> by 0xPizzaCat</small><br>
               <small>2025-08-30 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">We start with a windows box running Gibbons-LMS which we find is vulnerable to an arbitrary file write which we can use to upload an RCE. Once we get a foothold we locate the database and extract crackable password hashes. We use the found passwords to view the site, we can also see the posts on the database, we see a reference to the RecycleBin. We can find an archive containing config files with an encoded password. We utilize a password spray to gain a foothold onto the AD domain. From this foothold on the domain we can run bloodhound to find vulnerable ACLs which we can follow to gain GPO permissions. We abuse these GPO permissions to create a local admin account and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/c91ef1b641cf88156c7a9d3793d54216.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/08/29/nocturnal.html">Nocturnal</a><small> by FisMatHack</small></h2>
+              <h2><a href="/htb/2025/08/29/nocturnal.html">Nocturnal</a></h2><small> by FisMatHack</small><br>
               <small>2025-08-29 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Nocturnal runs a webserver on port 80 with a file upload portal. Retrieved Amanda’s temporary password from an `.odt` file in the upload directory. Logged into her ISPConfig panel account and generated a backup. Downloaded and extracted the SQLite database containing user password hashes. Cracked Tobias’ hash and accessed the system via SSH. Gained root access by exploiting a command injection vulnerability in ISPConfig’s language editor functionality.</p><img src="https://labs.hackthebox.com/storage/avatars/f6a56cec6e9826b4ed124fb4155abc66.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/07/26/Cypher.html">Cypher</a><small> by Techromancer</small></h2>
+              <h2><a href="/htb/2025/07/26/Cypher.html">Cypher</a></h2><small> by Techromancer</small><br>
               <small>2025-07-26 written by 0xW1LD<p style="float: right;">diff/medium&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Cypher is running a web server which has an exposed testing directory which contains a jar file. Analyzing the jar file and the login page on the site leads us to a neo4j cypher injection exploit which when calling a custom function on the jar file leads to RCE. Through this we are able to get a reverse shell. Looking through the bash history file we find the password of the user. The user is able to run bbot, an osint script as root. Using this script we can take advantage of debug mode and set a custom YARA file to get an arbitrary file read. We can also write a custom module to achieve code execution as root.</p><img src="https://labs.hackthebox.com/storage/avatars/765cd4be6f3a366ca83c7ea60bbcaaa8.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/07/19/Scepter.html">Scepter</a><small> by Emsec</small></h2>
+              <h2><a href="/htb/2025/07/19/Scepter.html">Scepter</a></h2><small> by Emsec</small><br>
               <small>2025-07-19 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Scepter is running active directory with an nfs share mounted to /helpdesk. We use these certificate files to generate a certificate for d.baker to request his TGT. Once we have access to d.baker we find a certificate template vulnerable to ESC9. A.carter has transitive generic all over the OU and so we grant him fullcontrol over the OU which d.baker is in to exploit a derivation of ESC9 to gain access to h.brown. H.brown can write altSecurityIdentities of p.adams which allows us to exploit ESC14. P.adams has DCSync rights over the domain which we use to dump secrets.</p><img src="https://labs.hackthebox.com/storage/avatars/f2df2ca13368e6e158cffd5a3ab54d5d.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/07/12/Dog.html">Dog</a><small> by FisMathack</small></h2>
+              <h2><a href="/htb/2025/07/12/Dog.html">Dog</a></h2><small> by FisMathack</small><br>
               <small>2025-07-12 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Dog is running a dog blog webserver run by backdrop CMS, it also has an exposed git directory. Dumping the git directory we can find credentials for use to login to backdrop CMS. We can upload a malicious module to gain a foothold. Using the same password we found we conduct a password spray and find a user we can pivot to. Said user has access to run bee, a backdrop command line utility, as root, we can use the post-script function to gain root.</p><img src="https://labs.hackthebox.com/storage/avatars/426830ea2ae4f05f7892ad89195f8276.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/07/05/Cat.html">Cat</a><small> by FisMathack</small></h2>
+              <h2><a href="/htb/2025/07/05/Cat.html">Cat</a></h2><small> by FisMathack</small><br>
               <small>2025-07-05 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Cat is running a website for a cat competition which is vulnerable to an XSS injection. Using this we are able to steal the admins cookie which reveal several additional pages. One of the pages is vulnerable to an SQLi using which we can grab credentials for users on the machine. Using these credentials we are able to ssh into the machine. Looking at some logs we are able to find another set of credentials and pivot from there. There is a gitea webpage running on the host, the version also contains an XSS vulnerability. Using the vulnerability we are able to read another set of credentials which belong to root.</p><img src="https://labs.hackthebox.com/storage/avatars/bf7ae27f4e0ce1703bdd10d538334d9e.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/06/28/Haze.html">Haze</a><small> by EmSec</small></h2>
+              <h2><a href="/htb/2025/06/28/Haze.html">Haze</a></h2><small> by EmSec</small><br>
               <small>2025-06-28 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Haze is running a splunk version vulnerable to an lfi which can be used to steal a password hash and splunk secret to decrypt the hash. Using the password, we access two accounts, one being a GMSA manager. Found a machine account in MSA's list with write owner privileges over support services group. This group can change passwords for a user on the box. Used this privilege chain to gain a shell as that user. This user has access to backups directory containing another splunk password hash and secret. Decrypted to gain access as another user with SEImpersonate Privileges, which we used to gain NT SYSTEM.</p><img src="https://labs.hackthebox.com/storage/avatars/44e14228c6a208714eda356bda7624a8.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/06/21/Titanic.html">Titanic</a><small> by ruycr4ft</small></h2>
+              <h2><a href="/htb/2025/06/21/Titanic.html">Titanic</a></h2><small> by ruycr4ft</small><br>
               <small>2025-06-21 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Titanic is running an http server on port 80 in whch you can book a trip which triggers a file download. The file download endpoint is vulnerable to an LFI. Looking around further we can find a subdomain which is running gitea, using the LFI we download the database and using a script to modify the hashes to become crackable. There's an image identification script that runs a magick version that happens to be vulnerable to an arbitrary code execution.</p><img src="https://labs.hackthebox.com/storage/avatars/eb5942ec56dd9b6feb06dcf8af8aefc6.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/06/07/Backfire.html">Backfire</a><small> by hyperreality & chebuya</small></h2>
+              <h2><a href="/htb/2025/06/07/Backfire.html">Backfire</a></h2><small> by hyperreality & chebuya</small><br>
               <small>2025-06-07 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Backfire is a hackback scenario linux box which is still running a file server on port 8000 by mistake of the users. It contains a patch file and a yaotl file for havoc C2. Using information from these files we can find a CVE for unauthenticated SSRF, we combine this with an authenticated RCE through websockets to gain a foothold. We can now find Hardhat, another C2, which is vulnerable to an authentication bypass. Hardhat C2, offers us a direct terminal as Sergej. Sergej is able to execute iptables and iptables-save as root which we are able to use as an arbitrary write, to write our ssh key to the root directory.</p><img src="/assets/img/img_Backfire/Pasted%20image%2020250113013147.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/05/31/Checker.html">Checker</a><small> by 0xyassine</small></h2>
+              <h2><a href="/htb/2025/05/31/Checker.html">Checker</a></h2><small> by 0xyassine</small><br>
               <small>2025-05-31 written by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Checker is running Bookstack and TeamPass on ports 80 and 8080 respectively. Teampass has an SQLi where we can leak credentials which we can use to login. TeamPass contains a couple of credentials for ssh and bookstack. We login on BookStack and looking around we find interesting documentation. The version of bookstack is vulnerable to an LFI via SSRF which we can use to steal the OTP key for ssh. Logging into ssh we find that the user has super user privileges to a script that is used to check for a password leak. Reversing the binary we see that it accesses a shared memory address, using this we can inject malicious code to achieve root.</p><img src="https://labs.hackthebox.com/storage/avatars/afe87a33205a5ffd978c805aa93488a9.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/05/24/EscapeTwo.html">EscapeTwo</a><small> by ruycr4ft & Llo0zy</small></h2>
+              <h2><a href="/htb/2025/05/24/EscapeTwo.html">EscapeTwo</a></h2><small> by ruycr4ft & Llo0zy</small><br>
               <small>2025-05-24 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Escape two is an assumed breach scenario where we start of as Rose. Rose is able to view an SMB share that contains excel files which contain additional credentials for SA. SA is a service account running mssql which we have access to xp_cmdline to get a foothold. With this foothold we can look around and find a file with a cleartext password which, when password spraying, leads us to Ryan's account. Ryan has an ACL to write owner the CA account, which is the Certificate Authority service. Using the CA service we find a vulnerable certificate template that needs a slight edit for the ESC to work. Once we edit and exploit the template we're able to grab the Administrator's certificates and just like that we have root!</p><img src="https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de580e1.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/05/16/Heal.html">Heal</a><small> by rajHere</small></h2>
+              <h2><a href="/htb/2025/05/16/Heal.html">Heal</a></h2><small> by rajHere</small><br>
               <small>2025-05-16 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Heal is running a resume builder website running Ruby on Rails as an api. We can abuse an LFI to gather credentials for another subdomain, Lime Survey. We can use these credentials to conduct an authenticated RCE which gets us a foothold. We use this foothold to locate databse credentials which we discover is the reused password of a user on the box. After which we can find a consul service running as root using a version with an RCE which we can use to escalate privileges.</p><img src="https://labs.hackthebox.com/storage/avatars/dcd5ef09ab764228c64385374ac744c1.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/05/10/Underpass.html">Underpass</a><small> by dakkmaddy</small></h2>
+              <h2><a href="/htb/2025/05/10/Underpass.html">Underpass</a></h2><small> by dakkmaddy</small><br>
               <small>2025-05-10 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Underpass is running a default apache website. If we check udp ports we find that a daloradius is running. Looking through the source of daloradius we find a couple of login pages and default credentials. Using these credentials we login to a dashboard and find credentials for svcMosh. We use his credentials to ssh on the box. svcMosh can run Mosh-server as root which we can use to spawn a root terminal.</p><img src="https://labs.hackthebox.com/storage/avatars/456a4d2e52f182847fb0a2dba0420a44.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/05/03/BigBang.html">BigBang</a><small> by ruycr4ft & lavclash75</small></h2>
+              <h2><a href="/htb/2025/05/03/BigBang.html">BigBang</a></h2><small> by ruycr4ft & lavclash75</small><br>
               <small>2025-05-03 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Bigbang is running a wordpress website using buddy forms which is vulnerable to RCE through image deserialization. Using this RCE we can establish a reverse shell which allows us to find credentials within a database with a reused password for ssh. We find a GrafanaDB endpoint which contains further credentials to pivot to another user. Finally we find an interesting thick web app running as root which is vulnerable to command injection.</p><img src="https://labs.hackthebox.com/storage/avatars/2d22afd496c5ae6f6c51ca24bf3719e1.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/04/26/Vintage.html">Vintage</a><small> by Geiseric</small></h2>
+              <h2><a href="/htb/2025/04/26/Vintage.html">Vintage</a></h2><small> by Geiseric</small><br>
               <small>2025-04-26 written by 0xW1LD<p style="float: right;">diff/hard&nbsp;</p><p style="float: right;">os/windows&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Vintage is another assumed breach active directory box, we're given Olivia's credentials. We use these to enumerate the domain using bloodhound where we'll find a pre 2000 compatible windows machine. We login using the machine account which can read GMSA01 which is another machine account. We use this account to allow ourselves to AS-REP Roast one of the service accounts. After which we find that the password is reused by C.Neri through a password spray. Checking bloodhound, C.Neri has an admin account which we manually have to decrypt the dpapi to read the password. C.Neri has access to the delegated admins group so we add SVC_SQL and give it an SPN using which we can impersonate L.Bianchi.adm who is root.</p><img src="https://labs.hackthebox.com/storage/avatars/4eae732c7af0ce1b443d009637167610.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/04/20/administrator.html">Administrator</a><small> by nirza</small></h2>
+              <h2><a href="/htb/2025/04/20/administrator.html">Administrator</a></h2><small> by nirza</small><br>
               <small>2025-04-20 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Administrator is running Active Directory and we're provided with initial credentials for the user Olivia. We can use Olivia to change Michael's password who can change Benjamin's Password. Benjamin is a member of Share Moderators which hints us towards file shares, nothing interesting in SMB however FTP is open and is hosting a backup passwordsafe file. Cracking this file we gain access to Emily through her password located in the file. Emily can write Ethan, however we can't Kerberoast him so instead we ASREPRoast him. Ethan has DCsync privileges over the domain so we use those to dump all the hashes</p><img src="https://labs.hackthebox.com/storage/avatars/9d232b1558b7543c7cb85f2774687363.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/04/13/linkvortex.html">linkvortex</a><small> by 0xyassine</small></h2>
+              <h2><a href="/htb/2025/04/13/linkvortex.html">linkvortex</a></h2><small> by 0xyassine</small><br>
               <small>2025-04-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Link vortex is running a webserver using ghost cms which we can find the credentials of in the git repository of a subdomain. We utilize a ghost cms exploit that uses symlinks to read files for the configuration of ghost which nets us the credentials of user Bob. Bob has the permissions to run a custom script as sudo which reads and transfers symlinks with some filtering. We can bypass the filtering through a double symlink. Another way we can escalate privileges is through exploiting a vulnerbility in the script that allows code execution through injection via the CHECK_CONTENT variable. Neither of these methods are intended and the intended method is to just fight the race condition right after the symlink is moved but before it is read to get another arbitrary file read.</p><img src="https://labs.hackthebox.com/storage/avatars/97f12db8fafed028448e29e30be7efac.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/03/29/BlockBlock.html">Blockblock</a><small> by MrR3boot</small></h2>
+              <h2><a href="/htb/2025/03/29/BlockBlock.html">Blockblock</a></h2><small> by MrR3boot</small><br>
               <small>2025-03-29 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Blockblock is running an online web chat decentralized through block chain. We can exploit an XSS vulnerability in the web app to gain an admin cookie, from which we can interact with the blockhain api to leak credentials. We can then use these credentials to login to the system. We have permissions to run forge as another user. Using this privillege we run forge with a malicious build script to gain a shell as that user. This user has access to run pacman as root so we use this to install a malicious pacman package to get the ssh keys of root.</p><img src="https://labs.hackthebox.com/storage/avatars/a6165b53a2df41fbfd6530782224925f.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/03/08/Chemistry.html">Chemistry</a><small> by FisMatHack</small></h2>
+              <h2><a href="/htb/2025/03/08/Chemistry.html">Chemistry</a></h2><small> by FisMatHack</small><br>
               <small>2025-03-08 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Chemistry is running an http webserver on a strange port, port 5000. The webpage is of a chemistry CIF analyzer tool using python. The python libraries that it uses in order to parse the CIF files is vulnerable to an RCE vulnerability. Using this we can upload and execute a reverse shell to get a shell on the system. We can then find a database with users and their passwords. One of the passwords belongs to a user on the machine allowing us to ssh into the machine. As User we find a monitoring site running as root on port 8080 which is running aiohttp with a vulnerable setting that allows for an LFI. We can use this LFI to gain root's ssh keys and ssh into the box.</p><img src="https://labs.hackthebox.com/storage/avatars/b8f3d660af2d3ed0929eb119e33526cf.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/02/25/Yummy.html">Yummy</a><small> by LazyTitan33</small></h2>
+              <h2><a href="/htb/2025/02/25/Yummy.html">Yummy</a></h2><small> by LazyTitan33</small><br>
               <small>2025-02-25 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Yummy is running a website for booking a restaurant. The site allows us to download an iCalendar file, the endpoint of which is vulnerable to an LFI. Using this we're able to download the web files and spot a vulnerability with accessing the Admin dashboard. The dashboard is vulnerable to SQLi which gives us an Arbitrary file write vulnerability. Mixing this with the crontab information we're able to get a shell on the box.</p><img src="https://labs.hackthebox.com/storage/avatars/5ca57613886666c4c33ef23876b3f054.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/02/14/Nibbles.html">Nibbles</a><small> by mrb3n</small></h2>
+              <h2><a href="/htb/2025/02/14/Nibbles.html">Nibbles</a></h2><small> by mrb3n</small><br>
               <small>2025-02-14 written by 0xW1LD<p style="float: right;">diff/easy&nbsp;</p><p style="float: right;">os/linux&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Nibbles is running a nibble blog on port 80 which is hidden behind the nibbleblog directory. Through a directory fuzz we can find an admin panel and are able to login through guessing the admin password. The site is vulnerable to an authenticated file upload RCE which we use to get user shell on the box. After which we find a vulnerable privilege to run a shell script in a directory where we have write access which we can use to escalate to root.</p><img src="https://labs.hackthebox.com/storage/avatars/344a8f99e8f7dddfed764f791e2731df.png" style="float: right; width: 23%; height: 23%;">
             
-              <h2><a href="/htb/2025/02/08/Caption.html">Caption</a><small> by MrR3boot</small></h2>
+              <h2><a href="/htb/2025/02/08/Caption.html">Caption</a></h2><small> by MrR3boot</small><br>
               <small>2025-02-08 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">Caption is running a caption portal on port 80 and a gitbucket instance on port 8080. In gitbucket we find credentials for margo which we can use to login. Several pages on this site are vulnerable to a stored XSS. Through this we are able to steal cookies. However, we are unable to access the downloads directory due to haproxy; so we must smuggle our request by upgrading to http 2 using h2smuggle. We can then access the downloads directory and find an arbitrary file read used on margo's ssh key. Finally we find the logservice and create a client that we can use to execute arbitrary commands as root.</p><img src="https://labs.hackthebox.com/storage/avatars/d3cb6edd2a219f122696655d0015b101.png" style="float: right; width: 23%; height: 23%;">

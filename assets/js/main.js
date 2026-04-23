@@ -13,10 +13,17 @@ var sectionHeight = function() {
   $(window).resize(sectionHeight);
   
   $(function() {
-    $("section h1,section h2,section h3").each(function(){
-      $("nav ul").append("<li class='tag-" + this.nodeName.toLowerCase() + "'><a href='#" + $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + $(this).text() + "</a></li>");
-      $(this).attr("id",$(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
-      $("nav ul li:first-child a").addClass("active");
+    var slugCount = {};
+
+      $("section h1, section h2, section h3").each(function(){
+        var base = $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+        
+        slugCount[base] = (slugCount[base] || 0) + 1;
+        var slug = slugCount[base] > 1 ? base + '-' + slugCount[base] : base;
+
+        $("nav ul").append("<li class='tag-" + this.nodeName.toLowerCase() + "'><a href='#" + slug + "'>" + $(this).text() + "</a></li>");
+        $(this).attr("id", slug);
+        $("nav ul li:first-child a").addClass("active");
     });
   
     $("nav ul li").on("click", "a", function(event) {

@@ -9,6 +9,9 @@
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <script src="https://kit.fontawesome.com/848cf172bf.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/mermaid.js" type="module"></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -16,7 +19,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
+      <nav>
 
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
@@ -40,7 +43,8 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
-      </header>
+        <ul></ul>
+      </nav>
       <section>
 
       {{content}}
@@ -51,7 +55,7 @@
           {% if category[0] == cat_name %}
             <h1>{{ category[0] }}</h1>
             {% for post in category[1] %}
-              <h2><a href="{{ post.url }}">{{ post.title }}</a><small> by {{post.creators}}</small></h2>
+              <h2><a href="{{ post.url }}">{{ post.title }}</a></h2><small> by {{post.creators}}</small><br>
               <small>{{ post.date | date: "%Y-%m-%d" }} written by {{ site.author }}{% for tag in post.tags %}<p style="float: right;">{{ tag }}&nbsp;</p>{% endfor %}</small>
               <hr style="width:100%; background: #373c3e;">
               <p style="text-align: justify; width: 75%; float: left;">{{ post.description }}</p><img src="{{ post.image }}" style="float: right; width: 23%; height: 23%;">
