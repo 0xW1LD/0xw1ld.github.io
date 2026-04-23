@@ -13,9 +13,9 @@ description: Whiterabbit is running a webserver on port 80. Fuzzing revealed upt
 image: https://labs.hackthebox.com/storage/avatars/acf63a6d45ca722a8203fe4ab82007a6.png
 cssclasses:
   - custom_htb
+render_with_liquid: false
 ---
 ![WhiteRabbit](https://labs.hackthebox.com/storage/avatars/acf63a6d45ca722a8203fe4ab82007a6.png)
-{% raw %}
 
 # Information Gathering
 ## Enumeration
@@ -835,5 +835,3 @@ root@whiterabbit:/home/neo#
 ```
 
 Just like that we have root.
-
-{% endraw %}
