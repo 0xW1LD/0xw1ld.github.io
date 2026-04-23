@@ -601,24 +601,33 @@ ul {
 .tag-h1 {
 	list-style-type: none;
 	padding: 0;
+	text-wrap: auto;
+	display: flex;
+	flex-direction: row;
 }
 
 .tag-h2 {
 	list-style-type: none;
 	padding: 0;
 	padding-left: 1vh;
-}
-
-.tag-h2::before, .tag-h3::before{
-	content: "\f105\00a0\00a0";
-    font: var(--fa-font-solid);
-    font-family: 'Font Awesome 6 Free';
+	text-wrap: auto;
+	display: flex;
+	flex-direction: row;
 }
 
 .tag-h3 {
 	list-style-type: none;
 	padding: 0;
 	padding-left: 2vh;
+	text-wrap: auto;
+	display: flex;
+	flex-direction: row;
+}
+
+.tag-h2::before, .tag-h3::before{
+	content: "\f105\00a0\00a0";
+    font: var(--fa-font-solid);
+    font-family: 'Font Awesome 6 Free';
 }
 
 nav ul {
