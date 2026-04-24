@@ -362,10 +362,14 @@ h4,
 h5,
 h6,
 strong {
-	color: #d3cfc9;
+	color: white;
 	margin: 0 0 5px;
 	clear: both;
 	flex-basis: 100%;
+}
+
+section h1,section h2, section h3 {
+	text-shadow: 0.05vh 0.05vh #b8b2a8;
 }
 
 h1,
@@ -379,19 +383,19 @@ h1 {
 }
 
 h2 {
-	color: #C4BFB7
+	color: white
 }
 
 h3,
 h4,
 h5,
 h6 {
-	color: #bab4ab
+	color: white
 }
 
 a {
 	color: #FFFFFF;
-	text-decoration: none
+	text-decoration: none;
 }
 
 a:hover {
@@ -624,10 +628,10 @@ ul {
 	flex-direction: row;
 }
 
-.tag-h2::before, .tag-h3::before{
-	content: "\f105\00a0\00a0";
-    font: var(--fa-font-solid);
-    font-family: 'Font Awesome 6 Free';
+.tag-h2 a, .tag-h3 a{
+	padding-left: 0.75vh;
+	border-left: 0.25vh solid gray;
+	margin: 0;
 }
 
 nav ul {
@@ -637,10 +641,6 @@ nav ul {
     scrollbar-width: thin;
     scrollbar-gutter: auto;
 	min-height: 0;
-}
-
-li {
-	margin: 0.5vh 0;
 }
 
 small {
@@ -749,6 +749,7 @@ blockquote {
 	font-style: italic;
 	color: #d8d4cf;
 	box-shadow: black 5px 5px 20px;
+	border-left: 5px solid gray;
   }
 
   blockquote.success {
@@ -827,8 +828,8 @@ blockquote {
 
 .active {
 	color: #ffffff;
-	border-left: 0.25vh solid white;
-	padding: 5px;
+	border-left: 0.25vh solid white !important;
+	padding: 1.25vh;
 }
 
 .language-shell {
