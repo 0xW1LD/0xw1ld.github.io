@@ -15,6 +15,7 @@ cssclasses:
   - custom_htb
 render_with_liquid: false
 ---
+{% raw %}
 ![WhiteRabbit](https://labs.hackthebox.com/storage/avatars/acf63a6d45ca722a8203fe4ab82007a6.png)
 
 # Information Gathering
@@ -835,3 +836,4 @@ root@whiterabbit:/home/neo#
 ```
 
 Just like that we have root.
+{% endraw %}
