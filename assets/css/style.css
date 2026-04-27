@@ -589,9 +589,10 @@ nav {
     top: 1vh;
     text-wrap: nowrap;
     border-radius: 15px;
-    max-height: 55vh;
+    max-height: 35rem;
 	display: flex;
 	flex-direction: column;
+	text-wrap: auto;
 }
 
 ul a{
