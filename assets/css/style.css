@@ -335,6 +335,10 @@ pre.highlight{
 	position: relative;
 	display: block;
 }
+
+pre.highlight.collapsed code {
+	display: none;
+}
 /*
 html {
 	min-height: 100%;

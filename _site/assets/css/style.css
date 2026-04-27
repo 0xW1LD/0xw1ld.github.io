@@ -335,6 +335,10 @@ pre.highlight{
 	position: relative;
 	display: block;
 }
+
+pre.highlight.collapsed code {
+	display: none;
+}
 /*
 html {
 	min-height: 100%;
@@ -589,9 +593,10 @@ nav {
     top: 1vh;
     text-wrap: nowrap;
     border-radius: 15px;
-    max-height: 55vh;
+    max-height: 35rem;
 	display: flex;
 	flex-direction: column;
+	text-wrap: auto;
 }
 
 ul a{

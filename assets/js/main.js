@@ -38,3 +38,38 @@ var sectionHeight = function() {
   
     $('img').on('load', sectionHeight);
   });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('pre.highlight').forEach(pre => {
+    pre.addEventListener('click', e => {
+      const fontSize = parseFloat(getComputedStyle(pre).fontSize)
+      const beforeHeight = 1.75 * fontSize
+      const preRect = pre.getBoundingClientRect()
+
+      const relX = e.clientX - preRect.left
+      const relY = e.clientY - preRect.top
+
+      // Measure icon text width with matching font
+      const ruler = document.createElement('span')
+      ruler.style.cssText = `
+        font-family: FontAwesome;
+        font-size: ${fontSize}px;
+        letter-spacing: 0.5em;
+        visibility: hidden;
+        position: absolute;
+        white-space: nowrap;
+      `
+      ruler.textContent = '\uf057 \uf056 \uf13a '
+      document.body.appendChild(ruler)
+      const iconsWidth = ruler.getBoundingClientRect().width
+      document.body.removeChild(ruler)
+
+      const inBefore = relY <= beforeHeight && relX <= iconsWidth
+
+      if (inBefore) {
+        pre.classList.toggle('collapsed')
+        console.log("click in icons region")
+      }
+    })
+  })
+})
