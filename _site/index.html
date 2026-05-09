@@ -95,6 +95,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/05/09/overwatch.html">Overwatch</a></h2><small> by xct</small><br>
+              <small>2026-05-09 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Overwatch is a medium windows box which allows guests to access a software SMB share. Said share contains a binary that when deconstructed leaks `sqlsvc`'s credentials which are usable to connect to the domain. `sqlsvc` has DNS permissions as well as we can find a linked server on the MSSQL service. We can exploit ADIDNS poisoning to point the linked server to ourselves and connect to it providing us credentials for the `sqlmgmt` user. Lastly we exploit the web service being used by the binary we found earlier in the software shell to get `NT authority/system`</p><img src="/assets/img/img_overwatch/overwatch.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/04/25/Sorcery.html">Sorcery</a></h2><small> by tomadimitrie</small><br>
               <small>2026-04-25 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/insane&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
