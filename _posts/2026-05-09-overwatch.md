@@ -795,34 +795,6 @@ WHOAMI      10.129.12.9     389    S200401          Distinguished Name: CN=sqlmg
 WHOAMI      10.129.12.9     389    S200401          Member of: CN=Remote Management Users,CN=Builtin,DC=overwatch,DC=htb
 WHOAMI      10.129.12.9     389    S200401          User SID: S-1-5-21-2797066498-1365161904-233915892-1105
 
-$ evil-winrm overwatch.htb -u 'sqlmgmt' -p "$PASS"
-                                        
-Evil-WinRM shell v3.9
-                                        
-Error: missing argument: ip
-
-Usage: evil-winrm -i IP -u USER [-s SCRIPTS_PATH] [-e EXES_PATH] [-P PORT] [-a USERAGENT] [-p PASS] [-H HASH] [-U URL] [-S] [-c PUBLIC_KEY_PATH ] [-k PRIVATE_KEY_PATH ] [-r REALM] [-K TICKET_FILE] [--spn SPN_PREFIX] [-l]
-    -S, --ssl                        Enable ssl
-    -c, --pub-key PUBLIC_KEY_PATH    Local path to public key certificate
-    -k, --priv-key PRIVATE_KEY_PATH  Local path to private key certificate
-    -r, --realm DOMAIN               Kerberos auth, it has to be set also in /etc/krb5.conf file using this format -> CONTOSO.COM = { kdc = fooserver.contoso.com }
-    -s, --scripts PS_SCRIPTS_PATH    Powershell scripts local path
-        --spn SPN_PREFIX             SPN prefix for Kerberos auth (default HTTP)
-    -K, --ccache TICKET_FILE         Path to Kerberos ticket file (ccache or kirbi format, auto-detected)
-    -e, --executables EXES_PATH      C# executables local path
-    -i, --ip IP                      Remote host IP or hostname. FQDN for Kerberos auth (required)
-    -U, --url URL                    Remote url endpoint (default /wsman)
-    -u, --user USER                  Username (required if not using kerberos)
-    -p, --password PASS              Password
-    -H, --hash HASH                  NTHash
-    -P, --port PORT                  Remote host port (default 5985)
-    -a, --user-agent USERAGENT       Specify connection user-agent (default Microsoft WinRM Client)
-    -V, --version                    Show version
-    -n, --no-colors                  Disable colors
-    -N, --no-rpath-completion        Disable remote path completion
-    -l, --log                        Log the WinRM session
-    -h, --help                       Display this help message
-                                                                                                                                                                                                                                                                       
 $ evil-winrm -i overwatch.htb -u 'sqlmgmt' -p "$PASS"
                                         
 Evil-WinRM shell v3.9
