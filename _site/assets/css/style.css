@@ -398,7 +398,12 @@ h6 {
 }
 
 a {
-	color: #FFFFFF;
+	color: #aaCCFF;
+	text-decoration: none;
+}
+
+h1 a, h2 a{
+	color: #ffffff;
 	text-decoration: none;
 }
 
@@ -429,7 +434,7 @@ a:hover small {
 code,
 pre {
 	font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
-	color: #f8f8f8
+	color: #f0f0f0
 }
 
 pre {
