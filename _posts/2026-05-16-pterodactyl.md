@@ -273,7 +273,7 @@ MariaDB [panel]> SHOW tables;
 ```
 
 Let's grab the `username` and `password` from the `users` table.
-```SQL
+```
 MariaDB [panel]> select * from user_ssh_keys;
 Empty set (0.001 sec)
 
