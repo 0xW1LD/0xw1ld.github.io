@@ -95,6 +95,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/05/24/monitorsfour.html">Monitors Four</a></h2><small> by TheCyberGeek & Kavigihan</small><br>
+              <small>2026-05-24 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Monitors Four is running a network solutions website with a cacti subdomain. The main website is vulnerable to information disclosure via a user endpoint with a token parameter. We're able to crack the admin hash and login to view the changelog of the system. We're also able to reuse the same password for the marcus user on cacti and utilize a file write CVE to gain RCE. We're then able to exploit a vulnerable version of docker wherein the api is accessible from any container. We create a new container with the root directory mounted and are able to send several exec commands to gain complete root access to the host's drive.</p><img src="/assets/img/img_monitorsfour/monitorsfour.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/05/16/pterodactyl.html">Pterodactyl</a></h2><small> by HeadMonitor & TheCyberGeek</small><br>
               <small>2026-05-16 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
