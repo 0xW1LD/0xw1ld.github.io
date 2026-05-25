@@ -314,7 +314,7 @@
 
 pre.highlight:before {
 	font-family: FontAwesome;
-	content: " \f057 \f056 \f13a ";
+	content: var(--before-label," \f057 \f056 \f13a ");
 	letter-spacing: 0.5em;
 	color: #e5e5e5;
 	position: sticky;
@@ -326,6 +326,15 @@ pre.highlight:before {
 	padding: 0.5em 0em 0.25em 0em;
 	margin: 0em;
 	box-shadow: black 0em 0.1em 0.5em;
+}
+
+div[filename]:before {
+	content: attr(filename, " ");
+	color: #e5e5e5;
+	position: relative;
+	top: 2.9em;
+	left: 5.5em;
+	z-index: 1000;
 }
 
 pre.highlight{

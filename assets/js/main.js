@@ -68,7 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (inBefore) {
         pre.classList.toggle('collapsed')
-        console.log("click in icons region")
+        const isCollapsed = pre.classList.contains('collapsed')
+        pre.style.setProperty('--before-label', isCollapsed ? '" \\f057 \\f056 \\f138 "':'" \\f057 \\f056 \\f13a "')
+        console.log(isCollapsed)
       }
     })
   })
