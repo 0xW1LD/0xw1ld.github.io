@@ -332,9 +332,11 @@ div[filename]:before {
 	content: attr(filename, " ");
 	color: #e5e5e5;
 	position: relative;
-	top: 2.9em;
+	top: 1.4em;
 	left: 5.5em;
 	z-index: 1000;
+	display: block;
+	height: 0em;
 }
 
 pre.highlight{
