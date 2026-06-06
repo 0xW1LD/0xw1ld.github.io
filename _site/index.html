@@ -95,6 +95,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/06/06/facts.html">Facts</a></h2><small> by LazyTitan33</small><br>
+              <small>2026-06-06 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Facts is an easy linux machine running a blog that shares fun facts. There is an exposed endpoint to the admin login page that allows us to register a user. We can find Camaleon CMS 2.9.0 is in use which is vulnerable to a mass assignment vulnerability letting us become an admin. We're able to then find AWS bucket keys and connect to the bucket and find an ssh key. We can then ssh onto the machine and are able to    run facter as sudo. Abusing custom facts directory we're able to gain a root shell!</p><img src="/assets/img/img_facts/facts-1769760223388.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/05/30/interpreter.html">Interpreter</a></h2><small> by ReziT</small><br>
               <small>2026-05-30 written by 0xW1LD<p style="float: right;">boxes&nbsp;</p><p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
