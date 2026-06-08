@@ -95,6 +95,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/06/13/variatype.html">VariaType</a></h2><small> by WackyH4cker</small><br>
+              <small>2026-06-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">Variatype is running a service that allows users to upload designspaces files and fonts using the fonttype library. It's also running a portal with a git repository with cleartext credentials allowing us to login. Doing some digging we are able to find an arbitrary file read and are able to do a bit of source code analysis. We are then able to exploit an Arbitrary File Write in the designspace fonttools library processing that allows us to write a php script on the portal to gain a foothold. We can then find a bash script that processes fonts and is ran repeatedly, we're able to exploit the bash script's lack of proper sanitization against tar files and gain a shell as steve, the user. Finally we can exploit a sudo permission to run a plugin installation script with an arbitrary file upload to a python pth file and gain code execution as root.</p><img src="./assets/img/img_variatype/variatype-1773631863449.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/06/06/facts.html">Facts</a></h2><small> by LazyTitan33</small><br>
               <small>2026-06-06 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
