@@ -95,6 +95,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/06/20/nanocorp.html">NanoCorp</a></h2><small> by EmSec</small><br>
+              <small>2026-06-20 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">NanoCorp is a windows active directory machine running a web server that allows for a malicious ntlm theft zip file upload. Stealing an NTLMv2 hash we're able to establish a foothold in the domain where we can abuse a small chain of ACEs to get to a Remote Management User. We can then locate the checkmk monitoring service is installed along with the installer still on the system. We can abuse a vulnerability that requires us to write a range of read only executable files which will be executed by the installer to achieve root.</p><img src="/assets/img/img_nanocorp/nanocorp.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/06/13/variatype.html">VariaType</a></h2><small> by WackyH4cker</small><br>
               <small>2026-06-13 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/medium&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
