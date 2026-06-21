@@ -597,7 +597,7 @@ section {
 	padding: 2vh;
 	background-color: /*#181a1b*/ black;
 	border-radius: 10px;
-	min-width: 70%;
+	min-width: 55%;
 	flex-basis: 70%;
 }
 nav {
