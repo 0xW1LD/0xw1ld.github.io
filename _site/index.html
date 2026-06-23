@@ -95,6 +95,11 @@ all around W1ld Card.
           
             <h1>HTB</h1>
             
+              <h2><a href="/htb/2026/06/27/wingdata.html">WingData</a></h2><small> by WackyH4cker</small><br>
+              <small>2026-06-27 written by 0xW1LD<p style="float: right;">os/linux&nbsp;</p><p style="float: right;">diff/easy&nbsp;</p></small>
+              <hr style="width:100%; background: #373c3e;">
+              <p style="text-align: justify; width: 75%; float: left;">WingData is running a vulnerable WingFTP server that allows us to gain a foothold onto the machine. We look around and find user hashes that aren't too easy to crack until we realize they're salted with the default WingFTP salt, with this we're able to crack wacky's password and get user. Wacky is able to run a custom python binary that contains a tar symlink vulnerability allowing us an arbitrary write as root, we can abuse this by writing to a sudoers file to gain root.</p><img src="/assets/img/img_wingdata/wingdata-1770627093347.png" style="float: right; width: 23%; height: 23%;">
+            
               <h2><a href="/htb/2026/06/20/nanocorp.html">NanoCorp</a></h2><small> by EmSec</small><br>
               <small>2026-06-20 written by 0xW1LD<p style="float: right;">os/windows&nbsp;</p><p style="float: right;">diff/hard&nbsp;</p></small>
               <hr style="width:100%; background: #373c3e;">
