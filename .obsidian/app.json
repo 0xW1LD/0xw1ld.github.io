@@ -1,3 +1,19 @@
 {
-  "vimMode": true
+  "vimMode": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "_posts",
+  "settingsPopoutWindow": false,
+  "showLineNumber": true,
+  "spellcheck": false,
+  "openBehavior": "file:untracked/Homepage.base",
+  "promptDelete": false,
+  "deleteUnlinkedAttachments": "always",
+  "userIgnoreFilters": [
+    "_includes/",
+    "_layouts/",
+    "_site/",
+    "script/",
+    "index",
+    "README"
+  ]
 }

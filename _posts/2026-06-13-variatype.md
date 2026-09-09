@@ -10,7 +10,7 @@ tags:
 category:
   - HTB
 description: Variatype is running a service that allows users to upload designspaces files and fonts using the fonttype library. It's also running a portal with a git repository with cleartext credentials allowing us to login. Doing some digging we are able to find an arbitrary file read and are able to do a bit of source code analysis. We are then able to exploit an Arbitrary File Write in the designspace fonttools library processing that allows us to write a php script on the portal to gain a foothold. We can then find a bash script that processes fonts and is ran repeatedly, we're able to exploit the bash script's lack of proper sanitization against tar files and gain a shell as steve, the user. Finally we can exploit a sudo permission to run a plugin installation script with an arbitrary file upload to a python pth file and gain code execution as root.
-image: ./assets/img/img_variatype/variatype-1773631863449.png
+image: /assets/img/img_variatype/variatype-1773631863449.png
 cssclasses:
   - custom_htb
 ---

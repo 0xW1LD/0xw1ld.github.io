@@ -15,7 +15,7 @@
     {
       "name": "assets",
       "type": "CUSTOM",
-      "customTemplate": "/assets/img_{notename}"
+      "customTemplate": "/assets/img/img_{notename}"
     }
   ],
   "selectedFolderPreset": "assets",
