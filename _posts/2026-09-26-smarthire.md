@@ -2,7 +2,7 @@
 title: SmartHire
 layout: post
 released: 2026-09-19
-creators:
+creators: redtrib3
 pwned: true
 tags:
   - os/linux
@@ -65,7 +65,7 @@ After uploading the `example` Training data and testing it with the `example` re
 
 When we upload a model the site is constantly querying the endpoint `model_info` which responds with the following.
 
-```HTTP
+```http
 HTTP/1.1 200 OK
 Server: nginx/1.18.0 (Ubuntu)
 Date: Sat, 16 May 2026 23:57:37 GMT
