@@ -2,8 +2,7 @@
 title: Silentium
 layout: post
 released: 2026-04-11
-creators:
-  - 7u9y
+creators: 7u9y
 pwned: true
 tags:
   - os/linux
