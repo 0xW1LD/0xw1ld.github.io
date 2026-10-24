@@ -6,7 +6,6 @@ creators: anuragtaparia
 pwned: true
 tags:
   - diff/medium
-  - os
   - os/windows
 category:
   - HTB
