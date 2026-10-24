@@ -18,7 +18,8 @@ cssclasses:
 ![](/assets/img/img_checkpoint/0001.jpeg)
 # Enumeration
 
-> As is common in real life pentests, you will start the Checkpoint box with credentials for the following account alex.turner / Checkpoint2024! {:.info}
+> As is common in real life pentests, you will start the Checkpoint box with credentials for the following account alex.turner / Checkpoint2024!
+{:.info}
 
 ## Scans
 
@@ -70,7 +71,7 @@ Host script results:
 ```
 {:.filename="nmap.txt"}
 
-<table id="bkmrk-port%28s%29-service-vers"><thead><tr><th>Port(s)</th><th>Service</th><th>Version / Notes</th></tr></thead><tbody><tr><td>53</td><td>DNS</td><td>Simple DNS Plus</td></tr><tr><td>88</td><td>Kerberos</td><td>MS Windows Kerberos — server time `2026-06-15 13:17:26Z`</td></tr><tr><td>135, 49664, 49670, 49671, 49675, 49693, 49706, 58161</td><td>MSRPC</td><td>Microsoft Windows RPC</td></tr><tr><td>139</td><td>NetBIOS</td><td>Microsoft Windows netbios-ssn</td></tr><tr><td>389, 3268</td><td>LDAP</td><td>AD LDAP — domain `checkpoint.htb` — 3268 = Global Catalog</td></tr><tr><td>445</td><td>SMB</td><td>SMB2 signing **enforced**</td></tr><tr><td>464</td><td>kpasswd</td><td>Kerberos password change</td></tr><tr><td>593, 49676</td><td>RPC over HTTP</td><td>Microsoft Windows RPC/HTTP 1.0</td></tr><tr><td>636, 3269</td><td>LDAPS / GC SSL</td><td>`tcpwrapped` — **no TLS cert, connections reset**</td></tr><tr><td>5985</td><td>WinRM</td><td>Microsoft HTTPAPI 2.0 — potential remote shell if creds/ticket work</td></tr><tr><td>9389</td><td>ADWS</td><td>.NET Message Framing — AD Web Services</td></tr></tbody></table>
+<table id="bkmrk-port%28s%29-service-vers" style="text-align: left"><thead><tr><th>Port(s)</th><th>Service</th><th>Version / Notes</th></tr></thead><tbody><tr><td>53</td><td>DNS</td><td>Simple DNS Plus</td></tr><tr><td>88</td><td>Kerberos</td><td>MS Windows Kerberos — server time `2026-06-15 13:17:26Z`</td></tr><tr><td>135, 49664, 49670, 49671, 49675, 49693, 49706, 58161</td><td>MSRPC</td><td>Microsoft Windows RPC</td></tr><tr><td>139</td><td>NetBIOS</td><td>Microsoft Windows netbios-ssn</td></tr><tr><td>389, 3268</td><td>LDAP</td><td>AD LDAP — domain `checkpoint.htb` — 3268 = Global Catalog</td></tr><tr><td>445</td><td>SMB</td><td>SMB2 signing **enforced**</td></tr><tr><td>464</td><td>kpasswd</td><td>Kerberos password change</td></tr><tr><td>593, 49676</td><td>RPC over HTTP</td><td>Microsoft Windows RPC/HTTP 1.0</td></tr><tr><td>636, 3269</td><td>LDAPS / GC SSL</td><td>`tcpwrapped` — **no TLS cert, connections reset**</td></tr><tr><td>5985</td><td>WinRM</td><td>Microsoft HTTPAPI 2.0 — potential remote shell if creds/ticket work</td></tr><tr><td>9389</td><td>ADWS</td><td>.NET Message Framing — AD Web Services</td></tr></tbody></table>
 
 # User
 
