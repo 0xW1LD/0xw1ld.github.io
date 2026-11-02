@@ -5,3 +5,7 @@ _site/
 vendor/
 Gemfile.lock
 .bundle/
+.gitignore
+untracked/
+.obsidian/*
+/assets/img/img_wifi
