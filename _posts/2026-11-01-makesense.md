@@ -2,7 +2,7 @@
 title: Makesense
 layout: post
 released: 2026-09-19
-creators:
+creators: SamLyhin & vldmmrz 
 pwned: true
 tags:
 category:
