@@ -13,7 +13,7 @@ description: Administrator is running Active Directory and we're provided with i
 image: https://labs.hackthebox.com/storage/avatars/9d232b1558b7543c7cb85f2774687363.png
 cssclass: custom_htb
 ---
-![HTB](https://labs.hackthebox.com/storage/avatars/9d232b1558b7543c7cb85f2774687363.png)
+![Administrator HackTheBox machine](https://labs.hackthebox.com/storage/avatars/9d232b1558b7543c7cb85f2774687363.png)
 
 # Information Gathering
 ## Enumeration

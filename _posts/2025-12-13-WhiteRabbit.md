@@ -16,7 +16,7 @@ cssclasses:
 render_with_liquid: false
 ---
 {% raw %}
-![WhiteRabbit](https://labs.hackthebox.com/storage/avatars/acf63a6d45ca722a8203fe4ab82007a6.png)
+![White Rabbit HackTheBox machine](https://labs.hackthebox.com/storage/avatars/acf63a6d45ca722a8203fe4ab82007a6.png)
 
 # Information Gathering
 ## Enumeration

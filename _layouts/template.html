@@ -6,22 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% seo %}
+{% include head-seo.html %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <script src="https://kit.fontawesome.com/848cf172bf.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/mermaid.js" type="module"></script>
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+    <script defer src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script defer src="{{ "/assets/js/main.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/mermaid.js" | relative_url }}" type="module"></script>
     {% include head-custom.html %}
   </head>
   <body>
     <div class="wrapper">
       <nav>
         {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
+          <img src="{{site.logo | relative_url}}" alt="{{ site.title }} logo" />
         {% endif %}
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         <ul></ul>
@@ -41,6 +38,5 @@
         <p><small>Powered by my one brain cell</small></p>
       </footer>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
   </body>
-</html>
+</html>

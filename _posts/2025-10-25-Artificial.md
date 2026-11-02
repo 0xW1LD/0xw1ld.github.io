@@ -15,7 +15,7 @@ image: https://labs.hackthebox.com/storage/avatars/e6633d6c2b1d824c3756eb21aeed7
 cssclasses:
   - custom_htb
 ---
-![Artificial Image](https://labs.hackthebox.com/storage/avatars/e6633d6c2b1d824c3756eb21aeed7590.png)
+![Artificial HackTheBox machine](https://labs.hackthebox.com/storage/avatars/e6633d6c2b1d824c3756eb21aeed7590.png)
 
 # Enumeration
 ## Scans

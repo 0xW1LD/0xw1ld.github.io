@@ -14,7 +14,7 @@ image: /assets/img/img_checkpoint/0001.jpeg
 cssclasses:
   - custom_htb
 ---
-![](/assets/img/img_checkpoint/0001.jpeg)
+![Checkpoint HackTheBox machine](/assets/img/img_checkpoint/0001.jpeg)
 # Enumeration
 
 > As is common in real life pentests, you will start the Checkpoint box with credentials for the following account alex.turner / Checkpoint2024!

@@ -13,7 +13,7 @@ description: Underpass is running a default apache website. If we check udp port
 image: https://labs.hackthebox.com/storage/avatars/456a4d2e52f182847fb0a2dba0420a44.png
 cssclass: custom_htb
 ---
-![Underpass icon](https://labs.hackthebox.com/storage/avatars/456a4d2e52f182847fb0a2dba0420a44.png)
+![Underpass HackTheBox machine](https://labs.hackthebox.com/storage/avatars/456a4d2e52f182847fb0a2dba0420a44.png)
 
 # Information Gathering
 As usual let's start off with an `nmap` scan.

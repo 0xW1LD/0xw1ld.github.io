@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+image: /assets/img/logo.png
 ---
 
 # About Me
@@ -18,3 +18,5 @@ all around W1ld Card.
 The end of an era: OSI has now disbanded
 ```
 {:filename="whoami.txt"}
+
+Step-by-step HackTheBox (HTB) machine writeups: enumeration, foothold, lateral movement and privilege escalation on Linux and Windows / Active Directory boxes.

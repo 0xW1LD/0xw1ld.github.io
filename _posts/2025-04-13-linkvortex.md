@@ -13,7 +13,7 @@ description: Link vortex is running a webserver using ghost cms which we can fin
 image: https://labs.hackthebox.com/storage/avatars/97f12db8fafed028448e29e30be7efac.png
 cssclass: custom_htb
 ---
-![HTB](https://labs.hackthebox.com/storage/avatars/97f12db8fafed028448e29e30be7efac.png)
+![Linkvortex HackTheBox machine](https://labs.hackthebox.com/storage/avatars/97f12db8fafed028448e29e30be7efac.png)
 # Information Gathering
 ## Enumeration
 As always we start off with a port scan.

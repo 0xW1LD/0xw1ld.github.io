@@ -1,9 +1,10 @@
-<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+<!-- start custom head snippets -->
 
 <!-- Setup Google Analytics -->
 {% include head-custom-google-analytics.html %}
 
-<!-- You can set your favicon here -->
-<link rel="icon" href="{{ "/favicon.ico" | absolute_url }}">
+<!-- Favicon -->
+<link rel="icon" href="{{ "/favicon.ico" | relative_url }}">
+<link rel="apple-touch-icon" href="{{ site.logo | relative_url }}">
 
 <!-- end custom head snippets -->

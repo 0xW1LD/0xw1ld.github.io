@@ -15,7 +15,7 @@ image: /assets/img/img_2026-09-09-cobblestone/0001.jpeg
 cssclasses:
   - custom_htb
 ---
-![](/assets/img/img_2026-09-09-cobblestone/0001.jpeg)
+![Cobblestone HackTheBox machine](/assets/img/img_2026-09-09-cobblestone/0001.jpeg)
 # Cobblestone
 
 ## Scans

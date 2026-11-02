@@ -15,7 +15,7 @@ image: /assets/img/img_monitorsfour/monitorsfour.png
 cssclasses:
   - custom_htb
 ---
-![HTB](/assets/img/img_monitorsfour/monitorsfour.png)
+![Monitors Four HackTheBox machine](/assets/img/img_monitorsfour/monitorsfour.png)
 
 # Enumeration
 ## Scans

@@ -16,7 +16,7 @@ cssclasses:
   - custom_htb
 render_with_liquid: false
 ---
-![Conversor](https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/0b659c391f2803c247e79c77a3284f96.png)
+![Conversor HackTheBox machine](https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/0b659c391f2803c247e79c77a3284f96.png)
 
 # Enumeration
 ## Scans

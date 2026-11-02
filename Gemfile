@@ -11,3 +11,5 @@ gem "webrick", "~> 1.9"
 gem 'jekyll-sitemap', '~> 1.4'
 
 gem "jekyll-gfm-admonitions"
+gem "jekyll-seo-tag"
+gem "jekyll-feed"

@@ -16,7 +16,7 @@ cssclasses:
   - custom_htb
 ---
 
-![HTB](https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a3257c109bddf7358350a2cf02b8ae81.png)
+![Principal HackTheBox machine](https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a3257c109bddf7358350a2cf02b8ae81.png)
 # Enumeration
 ## Scans
 As usual we start off with an `nmap` port scan

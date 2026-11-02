@@ -16,7 +16,7 @@ cssclasses:
   - custom_htb
 ---
 
-![Interpreter Logo](/assets/img/img_interpreter/interpreter-1771483588500.png)
+![Interpreter HackTheBox machine](/assets/img/img_interpreter/interpreter-1771483588500.png)
 # Enumeration
 ## Scans
 As usual we start off with an `nmap` port scan
