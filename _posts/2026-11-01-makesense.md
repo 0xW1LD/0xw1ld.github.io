@@ -4,7 +4,7 @@ layout: post
 released: 2026-09-19
 creators: SamLyhin & vldmmrz 
 pwned: true
-tags:
+tags: os/linux diff/medium
 category:
   - HTB
 description: MakeSense is running a wordpress website which exposes a voice message file where a user accidentally says their password out loud in the recording. With access to this user we can then exploit a stored XSS to create an administratrive wordpress user. Editing the theme php files we're able to obtain remote command execution on the machine as www-data. Reading the contents of the wordpress config we find walter's cleartext password which we can reuse to ssh into the machine as walter. Finally we can find a PHP OCR application running as root that arbitrarily saves the OCR results as root.
