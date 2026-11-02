@@ -15,7 +15,7 @@ image: https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/
 cssclasses:
   - custom_htb
 ---
-![Expressway Token](https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/75c168f01f04e5f256838733b77f13ec.png)
+![Expressway HackTheBox machine](https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/75c168f01f04e5f256838733b77f13ec.png)
 
 # Enumeration
 ## Scans

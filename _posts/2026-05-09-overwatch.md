@@ -15,7 +15,7 @@ image: /assets/img/img_overwatch/overwatch.png
 cssclasses:
   - custom_htb
 ---
-![Overwatch Image](/assets/img/img_overwatch/overwatch.png)
+![Overwatch HackTheBox machine](/assets/img/img_overwatch/overwatch.png)
 
 # Enumeration
 ## Scans

@@ -1,13 +1,47 @@
 title: 0xW1LD
+tagline: HackTheBox Writeups & Pentesting Notes
+description: >-
+  HackTheBox (HTB) machine writeups and walkthroughs by 0xW1LD — enumeration,
+  web exploitation, Active Directory attacks and Linux/Windows privilege escalation.
 logo: /assets/img/logo.png
-description: 
+lang: en
 show_downloads: false
 google_analytics: G-BLW6GLT2VS
 theme: jekyll-theme-minimal
-author: "0xW1LD"
 url: "https://0xw1ld.github.io"
+baseurl: ""
+
+# jekyll-seo-tag
+author:
+  name: 0xW1LD
+  url: "https://0xw1ld.github.io"
+social:
+  name: 0xW1LD
+  links:
+    - "https://github.com/0xW1LD"
+twitter:
+  card: summary_large_image
+
 plugins:
+  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: 0xW1LD
+  - scope:
+      path: "googled1b110d94fbee4b2.html"
+    values:
+      sitemap: false
+
 markdown: kramdown
 kramdown:
     highlighter: rouge
@@ -15,7 +49,9 @@ kramdown:
         block:
             line_numbers: true
 
-exclude: 
+exclude:
+  - README.md
+  - script/
   - "**/*.ts" # Exclude source code files!
   - "*.ts" # Also those in the root directory!
   - "*.json" # Don't forget about assets!

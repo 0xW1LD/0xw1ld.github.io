@@ -15,7 +15,7 @@ cssclasses:
   - custom_htb
 ---
 
-![](/assets/img/img_variatype/variatype-1773631863449.png)
+![VariaType HackTheBox machine](/assets/img/img_variatype/variatype-1773631863449.png)
 # Enumeration
 ## Scans
 As usual we start off with an `nmap` port scan

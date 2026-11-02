@@ -13,7 +13,7 @@ cssclasses:
   - custom_htb
 ---
 
-![](/assets/img/img_makesense/0038.jpeg)
+![Makesense HackTheBox machine](/assets/img/img_makesense/0038.jpeg)
 # Enumeration
 
 ## Scans

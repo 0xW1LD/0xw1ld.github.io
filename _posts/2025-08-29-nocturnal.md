@@ -13,7 +13,7 @@ description: Nocturnal runs a webserver on port 80 with a file upload portal. Re
 image: https://labs.hackthebox.com/storage/avatars/f6a56cec6e9826b4ed124fb4155abc66.png
 cssclass: custom_htb
 ---
-![HTB](https://labs.hackthebox.com/storage/avatars/f6a56cec6e9826b4ed124fb4155abc66.png)
+![Nocturnal HackTheBox machine](https://labs.hackthebox.com/storage/avatars/f6a56cec6e9826b4ed124fb4155abc66.png)
 
 # Information Gathering
 ## Enumeration

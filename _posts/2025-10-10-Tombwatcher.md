@@ -14,7 +14,7 @@ image: https://labs.hackthebox.com/storage/avatars/59c74a969b4fec16cd8072d253ca9
 cssclasses:
   - custom_htb
 ---
-![Tombwatcher Icon](https://labs.hackthebox.com/storage/avatars/59c74a969b4fec16cd8072d253ca9917.png)
+![TombWatcher HackTheBox machine](https://labs.hackthebox.com/storage/avatars/59c74a969b4fec16cd8072d253ca9917.png)
 
 # Information Gathering
 ## Assumed Breach

@@ -14,7 +14,7 @@ image: /assets/img/img_2026-09-12-silentium/0012.jpeg
 cssclasses:
   - custom_htb
 ---
-![](/assets/img/img_2026-09-12-silentium/0012.jpeg)
+![Silentium HackTheBox machine](/assets/img/img_2026-09-12-silentium/0012.jpeg)
 # Enumeration
 ## Scans
 As usual we start off with an `nmap` port scan

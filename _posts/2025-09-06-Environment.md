@@ -13,7 +13,7 @@ description: Environment has an environmental preservation website running larav
 image: https://labs.hackthebox.com/storage/avatars/757eeb9b0f530e71875f0219d0d477e4.png
 cssclass: custom_htb
 ---
-![Environment](https://labs.hackthebox.com/storage/avatars/757eeb9b0f530e71875f0219d0d477e4.png)
+![Environment HackTheBox machine](https://labs.hackthebox.com/storage/avatars/757eeb9b0f530e71875f0219d0d477e4.png)
 
 # Enumeration
 As usual let's start off with an `nmap` scan.

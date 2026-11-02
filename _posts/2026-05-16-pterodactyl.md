@@ -16,7 +16,7 @@ cssclasses:
   - custom_htb
 ---
 
-![](/assets/img/img_pterodactyl/pterodactyl-1770428239987.jpg)
+![Pterodactyl HackTheBox machine](/assets/img/img_pterodactyl/pterodactyl-1770428239987.jpg)
 # Enumeration
 ## Scans
 As usual we start off with an `nmap` port scan

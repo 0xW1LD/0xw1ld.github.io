@@ -14,7 +14,7 @@ image: https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de58
 cssclass: custom_htb
 ---
 
-![Escape2](https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de580e1.png)
+![EscapeTwo HackTheBox machine](https://labs.hackthebox.com/storage/avatars/d5fcf2425893a73cf137284e2de580e1.png)
 
 # Nmap
 

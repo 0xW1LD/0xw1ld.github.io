@@ -15,7 +15,7 @@ image: https://labs.hackthebox.com/storage/avatars/9b765f2f3e0b0c8d115b5455c2210
 cssclasses:
   - custom_htb
 ---
-![Certificate Icon](https://labs.hackthebox.com/storage/avatars/9b765f2f3e0b0c8d115b5455c22101cf.png)
+![Certificate HackTheBox machine](https://labs.hackthebox.com/storage/avatars/9b765f2f3e0b0c8d115b5455c22101cf.png)
 
 # Information Gathering
 ## Scans

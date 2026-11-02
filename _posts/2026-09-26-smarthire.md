@@ -14,7 +14,7 @@ image: /assets/img/img_smarthire/0009.jpeg
 cssclasses:
   - custom_htb
 ---
-![](/assets/img/img_smarthire/0009.jpeg)
+![SmartHire HackTheBox machine](/assets/img/img_smarthire/0009.jpeg)
 # Enumeration
 
 ## Scans

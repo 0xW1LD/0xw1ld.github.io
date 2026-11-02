@@ -1,0 +1,22 @@
+{%- comment -%}
+  Shared <head> metadata for every layout.
+  Title is built here (keyword-rich for writeups); jekyll-seo-tag handles
+  description, canonical, Open Graph, Twitter cards and JSON-LD.
+{%- endcomment -%}
+{%- if page.url == "/" -%}
+  {%- capture seo_title -%}{{ site.title }} | {{ site.tagline }}{%- endcapture -%}
+{%- elsif page.collection == "posts" -%}
+  {%- if page.categories contains "HTB" -%}
+    {%- capture seo_title -%}{{ page.title }} HTB Writeup | {{ site.title }}{%- endcapture -%}
+  {%- else -%}
+    {%- capture seo_title -%}{{ page.title }} Writeup | {{ site.title }}{%- endcapture -%}
+  {%- endif -%}
+{%- else -%}
+  {%- capture seo_title -%}{{ page.title | default: site.title }} | {{ site.title }}{%- endcapture -%}
+{%- endif %}
+    <title>{{ seo_title | strip_html | normalize_whitespace | escape }}</title>
+{% seo title=false %}
+{% feed_meta %}
+    <meta name="theme-color" content="#0a0a0c">
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
