@@ -19,8 +19,6 @@ social:
   name: 0xW1LD
   links:
     - "https://github.com/0xW1LD"
-twitter:
-  card: summary_large_image
 
 plugins:
   - jekyll-seo-tag
