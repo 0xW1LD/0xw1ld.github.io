@@ -17,6 +17,7 @@ layout: template
 
 <div class="post-nav" role="navigation" aria-label="More writeups">
   <hr style="width:100%; background: #373c3e;">
-  {% if page.previous %}<p style="float: left; font-weight: bolder;">&larr; <a href="{{ page.previous.url | relative_url }}" rel="prev">{{ page.previous.title }}</a></p>{% endif %}
-  {% if page.next %}<p style="float: right; font-weight: bolder;"><a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title }}</a> &rarr;</p>{% endif %}
+  {% if page.previous %}<p style="float: left; font-weight: bolder;"> < <a href="{{ page.previous.url | relative_url }}" rel="prev">{{ page.previous.title }}</a></p>{% endif %}
+  {% if page.next %}<p style="float: right; font-weight: bolder;"><a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title }}</a> > </p>{% endif %}
+  <a href="https://0xw1ld.github.io/"><h2>Return to home</h2></a>
 </div>

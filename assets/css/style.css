@@ -613,6 +613,7 @@ nav {
 	display: flex;
 	flex-direction: column;
 	text-wrap: auto;
+	z-index: 1;
 }
 
 ul a{
@@ -678,7 +679,7 @@ hr {
 footer {
 	position:fixed;
 	bottom: 2vh;
-	left: 15%;
+	left: 17%;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
