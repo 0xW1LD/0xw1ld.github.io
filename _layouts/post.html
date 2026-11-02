@@ -17,7 +17,6 @@ layout: template
 
 <div class="post-nav" role="navigation" aria-label="More writeups">
   <hr style="width:100%; background: #373c3e;">
-  {% if page.previous %}<p style="float: left;">&larr; <a href="{{ page.previous.url | relative_url }}" rel="prev">{{ page.previous.title }} writeup</a></p>{% endif %}
-  {% if page.next %}<p style="float: right;"><a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title }} writeup</a> &rarr;</p>{% endif %}
-  <p style="clear: both; text-align: center;"><a href="{{ "/" | relative_url }}">All HTB writeups</a></p>
+  {% if page.previous %}<p style="float: left; font-weight: bolder;">&larr; <a href="{{ page.previous.url | relative_url }}" rel="prev">{{ page.previous.title }}</a></p>{% endif %}
+  {% if page.next %}<p style="float: right; font-weight: bolder;"><a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title }}</a> &rarr;</p>{% endif %}
 </div>
