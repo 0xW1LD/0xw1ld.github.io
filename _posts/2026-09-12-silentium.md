@@ -94,7 +94,6 @@ staging
 
 Visiting the `staging` subdomain we're greated with a `Flowise AI` login page.
 ![[assets/img/img_2026-09-12-silentium/d3b92953326878853d858959d9ff15aa_MD5.png]]
-
 # User
 ## Flowise Access
 Searching around on the internet for `Flowise AI CVEs` we can come across a recent `CVE`: [CVE-2025-58434](https://nvd.nist.gov/vuln/detail/CVE-2025-58434) which exploits the `forgot-password` endpoint of `flowise 3.0.5` to create a `tempToken` which we can then use against the `reset-password` endpoint to reset the password.
