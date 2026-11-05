@@ -1,6 +1,6 @@
 title: 0xW1LD
 tagline: HackTheBox Writeups & Pentesting Notes
-description: >-
+description: 
   HackTheBox (HTB) machine writeups and walkthroughs by 0xW1LD — enumeration,
   web exploitation, Active Directory attacks and Linux/Windows privilege escalation.
 logo: /assets/img/logo.png
