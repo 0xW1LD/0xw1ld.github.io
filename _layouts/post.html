@@ -16,6 +16,7 @@ layout: template
   {% if page.next %}<p style="float: right; font-weight: bolder;"><a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title }}</a> > </p>{% endif %}
   <p style="clear: both; text-align: center; font-weight: 900;"><a href="https://0xw1ld.github.io/">Return to home</a></p>
 </div>
+<hr style="width:100%; background: #373c3e;">
 
 {% if page.tags %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
