@@ -414,6 +414,10 @@ a {
 	font-size: 24px;
 }
 
+sub {
+	font-size: smaller !important;
+}
+
 h1 a, h2 a{
 	color: #ffffff;
 	text-decoration: none;
