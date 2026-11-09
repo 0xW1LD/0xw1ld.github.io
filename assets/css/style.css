@@ -418,6 +418,10 @@ sub a {
 	font-size: smaller !important;
 }
 
+nav a {
+	font-size: 1em !important;
+}
+
 h1 a, h2 a{
 	color: #ffffff;
 	text-decoration: none;
