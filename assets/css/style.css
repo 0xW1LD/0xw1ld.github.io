@@ -411,11 +411,10 @@ h6 {
 a {
 	color: #aaCCFF;
 	text-decoration: none;
-	font-size: 24px;
 }
 
-sub a {
-	font-size: smaller !important;
+.post-nav a {
+	font-size: 24px;
 }
 
 nav a {
